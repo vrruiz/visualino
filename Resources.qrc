@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>arrow_right_alt1_24x24.png</file>
+        <file>check_alt_24x24.png</file>
+    </qresource>
+</RCC>

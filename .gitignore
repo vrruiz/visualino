@@ -19,3 +19,11 @@
 *.exe
 *.out
 *.app
+
+# Qt
+*.pro.user
+
+# OSX
+.DS_Store
+
+blockly/*
