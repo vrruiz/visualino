@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QWebView>
+#include <QProcess>
 
 namespace Ui {
 class MainWindow;
@@ -18,11 +19,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QProcess *process;
 
 public slots:
     void actionVerify();
     void actionSend();
     void actionMonitor();
+    void onProcessStarted();
+    void onProcessOutputUpdated();
+    void onProcessFinished(int exitCode);
 };
 
 #endif // MAINWINDOW_H

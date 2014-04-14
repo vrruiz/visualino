@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QObject>
 #include <QDebug>
-#include <QProcess>
 #include <QWebFrame>
 #include <QDir>
 #include <QFile>
@@ -12,21 +12,27 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->webView->load(QUrl("file:////Users/rvr/Downloads/BlocklyDuino-master/blockly/apps/blocklyduino/index.html"));
+    ui->webView->load(QUrl("file:///home/vrruiz/archivos/prog/Qt/VisualArduino/blockly/blockly/apps/blocklyduino/index.html"));
+
+    process = new QProcess();
+    process->setProcessChannelMode(QProcess::MergedChannels);
+    connect(process, SIGNAL(started()), this, SLOT(onProcessStarted()));
+    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(onProcessOutputUpdated()));
+    connect(process, SIGNAL(finished(int)), this, SLOT(onProcessFinished(int)));
 }
 
 MainWindow::~MainWindow()
 {
+    delete process;
     delete ui;
 }
 
 void MainWindow::actionVerify() {
-    QString program = "/Users/rvr/Applications/Arduino.app";
+    QString program = "/home/vrruiz/bin/arduino-1.5.6-r2/arduino";
     QString tmpDirName = "/tmp/visualarduino/";
     QString tmpFileName = "/tmp/visualarduino/visualarduino.ino";
 
     QStringList arguments;
-    QProcess process;
 
     // Check if temp path exists
     QDir dir(tmpDirName);
@@ -51,15 +57,24 @@ void MainWindow::actionVerify() {
     tmpFile.close();
 
     // Verify code
-    arguments << tmpFileName;
-    process.start(program, arguments);
-    process.waitForFinished();
-
-    qDebug() << process.readAllStandardOutput();
+    arguments << "--verify" << tmpFileName;
+    process->start(program, arguments);
 }
 
 void MainWindow::actionSend() {
 }
 
 void MainWindow::actionMonitor() {
+}
+
+void MainWindow::onProcessStarted() {
+    ui->textBrowser->append(tr("Running..."));
+}
+
+void MainWindow::onProcessOutputUpdated() {
+    ui->textBrowser->append(QString(process->readAllStandardOutput()));
+}
+
+void MainWindow::onProcessFinished(int exitCode) {
+    ui->textBrowser->append(tr("Finished."));
 }

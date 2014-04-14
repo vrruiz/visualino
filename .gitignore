@@ -21,7 +21,7 @@
 *.app
 
 # Qt
-*.pro.user
+*.pro.user*
 
 # OSX
 .DS_Store
