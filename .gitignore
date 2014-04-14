@@ -26,4 +26,4 @@
 # OSX
 .DS_Store
 
-blockly/*
+blockly*
