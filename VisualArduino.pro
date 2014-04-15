@@ -20,7 +20,8 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 OTHER_FILES += \
-    blockly/apps/blocklyduino/index.html
+    blockly/apps/blocklyduino/index.html \
+    config.ini
 
 RESOURCES += \
     Resources.qrc

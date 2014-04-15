@@ -20,10 +20,17 @@ public:
 private:
     Ui::MainWindow *ui;
     QProcess *process;
+    QString arduinoIdePath;
+    QString htmlIndex;
+    QString tmpDirName;
+    QString tmpFileName;
+
+    void arduinoExec(const QString &action);
+    void readSettings();
 
 public slots:
     void actionVerify();
-    void actionSend();
+    void actionUpload();
     void actionMonitor();
     void onProcessStarted();
     void onProcessOutputUpdated();

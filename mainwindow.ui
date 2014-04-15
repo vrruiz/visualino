@@ -125,7 +125,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionVerify"/>
-   <addaction name="actionSend"/>
+   <addaction name="actionUpload"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionVerify">
@@ -140,16 +140,16 @@
     <string>Verify</string>
    </property>
   </action>
-  <action name="actionSend">
+  <action name="actionUpload">
    <property name="icon">
     <iconset resource="Resources.qrc">
      <normaloff>:/icons/arrow_right_alt1_24x24.png</normaloff>:/icons/arrow_right_alt1_24x24.png</iconset>
    </property>
    <property name="text">
-    <string>Send</string>
+    <string>Upload</string>
    </property>
    <property name="toolTip">
-    <string>Send</string>
+    <string>Upload</string>
    </property>
   </action>
  </widget>
@@ -181,8 +181,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionUpload</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionUpload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
+  <slot>actionUpload()</slot>
  </slots>
 </ui>

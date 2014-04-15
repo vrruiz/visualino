@@ -1,19 +1,26 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QObject>
+#include <QApplication>
 #include <QDebug>
-#include <QWebFrame>
 #include <QDir>
 #include <QFile>
+#include <QSettings>
+#include <QWebFrame>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->webView->load(QUrl("file:///home/vrruiz/archivos/prog/Qt/VisualArduino/blockly/blockly/apps/blocklyduino/index.html"));
 
+    // Set environment
+    readSettings();
+
+    // Load blockly index
+    ui->webView->load(QUrl("file://" + htmlIndex));
+
+    // Set process
     process = new QProcess();
     process->setProcessChannelMode(QProcess::MergedChannels);
     connect(process, SIGNAL(started()), this, SLOT(onProcessStarted()));
@@ -27,11 +34,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::actionVerify() {
-    QString program = "/home/vrruiz/bin/arduino-1.5.6-r2/arduino";
-    QString tmpDirName = "/tmp/visualarduino/";
-    QString tmpFileName = "/tmp/visualarduino/visualarduino.ino";
+void MainWindow::readSettings() {
+    // Set environment
+    QString configFile = QApplication::applicationDirPath() + "/config.ini";
 
+    QSettings settings(configFile, QSettings::IniFormat);
+
+    arduinoIdePath = settings.value(
+                "arduino_ide_path",
+                "/usr/bin/arduino"
+                ).toString();
+    tmpDirName = settings.value(
+                "tmp_dir_name",
+                "/tmp/visualarduino/"
+                ).toString();
+    tmpFileName = settings.value(
+                "tmp_file_name",
+                "/tmp/visualarduino/visualarduino.ino"
+                ).toString();
+    htmlIndex = settings.value(
+                "html_index",
+                QApplication::applicationDirPath() + "/blockly/blockly/apps/blocklyduino/index.html"
+                ).toString();
+}
+
+void MainWindow::arduinoExec(const QString &action) {
     QStringList arguments;
 
     // Check if temp path exists
@@ -57,11 +84,16 @@ void MainWindow::actionVerify() {
     tmpFile.close();
 
     // Verify code
-    arguments << "--verify" << tmpFileName;
-    process->start(program, arguments);
+    arguments << action << tmpFileName;
+    process->start(arduinoIdePath, arguments);
 }
 
-void MainWindow::actionSend() {
+void MainWindow::actionVerify() {
+    arduinoExec("--verify");
+}
+
+void MainWindow::actionUpload() {
+    arduinoExec("--upload");
 }
 
 void MainWindow::actionMonitor() {
