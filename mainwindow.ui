@@ -37,14 +37,14 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QWebView" name="webView" native="true">
+     <widget class="QWebView" name="webView">
       <property name="minimumSize">
        <size>
         <width>0</width>
         <height>400</height>
        </size>
       </property>
-      <property name="url" stdset="0">
+      <property name="url">
        <url>
         <string>about:blank</string>
        </url>
@@ -113,7 +113,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -156,16 +156,28 @@
    </property>
   </action>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/icons/upload_18x24.png</normaloff>:/icons/upload_18x24.png</iconset>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
   </action>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/icons/download_18x24.png</normaloff>:/icons/download_18x24.png</iconset>
+   </property>
    <property name="text">
     <string>Save</string>
    </property>
   </action>
   <action name="actionNew">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/icons/document_alt_stroke_18x24.png</normaloff>:/icons/document_alt_stroke_18x24.png</iconset>
+   </property>
    <property name="text">
     <string>New</string>
    </property>

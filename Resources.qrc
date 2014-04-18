@@ -2,5 +2,8 @@
     <qresource prefix="/icons">
         <file>arrow_right_alt1_24x24.png</file>
         <file>check_alt_24x24.png</file>
+        <file>document_alt_stroke_18x24.png</file>
+        <file>download_18x24.png</file>
+        <file>upload_18x24.png</file>
     </qresource>
 </RCC>
