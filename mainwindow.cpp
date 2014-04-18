@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Set environment
     readSettings();
+    xmlFileName = "";
 
     // Load blockly index
     ui->webView->load(QUrl("file://" + htmlIndex));
@@ -90,9 +91,27 @@ void MainWindow::arduinoExec(const QString &action) {
     process->start(arduinoIdePath, arguments);
 }
 
-void MainWindow::actionLoad() {
-    qDebug() << "actionLoad";
+void MainWindow::actionNew() {
+    // Unset file name
+    xmlFileName = "";
 
+    // Clear workspace
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    frame->evaluateJavaScript("Blockly.mainWorkspace.clear(); renderContent();");
+}
+
+void MainWindow::actionMonitor() {
+}
+
+void MainWindow::actionUpload() {
+    arduinoExec("--upload");
+}
+
+void MainWindow::actionVerify() {
+    arduinoExec("--verify");
+}
+
+void MainWindow::actionOpen() {
     // Open file dialog
     QString xmlFileName = QFileDialog::getOpenFileName(this, tr("Open File"),"", tr("Files (*.*)"));
     // Return if no file to open
@@ -111,32 +130,32 @@ void MainWindow::actionLoad() {
     // Read content
     QByteArray content = xmlFile.readAll();
     QString xml(content);
+    QString escapedXml(escapeCharacters(xml));
+    xmlFile.close();
 
     // Set XML to Workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);").arg(xml));
-}
+    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);").arg(escapedXml));
 
-void MainWindow::actionMonitor() {
-}
-
-void MainWindow::actionUpload() {
-    arduinoExec("--upload");
-}
-
-void MainWindow::actionVerify() {
-    arduinoExec("--verify");
+    // Set file name
+    this->xmlFileName = xmlFileName;
 }
 
 void MainWindow::actionSave() {
+    QString xmlFileName;
+
     // Get XML
     QWebFrame *frame = ui->webView->page()->mainFrame();
     QVariant xml = frame->evaluateJavaScript("var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace); var data = Blockly.Xml.domToText(xml); data;");
 
-    // Open file dialog
-    QString xmlFileName = QFileDialog::getOpenFileName(this, tr("Save File"),"", tr("Files (*.*)"));
-    // Return if no file to open
-    if (xmlFileName.isNull()) return;
+    if (this->xmlFileName.isEmpty()) {
+        // Open file dialog
+         xmlFileName = QFileDialog::getSaveFileName(this, tr("Save File"),"", tr("Files (*.*)"));
+        // Return if no file to open
+        if (xmlFileName.isNull()) return;
+    } else {
+        xmlFileName = this->xmlFileName;
+    }
 
     // Save XML to file
     QFile xmlFile(xmlFileName);
@@ -149,6 +168,15 @@ void MainWindow::actionSave() {
         return;
     }
     xmlFile.write(xml.toByteArray());
+    xmlFile.close();
+
+    // Set file name
+    if (this->xmlFileName.isEmpty()) {
+        this->xmlFileName = xmlFileName;
+    }
+
+    // Feedback
+    statusBar()->showMessage(tr("Done saving."), 2000);
 }
 
 void MainWindow::onProcessFinished(int exitCode) {
@@ -163,3 +191,16 @@ void MainWindow::onProcessStarted() {
     ui->textBrowser->append(tr("Running..."));
 }
 
+QString MainWindow::escapeCharacters(const QString& string)
+{
+    QString rValue = QString(string);
+    // Assign \\ to backSlash
+    QString backSlash = QString(QChar(0x5c)).append(QChar(0x5c));
+    // Replace \ with \\
+    rValue = rValue.replace('\\', backSlash);
+    // Assing \" to quote.
+    QString quote = QString(QChar(0x5c)).append(QChar(0x22));
+    // Replace " with \"
+    rValue = rValue.replace('"', quote);
+    return rValue;
+}

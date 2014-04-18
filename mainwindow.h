@@ -24,15 +24,18 @@ private:
     QString htmlIndex;
     QString tmpDirName;
     QString tmpFileName;
+    QString xmlFileName;
 
+    QString escapeCharacters(const QString& string);
     void arduinoExec(const QString &action);
     void readSettings();
 
 public slots:
-    void actionLoad();
+    void actionNew();
     void actionMonitor();
     void actionUpload();
     void actionVerify();
+    void actionOpen();
     void actionSave();
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
