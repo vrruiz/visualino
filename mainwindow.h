@@ -29,12 +29,14 @@ private:
     void readSettings();
 
 public slots:
-    void actionVerify();
-    void actionUpload();
+    void actionLoad();
     void actionMonitor();
-    void onProcessStarted();
-    void onProcessOutputUpdated();
+    void actionUpload();
+    void actionVerify();
+    void actionSave();
     void onProcessFinished(int exitCode);
+    void onProcessOutputUpdated();
+    void onProcessStarted();
 };
 
 #endif // MAINWINDOW_H

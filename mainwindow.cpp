@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QFileDialog>
+#include <QMessageBox>
 #include <QSettings>
 #include <QWebFrame>
 
@@ -88,25 +90,76 @@ void MainWindow::arduinoExec(const QString &action) {
     process->start(arduinoIdePath, arguments);
 }
 
-void MainWindow::actionVerify() {
-    arduinoExec("--verify");
+void MainWindow::actionLoad() {
+    qDebug() << "actionLoad";
+
+    // Open file dialog
+    QString xmlFileName = QFileDialog::getOpenFileName(this, tr("Open File"),"", tr("Files (*.*)"));
+    // Return if no file to open
+    if (xmlFileName.isNull()) return;
+
+    // Open file
+    QFile xmlFile(xmlFileName);
+    if (!xmlFile.open(QIODevice::ReadOnly)) {
+        // Display error message
+        QMessageBox msgBox(this);
+        msgBox.setText(QString(tr("Couldn't open file to read content: %1.")).arg(xmlFileName));
+        msgBox.exec();
+        return;
+    }
+
+    // Read content
+    QByteArray content = xmlFile.readAll();
+    QString xml(content);
+
+    // Set XML to Workspace
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);").arg(xml));
+}
+
+void MainWindow::actionMonitor() {
 }
 
 void MainWindow::actionUpload() {
     arduinoExec("--upload");
 }
 
-void MainWindow::actionMonitor() {
+void MainWindow::actionVerify() {
+    arduinoExec("--verify");
 }
 
-void MainWindow::onProcessStarted() {
-    ui->textBrowser->append(tr("Running..."));
+void MainWindow::actionSave() {
+    // Get XML
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    QVariant xml = frame->evaluateJavaScript("var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace); var data = Blockly.Xml.domToText(xml); data;");
+
+    // Open file dialog
+    QString xmlFileName = QFileDialog::getOpenFileName(this, tr("Save File"),"", tr("Files (*.*)"));
+    // Return if no file to open
+    if (xmlFileName.isNull()) return;
+
+    // Save XML to file
+    QFile xmlFile(xmlFileName);
+
+    if (!xmlFile.open(QIODevice::WriteOnly)) {
+        // Display error message
+        QMessageBox msgBox(this);
+        msgBox.setText(QString(tr("Couldn't open file to save content: %1.")).arg(xmlFileName));
+        msgBox.exec();
+        return;
+    }
+    xmlFile.write(xml.toByteArray());
+}
+
+void MainWindow::onProcessFinished(int exitCode) {
+    ui->textBrowser->append(tr("Finished."));
 }
 
 void MainWindow::onProcessOutputUpdated() {
     ui->textBrowser->append(QString(process->readAllStandardOutput()));
 }
 
-void MainWindow::onProcessFinished(int exitCode) {
-    ui->textBrowser->append(tr("Finished."));
+void MainWindow::onProcessStarted() {
+    ui->textBrowser->append(tr("Running..."));
 }
+
