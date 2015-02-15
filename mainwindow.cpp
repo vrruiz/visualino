@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QWebFrame>
+#include <QStandardPaths>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Load blockly index
     ui->webView->load(QUrl("file://" + htmlIndex));
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
 
     // Set process
     process = new QProcess();
@@ -39,7 +42,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::readSettings() {
     // Set environment
-    QString configFile = QApplication::applicationDirPath() + "/config.ini";
+    QString configFile = QStandardPaths::locate(QStandardPaths::DataLocation, QString("config.ini"), QStandardPaths::LocateFile);
+    qDebug() << configFile;
 
     QSettings settings(configFile, QSettings::IniFormat);
 
@@ -49,15 +53,15 @@ void MainWindow::readSettings() {
                 ).toString();
     tmpDirName = settings.value(
                 "tmp_dir_name",
-                "/tmp/visualarduino/"
+                "/tmp/visual_arduino/"
                 ).toString();
     tmpFileName = settings.value(
                 "tmp_file_name",
-                "/tmp/visualarduino/visualarduino.ino"
+                "/tmp/visual_arduino/visual_arduino.ino"
                 ).toString();
     htmlIndex = settings.value(
                 "html_index",
-                QApplication::applicationDirPath() + "/blockly/blockly/apps/blocklyduino/index.html"
+                "/usr/share/visual-arduino/html/index.html"
                 ).toString();
 }
 
@@ -79,7 +83,7 @@ void MainWindow::arduinoExec(const QString &action) {
 
     // Read code
     QWebFrame *mainFrame = ui->webView->page()->mainFrame();
-    QVariant codeVariant = mainFrame->evaluateJavaScript("Blockly.Generator.workspaceToCode('Arduino');");
+    QVariant codeVariant = mainFrame->evaluateJavaScript("Blockly.Arduino.workspaceToCode();");
     QString codeString = codeVariant.toString();
 
     // Write code to tmp file
@@ -135,7 +139,7 @@ void MainWindow::actionOpen() {
 
     // Set XML to Workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);").arg(escapedXml));
+    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(), xml);").arg(escapedXml));
 
     // Set file name
     this->xmlFileName = xmlFileName;
@@ -146,7 +150,7 @@ void MainWindow::actionSave() {
 
     // Get XML
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    QVariant xml = frame->evaluateJavaScript("var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace); var data = Blockly.Xml.domToText(xml); data;");
+    QVariant xml = frame->evaluateJavaScript("var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()); var data = Blockly.Xml.domToText(xml); data;");
 
     if (this->xmlFileName.isEmpty()) {
         // Open file dialog
@@ -196,7 +200,7 @@ QString MainWindow::escapeCharacters(const QString& string)
     QString rValue = QString(string);
     // Assign \\ to backSlash
     QString backSlash = QString(QChar(0x5c)).append(QChar(0x5c));
-    // Replace \ with \\
+    /* Replace \ with \\ */
     rValue = rValue.replace('\\', backSlash);
     // Assing \" to quote.
     QString quote = QString(QChar(0x5c)).append(QChar(0x22));
