@@ -1,4 +1,4 @@
-visualino usr/bin/
+src/visualino usr/bin/
 roboblocks/roboblocks/ usr/share/visualino/
 config.ini usr/share/visualino/
 icon.png usr/share/visualino/icons/
