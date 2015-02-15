@@ -8,8 +8,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QSettings>
-#include <QWebFrame>
 #include <QStandardPaths>
+#include <QWebFrame>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -45,22 +45,31 @@ void MainWindow::readSettings() {
     QString configFile = QStandardPaths::locate(QStandardPaths::DataLocation, QString("config.ini"), QStandardPaths::LocateFile);
     qDebug() << configFile;
 
+#ifdef Q_OS_LINUX
+    QString platform("linux/");
+#elif defined(Q_OS_WIN)
+    QString platform("windows/");
+#elif defined(Q_OS_MAC)
+    QString platform("mac/");
+#endif
+    qDebug() << platform;
+
     QSettings settings(configFile, QSettings::IniFormat);
 
     arduinoIdePath = settings.value(
-                "arduino_ide_path",
+                platform + "arduino_ide_path",
                 "/usr/bin/arduino"
                 ).toString();
     tmpDirName = settings.value(
-                "tmp_dir_name",
+                platform + "tmp_dir_name",
                 "/tmp/visual_arduino/"
                 ).toString();
     tmpFileName = settings.value(
-                "tmp_file_name",
+                platform + "tmp_file_name",
                 "/tmp/visual_arduino/visual_arduino.ino"
                 ).toString();
     htmlIndex = settings.value(
-                "html_index",
+                platform + "html_index",
                 "/usr/share/visual-arduino/html/index.html"
                 ).toString();
 }
