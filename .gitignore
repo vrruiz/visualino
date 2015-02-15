@@ -22,6 +22,8 @@
 
 # Qt
 *.pro.user*
+build-*
+*.autosave
 
 # OSX
 .DS_Store
