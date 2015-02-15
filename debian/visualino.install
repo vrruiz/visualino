@@ -1,0 +1,5 @@
+visualino usr/bin/
+roboblocks/roboblocks/ usr/share/visualino/
+config.ini usr/share/visualino/
+icon.png usr/share/visualino/icons/
+visualino.desktop usr/share/applications/

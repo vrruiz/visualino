@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.vrruiz.visualino",
+    "description": "Visual Programming Environment for Arduino.",
+    "framework": "ubuntu-sdk-14.10-qml-dev3",
+    "architecture": "all",
+    "title": "Visualino",
+    "hooks": {
+        "visualino": {
+            "apparmor": "visualino.json",
+            "desktop": "visualino.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Víctor R. Ruiz <vrruiz@gmail.com>"
+}
