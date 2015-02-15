@@ -25,15 +25,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Load blockly index
     ui->webView->load(QUrl::fromLocalFile(htmlIndex));
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Vertical,
+                                                         Qt::ScrollBarAlwaysOff);
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Horizontal,
+                                                         Qt::ScrollBarAlwaysOff);
 
     // Set process
     process = new QProcess();
     process->setProcessChannelMode(QProcess::MergedChannels);
     connect(process, SIGNAL(started()), this, SLOT(onProcessStarted()));
-    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(onProcessOutputUpdated()));
-    connect(process, SIGNAL(finished(int)), this, SLOT(onProcessFinished(int)));
+    connect(process, SIGNAL(readyReadStandardOutput()),
+            this,
+            SLOT(onProcessOutputUpdated()));
+    connect(process, SIGNAL(finished(int)),
+            this,
+            SLOT(onProcessFinished(int)));
 }
 
 MainWindow::~MainWindow()
@@ -116,7 +122,8 @@ void MainWindow::arduinoExec(const QString &action) {
 
     // Read code
     QWebFrame *mainFrame = ui->webView->page()->mainFrame();
-    QVariant codeVariant = mainFrame->evaluateJavaScript("Blockly.Arduino.workspaceToCode();");
+    QVariant codeVariant = mainFrame->evaluateJavaScript(
+                "Blockly.Arduino.workspaceToCode();");
     QString codeString = codeVariant.toString();
 
     // Write code to tmp file
@@ -134,7 +141,8 @@ void MainWindow::actionNew() {
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript("Blockly.mainWorkspace.clear(); renderContent();");
+    frame->evaluateJavaScript(
+                "Blockly.mainWorkspace.clear(); renderContent();");
 }
 
 void MainWindow::actionMonitor() {
@@ -150,7 +158,11 @@ void MainWindow::actionVerify() {
 
 void MainWindow::actionOpen() {
     // Open file dialog
-    QString xmlFileName = QFileDialog::getOpenFileName(this, tr("Open File"),"", tr("Files (*.*)"));
+    QString xmlFileName = QFileDialog::getOpenFileName(
+                this,
+                tr("Open File"),
+                "",
+                tr("Files (*.*)"));
     // Return if no file to open
     if (xmlFileName.isNull()) return;
 
@@ -159,7 +171,8 @@ void MainWindow::actionOpen() {
     if (!xmlFile.open(QIODevice::ReadOnly)) {
         // Display error message
         QMessageBox msgBox(this);
-        msgBox.setText(QString(tr("Couldn't open file to read content: %1.")).arg(xmlFileName));
+        msgBox.setText(QString(tr("Couldn't open file to read content: %1.")
+                               ).arg(xmlFileName));
         msgBox.exec();
         return;
     }
@@ -172,7 +185,11 @@ void MainWindow::actionOpen() {
 
     // Set XML to Workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString("var data = '%1'; var xml = Blockly.Xml.textToDom(data); Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(), xml);").arg(escapedXml));
+    frame->evaluateJavaScript(QString(
+        "var data = '%1'; "
+        "var xml = Blockly.Xml.textToDom(data);"
+        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),"
+        "xml);").arg(escapedXml));
 
     // Set file name
     this->xmlFileName = xmlFileName;
@@ -183,11 +200,17 @@ void MainWindow::actionSave() {
 
     // Get XML
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    QVariant xml = frame->evaluateJavaScript("var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()); var data = Blockly.Xml.domToText(xml); data;");
+    QVariant xml = frame->evaluateJavaScript(
+        "var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());"
+        "var data = Blockly.Xml.domToText(xml); data;");
 
     if (this->xmlFileName.isEmpty()) {
         // Open file dialog
-         xmlFileName = QFileDialog::getSaveFileName(this, tr("Save File"),"", tr("Files (*.*)"));
+         xmlFileName = QFileDialog::getSaveFileName(
+                     this,
+                     tr("Save File"),
+                     "",
+                     tr("Files (*.*)"));
         // Return if no file to open
         if (xmlFileName.isNull()) return;
     } else {
@@ -200,7 +223,8 @@ void MainWindow::actionSave() {
     if (!xmlFile.open(QIODevice::WriteOnly)) {
         // Display error message
         QMessageBox msgBox(this);
-        msgBox.setText(QString(tr("Couldn't open file to save content: %1.")).arg(xmlFileName));
+        msgBox.setText(QString(tr("Couldn't open file to save content: %1.")
+                               ).arg(xmlFileName));
         msgBox.exec();
         return;
     }
