@@ -11,6 +11,8 @@
 #include <QStandardPaths>
 #include <QWebFrame>
 
+#define CONFIG_INI "config.ini"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -42,8 +44,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::readSettings() {
     // Set environment
-    QString configFile = QStandardPaths::locate(QStandardPaths::DataLocation, QString("config.ini"), QStandardPaths::LocateFile);
-    qDebug() << configFile;
+    QString configFile = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                                CONFIG_INI,
+                                                QStandardPaths::LocateFile);
+    if (configFile.isEmpty()) {
+        // Couldn't locate config.ini in DataLocation dirs.
+        // Search in the binary path.
+        configFile = QDir(QCoreApplication::applicationDirPath())
+                .filePath(CONFIG_INI);
+    }
 
 #ifdef Q_OS_LINUX
     QString platform("linux/");
@@ -52,7 +61,6 @@ void MainWindow::readSettings() {
 #elif defined(Q_OS_MAC)
     QString platform("mac/");
 #endif
-    qDebug() << platform;
 
     QSettings settings(configFile, QSettings::IniFormat);
 
@@ -62,16 +70,32 @@ void MainWindow::readSettings() {
                 ).toString();
     tmpDirName = settings.value(
                 platform + "tmp_dir_name",
-                "/tmp/visual_arduino/"
+                "/tmp/visualino/"
                 ).toString();
     tmpFileName = settings.value(
                 platform + "tmp_file_name",
-                "/tmp/visual_arduino/visual_arduino.ino"
+                "/tmp/visualino/visualino.ino"
                 ).toString();
     htmlIndex = settings.value(
                 platform + "html_index",
-                "/usr/share/visual-arduino/html/index.html"
+                "/usr/share/visualino/html/index.html"
                 ).toString();
+
+    // Add applicationDirPath if relative path.
+    // Needed specially for Windows.
+    arduinoIdePath = checkRelativePath(arduinoIdePath);
+    htmlIndex = checkRelativePath(htmlIndex);
+    tmpDirName = checkRelativePath(tmpDirName);
+    tmpFileName = checkRelativePath(tmpFileName);
+
+}
+
+QString MainWindow::checkRelativePath(const QString &fileName) {
+    // Append the binary path if relative.
+    if (QDir::isRelativePath(htmlIndex)) {
+        return QDir(QCoreApplication::applicationDirPath()).filePath(htmlIndex);
+    }
+    return fileName;
 }
 
 void MainWindow::arduinoExec(const QString &action) {

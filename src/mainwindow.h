@@ -26,6 +26,7 @@ private:
     QString tmpFileName;
     QString xmlFileName;
 
+    QString checkRelativePath(const QString &fileName);
     QString escapeCharacters(const QString& string);
     void arduinoExec(const QString &action);
     void readSettings();

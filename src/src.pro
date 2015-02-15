@@ -12,16 +12,8 @@ HEADERS += mainwindow.h
 
 FORMS += mainwindow.ui
 
-OTHER_FILES += config.ini
+OTHER_FILES += ../config.ini
 
 RESOURCES += Resources.qrc
 
 # SUBDIRS = roboblocks
-
-# icons.path = usr/share/visualino/icons/
-# icons.files = *.png
-
-# html.path = usr/share/visualino/html/
-# html.files = html/*
-
-# INSTALLS += icons html
