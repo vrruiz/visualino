@@ -98,8 +98,8 @@ void MainWindow::readSettings() {
 
 QString MainWindow::checkRelativePath(const QString &fileName) {
     // Append the binary path if relative.
-    if (QDir::isRelativePath(htmlIndex)) {
-        return QDir(QCoreApplication::applicationDirPath()).filePath(htmlIndex);
+    if (QDir::isRelativePath(fileName)) {
+        return QDir(QCoreApplication::applicationDirPath()).filePath(fileName);
     }
     return fileName;
 }
