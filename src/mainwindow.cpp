@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     xmlFileName = "";
 
     // Load blockly index
-    ui->webView->load(QUrl("file://" + htmlIndex));
+    ui->webView->load(QUrl::fromLocalFile(htmlIndex));
     ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
     ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
 
