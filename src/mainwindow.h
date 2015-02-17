@@ -41,6 +41,7 @@ public slots:
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
     void onProcessStarted();
+    void unhide();
 };
 
 #endif // MAINWINDOW_H

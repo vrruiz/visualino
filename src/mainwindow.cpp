@@ -252,6 +252,10 @@ void MainWindow::onProcessStarted() {
     ui->textBrowser->append(tr("Running..."));
 }
 
+void MainWindow::unhide() {
+    this->show();
+}
+
 QString MainWindow::escapeCharacters(const QString& string)
 {
     QString rValue = QString(string);

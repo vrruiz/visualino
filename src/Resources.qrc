@@ -6,4 +6,7 @@
         <file>download_18x24.png</file>
         <file>upload_18x24.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>splashscreen.png</file>
+    </qresource>
 </RCC>
