@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "settingsstore.h"
+#include "settingsdialog.h"
+
 #include <QMainWindow>
 #include <QWebView>
 #include <QProcess>
@@ -20,24 +23,27 @@ public:
 private:
     Ui::MainWindow *ui;
     QProcess *process;
-    QString arduinoIdePath;
-    QString htmlIndex;
-    QString tmpDirName;
-    QString tmpFileName;
+    SettingsStore *settings;
     QString xmlFileName;
+    QString xmlLoadContent;
 
-    QString checkRelativePath(const QString &fileName);
     QString escapeCharacters(const QString& string);
     void arduinoExec(const QString &action);
-    void readSettings();
+    QString getXml();
+    void setXml(const QString &xml);
+    void loadBlockly();
+    int saveXml(const QString &xmlFilePath);
 
 public slots:
     void actionNew();
     void actionMonitor();
+    void actionOpen();
+    void actionQuit();
     void actionUpload();
     void actionVerify();
-    void actionOpen();
     void actionSave();
+    void actionSettings();
+    void onLoadFinished(bool finished);
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
     void onProcessStarted();

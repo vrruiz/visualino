@@ -3,21 +3,31 @@
 #include <QSplashScreen>
 #include <QTimer>
 
+#define SPLASH
+#undef SPLASH
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+#ifdef SPLASH
     QImage img(":/splashscreen.png");
     QPixmap pixmap = QPixmap::fromImage(img);
     QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
     splash.show();
     a.processEvents();
+#endif
 
-    MainWindow w;    
+    MainWindow w;
+
+#ifdef SPLASH
     w.hide();
 
     QTimer::singleShot(2500, &splash, SLOT(close()));
     QTimer::singleShot(1500, &w, SLOT(unhide()));
+#else
+    w.show();
+#endif
 
     return a.exec();
 }

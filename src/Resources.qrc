@@ -5,6 +5,8 @@
         <file>document_alt_stroke_18x24.png</file>
         <file>download_18x24.png</file>
         <file>upload_18x24.png</file>
+        <file>cog_24x24.png</file>
+        <file>magnifying_glass_24x24.png</file>
     </qresource>
     <qresource prefix="/">
         <file>splashscreen.png</file>

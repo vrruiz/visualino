@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QThread>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QWebFrame>
@@ -19,16 +20,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Align last toolbar action to the right
+    // QWidget* empty = new QWidget(this);
+    // empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    // ui->mainToolBar->insertWidget(ui->actionSettings, empty);
+
     // Set environment
-    readSettings();
+    settings = new SettingsStore(CONFIG_INI);
     xmlFileName = "";
 
     // Load blockly index
-    ui->webView->load(QUrl::fromLocalFile(htmlIndex));
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Vertical,
-                                                         Qt::ScrollBarAlwaysOff);
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(Qt::Horizontal,
-                                                         Qt::ScrollBarAlwaysOff);
+    loadBlockly();
 
     // Set process
     process = new QProcess();
@@ -44,77 +46,22 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete settings;
     delete process;
     delete ui;
-}
-
-void MainWindow::readSettings() {
-    // Set environment
-    QString configFile = QStandardPaths::locate(QStandardPaths::DataLocation,
-                                                CONFIG_INI,
-                                                QStandardPaths::LocateFile);
-    if (configFile.isEmpty()) {
-        // Couldn't locate config.ini in DataLocation dirs.
-        // Search in the binary path.
-        configFile = QDir(QCoreApplication::applicationDirPath())
-                .filePath(CONFIG_INI);
-    }
-
-#ifdef Q_OS_LINUX
-    QString platform("linux/");
-#elif defined(Q_OS_WIN)
-    QString platform("windows/");
-#elif defined(Q_OS_MAC)
-    QString platform("mac/");
-#endif
-
-    QSettings settings(configFile, QSettings::IniFormat);
-
-    arduinoIdePath = settings.value(
-                platform + "arduino_ide_path",
-                "/usr/bin/arduino"
-                ).toString();
-    tmpDirName = settings.value(
-                platform + "tmp_dir_name",
-                "/tmp/visualino/"
-                ).toString();
-    tmpFileName = settings.value(
-                platform + "tmp_file_name",
-                "/tmp/visualino/visualino.ino"
-                ).toString();
-    htmlIndex = settings.value(
-                platform + "html_index",
-                "/usr/share/visualino/html/index.html"
-                ).toString();
-
-    // Add applicationDirPath if relative path.
-    // Needed specially for Windows.
-    arduinoIdePath = checkRelativePath(arduinoIdePath);
-    htmlIndex = checkRelativePath(htmlIndex);
-    tmpDirName = checkRelativePath(tmpDirName);
-    tmpFileName = checkRelativePath(tmpFileName);
-
-}
-
-QString MainWindow::checkRelativePath(const QString &fileName) {
-    // Append the binary path if relative.
-    if (QDir::isRelativePath(fileName)) {
-        return QDir(QCoreApplication::applicationDirPath()).filePath(fileName);
-    }
-    return fileName;
 }
 
 void MainWindow::arduinoExec(const QString &action) {
     QStringList arguments;
 
     // Check if temp path exists
-    QDir dir(tmpDirName);
+    QDir dir(settings->tmpDirName());
     if (dir.exists() == false) {
-        dir.mkdir(tmpDirName);
+        dir.mkdir(settings->tmpDirName());
     }
 
     // Check if tmp file exists
-    QFile tmpFile(tmpFileName);
+    QFile tmpFile(settings->tmpFileName());
     if (tmpFile.exists()) {
         tmpFile.remove();
     }
@@ -131,8 +78,8 @@ void MainWindow::arduinoExec(const QString &action) {
     tmpFile.close();
 
     // Verify code
-    arguments << action << tmpFileName;
-    process->start(arduinoIdePath, arguments);
+    arguments << action << settings->tmpDirName();
+    process->start(settings->arduinoIdePath(), arguments);
 }
 
 void MainWindow::actionNew() {
@@ -146,14 +93,6 @@ void MainWindow::actionNew() {
 }
 
 void MainWindow::actionMonitor() {
-}
-
-void MainWindow::actionUpload() {
-    arduinoExec("--upload");
-}
-
-void MainWindow::actionVerify() {
-    arduinoExec("--verify");
 }
 
 void MainWindow::actionOpen() {
@@ -180,29 +119,32 @@ void MainWindow::actionOpen() {
     // Read content
     QByteArray content = xmlFile.readAll();
     QString xml(content);
-    QString escapedXml(escapeCharacters(xml));
     xmlFile.close();
 
     // Set XML to Workspace
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString(
-        "var data = '%1'; "
-        "var xml = Blockly.Xml.textToDom(data);"
-        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),"
-        "xml);").arg(escapedXml));
+    setXml(xml);
 
     // Set file name
     this->xmlFileName = xmlFileName;
 }
 
-void MainWindow::actionSave() {
-    QString xmlFileName;
+void MainWindow::actionQuit() {
+    // Quit
+    close();
+}
 
-    // Get XML
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    QVariant xml = frame->evaluateJavaScript(
-        "var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());"
-        "var data = Blockly.Xml.domToText(xml); data;");
+void MainWindow::actionUpload() {
+    // Upload sketch
+    arduinoExec("--upload");
+}
+
+void MainWindow::actionVerify() {
+    // Build sketch
+    arduinoExec("--verify");
+}
+void MainWindow::actionSave() {
+    // Save XML file
+    QString xmlFileName;
 
     if (this->xmlFileName.isEmpty()) {
         // Open file dialog
@@ -217,10 +159,9 @@ void MainWindow::actionSave() {
         xmlFileName = this->xmlFileName;
     }
 
-    // Save XML to file
-    QFile xmlFile(xmlFileName);
+    int result = saveXml(xmlFileName);
 
-    if (!xmlFile.open(QIODevice::WriteOnly)) {
+    if (result == 0) {
         // Display error message
         QMessageBox msgBox(this);
         msgBox.setText(QString(tr("Couldn't open file to save content: %1.")
@@ -228,8 +169,6 @@ void MainWindow::actionSave() {
         msgBox.exec();
         return;
     }
-    xmlFile.write(xml.toByteArray());
-    xmlFile.close();
 
     // Set file name
     if (this->xmlFileName.isEmpty()) {
@@ -238,6 +177,65 @@ void MainWindow::actionSave() {
 
     // Feedback
     statusBar()->showMessage(tr("Done saving."), 2000);
+}
+
+void MainWindow::actionSettings() {
+    // Open preferences dialog
+    QString htmlIndex = settings->htmlIndex();
+    SettingsDialog settingsDialog(settings, this);
+    int result = settingsDialog.exec();
+    if (result && settingsDialog.changed()) {
+        // Reload blockly page
+        if (htmlIndex != settings->htmlIndex()) {
+            xmlLoadContent = getXml();
+            qDebug() << xmlLoadContent;
+            loadBlockly();
+            connect(ui->webView,
+                    SIGNAL(loadFinished(bool)),
+                    SLOT(onLoadFinished(bool)));
+        }
+    }
+}
+
+QString MainWindow::getXml() {
+    // Get XML
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    QVariant xml = frame->evaluateJavaScript(
+        "var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());"
+        "var data = Blockly.Xml.domToText(xml); data;");
+    return xml.toString();
+}
+
+void MainWindow::setXml(const QString &xml) {
+    // Set XML
+    QString escapedXml(escapeCharacters(xml));
+
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    frame->evaluateJavaScript(QString(
+        "var data = '%1'; "
+        "var xml = Blockly.Xml.textToDom(data);"
+        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),"
+        "xml);").arg(escapedXml));
+}
+
+void MainWindow::loadBlockly() {
+    // Load blockly index
+    ui->webView->load(QUrl::fromLocalFile(settings->htmlIndex()));
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(
+                Qt::Vertical,
+                Qt::ScrollBarAlwaysOff);
+    ui->webView->page()->mainFrame()->setScrollBarPolicy(
+                Qt::Horizontal,
+                Qt::ScrollBarAlwaysOff);
+}
+
+void MainWindow::onLoadFinished(bool finished) {
+    // Load content using xmlLoadContent variable
+    // This is triggered by settings dialog
+    if (!finished || xmlLoadContent.isEmpty()) return;
+    setXml(xmlLoadContent);
+    ui->webView->disconnect(SIGNAL(loadFinished(bool)));
+    xmlLoadContent = "";
 }
 
 void MainWindow::onProcessFinished(int exitCode) {
@@ -250,6 +248,29 @@ void MainWindow::onProcessOutputUpdated() {
 
 void MainWindow::onProcessStarted() {
     ui->textBrowser->append(tr("Running..."));
+}
+
+int MainWindow::saveXml(const QString &xmlFilePath) {
+    // Save XML file
+
+    // Get XML
+    QVariant xml = getXml();
+
+    // Save XML to file
+    QFile xmlFile(xmlFilePath);
+
+    if (!xmlFile.open(QIODevice::WriteOnly)) {
+        return 0;
+    }
+    xmlFile.write(xml.toByteArray());
+    xmlFile.close();
+
+    // Set file name
+    if (this->xmlFileName.isEmpty()) {
+        this->xmlFileName = xmlFileName;
+    }
+
+    return 1;
 }
 
 void MainWindow::unhide() {
