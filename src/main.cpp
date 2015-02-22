@@ -4,7 +4,6 @@
 #include <QTimer>
 
 #define SPLASH
-#undef SPLASH
 
 int main(int argc, char *argv[])
 {

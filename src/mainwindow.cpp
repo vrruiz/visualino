@@ -188,7 +188,6 @@ void MainWindow::actionSettings() {
         // Reload blockly page
         if (htmlIndex != settings->htmlIndex()) {
             xmlLoadContent = getXml();
-            qDebug() << xmlLoadContent;
             loadBlockly();
             connect(ui->webView,
                     SIGNAL(loadFinished(bool)),
