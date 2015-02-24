@@ -78,7 +78,7 @@ void MainWindow::arduinoExec(const QString &action) {
     tmpFile.close();
 
     // Verify code
-    arguments << action << settings->tmpDirName();
+    arguments << action << settings->tmpFileName();
     process->start(settings->arduinoIdePath(), arguments);
 }
 
