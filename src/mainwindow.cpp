@@ -82,6 +82,9 @@ void MainWindow::arduinoExec(const QString &action) {
     process->start(settings->arduinoIdePath(), arguments);
 }
 
+void MainWindow::actionAbout() {
+}
+
 void MainWindow::actionNew() {
     // Unset file name
     xmlFileName = "";

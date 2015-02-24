@@ -35,6 +35,7 @@ private:
     int saveXml(const QString &xmlFilePath);
 
 public slots:
+    void actionAbout();
     void actionNew();
     void actionMonitor();
     void actionOpen();
