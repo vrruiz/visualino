@@ -33,6 +33,7 @@ private:
     void setXml(const QString &xml);
     void loadBlockly();
     int saveXml(const QString &xmlFilePath);
+    QStringList portList();
 
 public slots:
     void actionAbout();

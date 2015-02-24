@@ -7,9 +7,11 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QThread>
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QThread>
 #include <QWebFrame>
 
 #define CONFIG_INI "config.ini"
@@ -31,6 +33,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Load blockly index
     loadBlockly();
+
+    // Set available ports
+    QStringList ports = portList();
+    ui->serialPortBox->addItems(ports);
 
     // Set process
     process = new QProcess();
@@ -78,7 +84,16 @@ void MainWindow::arduinoExec(const QString &action) {
     tmpFile.close();
 
     // Verify code
-    arguments << action << settings->tmpFileName();
+    arguments << action;
+    // Board parameter
+    if (ui->boardBox->count() > 0) {
+        arguments << "--board" << ui->boardBox->currentText();
+    }
+    // Port parameter
+    if (ui->serialPortBox->count() > 0) {
+        arguments << "--port" << ui->serialPortBox->currentText();
+    }
+    arguments << settings->tmpFileName();
     process->start(settings->arduinoIdePath(), arguments);
 }
 
@@ -250,6 +265,23 @@ void MainWindow::onProcessOutputUpdated() {
 
 void MainWindow::onProcessStarted() {
     ui->textBrowser->append(tr("Running..."));
+}
+
+QStringList MainWindow::portList() {
+    // Return list of serial ports
+    QStringList serialPorts;
+
+    // Get list
+    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+        // Add to the list
+        QString portName = info.portName();
+#ifdef Q_OS_LINUX
+        portName.insert(0, "/dev/");
+#endif
+        serialPorts.append(portName);
+    }
+
+    return serialPorts;
 }
 
 int MainWindow::saveXml(const QString &xmlFilePath) {
