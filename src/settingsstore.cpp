@@ -26,9 +26,10 @@ SettingsStore::SettingsStore(const QString &fileName) {
     // If IDE path is empty, copy original settings
     if (settings->value(platform + "arduino_ide_path", "").toString() == "") {
         // Locate config.ini in standard locations
-        QString settingsFile = QStandardPaths::locate(QStandardPaths::DataLocation,
-                                                    fileName,
-                                                    QStandardPaths::LocateFile);
+        QString settingsFile = QStandardPaths::locate(
+                    QStandardPaths::DataLocation,
+                    fileName,
+                    QStandardPaths::LocateFile);
 
         // If couldn't locate config.ini in DataLocation dirs,
         // search in the binary path.
@@ -96,7 +97,6 @@ void SettingsStore::setTmpFileName(const QString &value) {
 void SettingsStore::setHtmlIndex(const QString &value) {
     settings->setValue(platform + "html_index", value);
 }
-
 
 QString SettingsStore::relativePath(const QString &value,
                                     const QString &defaultValue) {
