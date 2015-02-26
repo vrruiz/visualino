@@ -7,17 +7,6 @@
 #include <QStandardPaths>
 
 SettingsStore::SettingsStore(const QString &fileName) {
-    // Set environment
-    QString settingsFile = QStandardPaths::locate(QStandardPaths::DataLocation,
-                                                fileName,
-                                                QStandardPaths::LocateFile);
-    if (settingsFile.isEmpty()) {
-        // Couldn't locate config.ini in DataLocation dirs.
-        // Search in the binary path.
-        settingsFile = QDir(QCoreApplication::applicationDirPath())
-                .filePath(fileName);
-    }
-
     // Set platform
 #ifdef Q_OS_LINUX
     platform = "linux/";
@@ -27,8 +16,49 @@ SettingsStore::SettingsStore(const QString &fileName) {
     platform = "mac/";
 #endif
 
+
     // Read settings file
-    settings = new QSettings(settingsFile, QSettings::IniFormat);
+    settings = new QSettings(QSettings::IniFormat,
+                             QSettings::UserScope,
+                             "visualino",
+                             "visualino");
+
+    // If IDE path is empty, copy original settings
+    if (settings->value(platform + "arduino_ide_path", "").toString() == "") {
+        // Locate config.ini in standard locations
+        QString settingsFile = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                                    fileName,
+                                                    QStandardPaths::LocateFile);
+
+        // If couldn't locate config.ini in DataLocation dirs,
+        // search in the binary path.
+        if (settingsFile.isEmpty()) {
+            settingsFile = QDir(QCoreApplication::applicationDirPath())
+                    .filePath(fileName);
+        }
+
+        // Set final settings path
+        QString localSettingsFile = settings->fileName();
+        QString localSettingsDir = QDir(localSettingsFile).dirName();
+
+        // Free settings file
+        delete settings;
+
+        // Create directory if it doesn't exist
+        QDir dir(localSettingsDir);
+        if (!dir.exists()) {
+            dir.mkpath(localSettingsDir);
+        }
+
+        // Copy settings
+        QFile::copy(settingsFile, localSettingsFile);
+
+        // Reload settings
+        settings = new QSettings(QSettings::IniFormat,
+                                 QSettings::UserScope,
+                                 "visualino",
+                                 "visualino");
+    }
 }
 
 SettingsStore::~SettingsStore() {
