@@ -7,8 +7,8 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
+#include <QScrollBar>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QThread>
@@ -24,16 +24,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Align last toolbar action to the right
-    // QWidget* empty = new QWidget(this);
-    // empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
-    // ui->mainToolBar->insertWidget(ui->actionSettings, empty);
-
-    // Hide messages
-    actionCloseMessages();
+    QWidget* empty = new QWidget(this);
+    empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
 
     // Set environment
     settings = new SettingsStore(CONFIG_INI);
     xmlFileName = "";
+    serial = NULL;
+
+    // Hide messages
+    actionCloseMessages();
+    serialPortClose();
 
     // Load blockly index
     loadBlockly();
@@ -43,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateSerialPorts()));
     timer->start(5000);
+
+    ui->consoleText->document()->setMaximumBlockCount(100);
 
     // Set process
     process = new QProcess();
@@ -63,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete serial;
     delete settings;
     delete process;
     delete ui;
@@ -125,6 +130,12 @@ void MainWindow::actionNew() {
 }
 
 void MainWindow::actionMonitor() {
+    // Open close monitor
+    if (ui->widgetConsole->isVisible()) {
+        serialPortClose();
+    } else {
+        serialPortOpen();
+    }
 }
 
 void MainWindow::actionMessages() {
@@ -311,6 +322,44 @@ void MainWindow::onProcessOutputUpdated() {
 void MainWindow::onProcessStarted() {
     ui->textBrowser->clear();
     ui->textBrowser->append(tr("Building..."));
+}
+
+void MainWindow::serialPortClose() {
+    // Close serial connection
+    ui->webView->show();
+    ui->widgetConsole->hide();
+    ui->consoleText->clear();
+
+    if (serial == NULL) return;
+
+    serial->close();
+    serial->disconnect(serial, SIGNAL(readyRead()), this, SLOT(readSerial()));
+}
+
+void MainWindow::serialPortOpen() {
+    // Open serial connection
+    ui->webView->hide();
+    ui->widgetConsole->show();
+
+    if (serial == NULL && ui->serialPortBox->currentText() != "") {
+        serial = new QSerialPort(this);
+        serial->setPortName(ui->serialPortBox->currentText());
+        serial->setBaudRate(QSerialPort::Baud9600);
+        serial->setDataBits(QSerialPort::Data8);
+        serial->setParity(QSerialPort::NoParity);
+        serial->setStopBits(QSerialPort::OneStop);
+        serial->setFlowControl(QSerialPort::HardwareControl);
+    }
+    if (serial->open(QIODevice::ReadOnly)) {
+        connect(serial, SIGNAL(readyRead()), this, SLOT(readSerial()));
+    }
+}
+
+void MainWindow::readSerial() {
+    // Read serial port data and display it in the console
+    QByteArray data = serial->readAll();
+    QString stringData(data);
+    ui->consoleText->insertPlainText(stringData);
 }
 
 QStringList MainWindow::portList() {

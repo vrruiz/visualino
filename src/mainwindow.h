@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include <QWebView>
 #include <QProcess>
+#include <QtSerialPort/QSerialPort>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,7 @@ private:
     QString xmlFileName;
     QString xmlLoadContent;
     QStringList serialPortList;
+    QSerialPort *serial;
 
     void arduinoExec(const QString &action);
     QString escapeCharacters(const QString& string);
@@ -34,6 +36,8 @@ private:
     void setXml(const QString &xml);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
+    void serialPortOpen();
+    void serialPortClose();
     QStringList portList();
     int saveXml(const QString &xmlFilePath);
 
@@ -54,6 +58,7 @@ public slots:
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
     void onProcessStarted();
+    void readSerial();
     void unhide();
     void updateSerialPorts();
 };
