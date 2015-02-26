@@ -12,6 +12,7 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QThread>
+#include <QTimer>
 #include <QWebFrame>
 
 #define CONFIG_INI "config.ini"
@@ -27,6 +28,9 @@ MainWindow::MainWindow(QWidget *parent) :
     // empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     // ui->mainToolBar->insertWidget(ui->actionSettings, empty);
 
+    // Hide messages
+    actionCloseMessages();
+
     // Set environment
     settings = new SettingsStore(CONFIG_INI);
     xmlFileName = "";
@@ -34,18 +38,25 @@ MainWindow::MainWindow(QWidget *parent) :
     // Load blockly index
     loadBlockly();
 
-    // Set available ports
-    QStringList ports = portList();
-    ui->serialPortBox->addItems(ports);
+    // Set timer to update list of available ports
+    updateSerialPorts();
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(updateSerialPorts()));
+    timer->start(5000);
 
     // Set process
     process = new QProcess();
     process->setProcessChannelMode(QProcess::MergedChannels);
-    connect(process, SIGNAL(started()), this, SLOT(onProcessStarted()));
-    connect(process, SIGNAL(readyReadStandardOutput()),
+    connect(process,
+            SIGNAL(started()),
+            this,
+            SLOT(onProcessStarted()));
+    connect(process,
+            SIGNAL(readyReadStandardOutput()),
             this,
             SLOT(onProcessOutputUpdated()));
-    connect(process, SIGNAL(finished(int)),
+    connect(process,
+            SIGNAL(finished(int)),
             this,
             SLOT(onProcessFinished(int)));
 }
@@ -95,6 +106,9 @@ void MainWindow::arduinoExec(const QString &action) {
     }
     arguments << settings->tmpFileName();
     process->start(settings->arduinoIdePath(), arguments);
+
+    // Show messages
+    ui->messagesWidget->show();
 }
 
 void MainWindow::actionAbout() {
@@ -112,6 +126,21 @@ void MainWindow::actionNew() {
 
 void MainWindow::actionMonitor() {
 }
+
+void MainWindow::actionMessages() {
+    // Open/hide messages window
+    if (ui->messagesWidget->isVisible()) {
+        actionCloseMessages();
+    } else {
+        actionOpenMessages();
+    }
+}
+
+void MainWindow::actionCloseMessages() {
+    // Hide messages window
+    ui->messagesWidget->hide();
+}
+
 
 void MainWindow::actionOpen() {
     // Open file dialog
@@ -146,6 +175,11 @@ void MainWindow::actionOpen() {
     this->xmlFileName = xmlFileName;
 }
 
+void MainWindow::actionOpenMessages() {
+    // Open messages
+    ui->messagesWidget->show();
+}
+
 void MainWindow::actionQuit() {
     // Quit
     close();
@@ -160,6 +194,7 @@ void MainWindow::actionVerify() {
     // Build sketch
     arduinoExec("--verify");
 }
+
 void MainWindow::actionSave() {
     // Save XML file
     QString xmlFileName;
@@ -235,6 +270,16 @@ void MainWindow::setXml(const QString &xml) {
         "xml);").arg(escapedXml));
 }
 
+bool MainWindow::listIsEqual(const QStringList &listOne,
+                             const QStringList &listTwo) {
+    // Compare two string lists. Return true if equal.
+    if (listOne.count() != listTwo.count()) return false;
+    for (int i = 0; i < listOne.count(); i++) {
+        if (listOne[i] != listTwo[i]) return false;
+    }
+    return true;
+}
+
 void MainWindow::loadBlockly() {
     // Load blockly index
     ui->webView->load(QUrl::fromLocalFile(settings->htmlIndex()));
@@ -264,7 +309,8 @@ void MainWindow::onProcessOutputUpdated() {
 }
 
 void MainWindow::onProcessStarted() {
-    ui->textBrowser->append(tr("Running..."));
+    ui->textBrowser->clear();
+    ui->textBrowser->append(tr("Building..."));
 }
 
 QStringList MainWindow::portList() {
@@ -309,6 +355,15 @@ int MainWindow::saveXml(const QString &xmlFilePath) {
 
 void MainWindow::unhide() {
     this->show();
+}
+
+void MainWindow::updateSerialPorts() {
+    // Update the list of available serial ports in the combo box
+    QStringList ports = portList();
+    if (!listIsEqual(serialPortList, ports)) {
+        ui->serialPortBox->addItems(ports);
+        serialPortList = ports;
+    }
 }
 
 QString MainWindow::escapeCharacters(const QString& string)

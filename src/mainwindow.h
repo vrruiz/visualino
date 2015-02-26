@@ -26,18 +26,23 @@ private:
     SettingsStore *settings;
     QString xmlFileName;
     QString xmlLoadContent;
+    QStringList serialPortList;
 
-    QString escapeCharacters(const QString& string);
     void arduinoExec(const QString &action);
+    QString escapeCharacters(const QString& string);
     QString getXml();
     void setXml(const QString &xml);
+    bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
-    int saveXml(const QString &xmlFilePath);
     QStringList portList();
+    int saveXml(const QString &xmlFilePath);
 
 public slots:
     void actionAbout();
+    void actionOpenMessages();
+    void actionCloseMessages();
     void actionNew();
+    void actionMessages();
     void actionMonitor();
     void actionOpen();
     void actionQuit();
@@ -50,6 +55,7 @@ public slots:
     void onProcessOutputUpdated();
     void onProcessStarted();
     void unhide();
+    void updateSerialPorts();
 };
 
 #endif // MAINWINDOW_H
