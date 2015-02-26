@@ -21,13 +21,37 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QSplitter" name="splitter">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
         <item>
          <widget class="QWebView" name="webView">
           <property name="sizePolicy">
@@ -57,24 +81,35 @@
             <height>100</height>
            </size>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
            <property name="spacing">
-            <number>9</number>
+            <number>4</number>
            </property>
            <property name="leftMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="topMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="rightMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <item>
-            <widget class="QLineEdit" name="consoleEdit"/>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLineEdit" name="consoleEdit"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="consoleSendButton">
+               <property name="text">
+                <string>Send</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
             <widget class="QTextEdit" name="consoleText">
@@ -109,13 +144,13 @@
          <number>0</number>
         </property>
         <property name="leftMargin">
-         <number>0</number>
+         <number>9</number>
         </property>
         <property name="topMargin">
          <number>0</number>
         </property>
         <property name="rightMargin">
-         <number>0</number>
+         <number>9</number>
         </property>
         <property name="bottomMargin">
          <number>0</number>
@@ -143,19 +178,19 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <property name="spacing">
-            <number>5</number>
+            <number>0</number>
            </property>
            <property name="leftMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="topMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="rightMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>4</number>
+            <number>0</number>
            </property>
            <item>
             <spacer name="horizontalSpacer_3">
@@ -210,16 +245,16 @@ pressed: { border: 1px };</string>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="leftMargin">
-       <number>0</number>
+       <number>9</number>
       </property>
       <property name="topMargin">
-       <number>3</number>
+       <number>4</number>
       </property>
       <property name="rightMargin">
-       <number>3</number>
+       <number>9</number>
       </property>
       <property name="bottomMargin">
-       <number>3</number>
+       <number>4</number>
       </property>
       <item>
        <spacer name="horizontalSpacer">
@@ -331,6 +366,8 @@ pressed: { border: 1px };</string>
      <string>&amp;Tools</string>
     </property>
     <addaction name="actionMessages"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_hide_monitor"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menuView"/>
@@ -481,6 +518,9 @@ pressed: { border: 1px };</string>
    </property>
   </action>
   <action name="actionMonitor">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="Resources.qrc">
      <normaloff>:/icons/magnifying_glass_24x24.png</normaloff>:/icons/magnifying_glass_24x24.png</iconset>
@@ -490,6 +530,11 @@ pressed: { border: 1px };</string>
    </property>
    <property name="toolTip">
     <string>Monitor</string>
+   </property>
+  </action>
+  <action name="actionShow_hide_monitor">
+   <property name="text">
+    <string>Show/hide monitor</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+M</string>
@@ -734,6 +779,22 @@ pressed: { border: 1px };</string>
   </connection>
   <connection>
    <sender>actionMonitor</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionMonitor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_hide_monitor</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>actionMonitor()</slot>
