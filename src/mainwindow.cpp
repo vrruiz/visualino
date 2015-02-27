@@ -135,6 +135,24 @@ void MainWindow::actionMonitor() {
         serialPortClose();
     } else {
         serialPortOpen();
+        ui->consoleEdit->setFocus();
+    }
+}
+
+void MainWindow::actionMonitorSend() {
+    // Send what's available in the console line edit
+    if (serial == NULL) return;
+
+    QString data = ui->consoleEdit->text();
+    if (data.isEmpty()) return; // Nothing to send
+
+    // Send data
+    qint64 result = serial->write(data.toLocal8Bit());
+    if (result != -1) {
+        // If data was sent successfully, clear line edit
+        ui->consoleText->insertHtml("&rarr;&nbsp;");
+        ui->consoleText->insertPlainText(data.toLocal8Bit() + "\n");
+        ui->consoleEdit->clear();
     }
 }
 
@@ -350,7 +368,7 @@ void MainWindow::serialPortOpen() {
         serial->setStopBits(QSerialPort::OneStop);
         serial->setFlowControl(QSerialPort::HardwareControl);
     }
-    if (serial->open(QIODevice::ReadOnly)) {
+    if (serial->open(QIODevice::ReadWrite)) {
         connect(serial, SIGNAL(readyRead()), this, SLOT(readSerial()));
     }
 }
@@ -360,6 +378,10 @@ void MainWindow::readSerial() {
     QByteArray data = serial->readAll();
     QString stringData(data);
     ui->consoleText->insertPlainText(stringData);
+
+    // Move scroll to the bottom
+    QScrollBar *bar = ui->consoleText->verticalScrollBar();
+    bar->setValue(bar->maximum());
 }
 
 QStringList MainWindow::portList() {

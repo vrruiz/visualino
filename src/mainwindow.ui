@@ -105,7 +105,7 @@
              <item>
               <widget class="QPushButton" name="consoleSendButton">
                <property name="text">
-                <string>Send</string>
+                <string>&amp;Send</string>
                </property>
               </widget>
              </item>
@@ -809,6 +809,38 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>consoleSendButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionMonitorSend()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>consoleEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionMonitorSend()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>669</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -822,5 +854,6 @@ pressed: { border: 1px };</string>
   <slot>actionCloseMessages()</slot>
   <slot>actionMessages()</slot>
   <slot>actionMonitor()</slot>
+  <slot>actionMonitorSend()</slot>
  </slots>
 </ui>

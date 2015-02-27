@@ -48,6 +48,7 @@ public slots:
     void actionNew();
     void actionMessages();
     void actionMonitor();
+    void actionMonitorSend();
     void actionOpen();
     void actionQuit();
     void actionUpload();
