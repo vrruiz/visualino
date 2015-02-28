@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#code {
+    margin: 0;
+    float: right;
+    width: 33%;
+    height: 100%;
+    background-color: #D2D2D2;
+    color: #5F5F5F;
+}
+
+#wrap {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+

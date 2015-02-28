@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Visualino - RoboBlocks PlayGround</title>
+    <link rel="stylesheet" type="text/css" href="visualino.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="blockly" style="float: left; width: 66%;"></div>
+        <div id="code" style="float: right; width: 34%;"></div>
+    </div>
+    <script src="javascript/jquery/dist/jquery.min.js"></script>
+    <script src="javascript/underscore/underscore.js"></script>
+    <script src="javascript/blockly-bq/blockly_compressed.js"></script>
+    <script src="javascript/blockly-bq/blocks_compressed.js"></script>
+    <script src="javascript/blockly-bq/arduino_compressed.js"></script>
+    <script src="roboblocks.min.js"></script>
+    <script>
+            if (window.roboblocksLanguage === undefined || window.roboblocksLanguage == null) {
+                var roboblocksLanguage = 'en-GB';
+            }
+            RoboBlocks.load({
+                zoom:1.0
+            });
+            // New workspace for each test case
+            var el = document.getElementById('blockly');
+            Blockly.inject(el, {
+                toolbox: Blockly.createToolbox()
+            });
+            $('.blocklySvg, #blockly').height('100%');
+            $('.blocklySvg').width('100%');
+
+            setInterval(function () { document.getElementById('code').innerHTML ='<pre>'+Blockly.Arduino.workspaceToCode()+'</pre>' }, 1000);
+    </script>
+</body>
+</html>

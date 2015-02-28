@@ -29,5 +29,4 @@ build-*
 .DS_Store
 
 blockly*
-roboblocks/html/
 roboblocks/roboblocks/
