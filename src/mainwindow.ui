@@ -105,7 +105,11 @@
              <item>
               <widget class="QPushButton" name="consoleSendButton">
                <property name="text">
-                <string>&amp;Send</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="Resources.qrc">
+                 <normaloff>:/icons/icons/enter-16x16.png</normaloff>:/icons/icons/enter-16x16.png</iconset>
                </property>
               </widget>
              </item>
@@ -270,9 +274,12 @@ pressed: { border: 1px };</string>
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>Board</string>
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Resources.qrc">:/icons/icons/chip-micro-24x24.png</pixmap>
         </property>
        </widget>
       </item>
@@ -312,9 +319,12 @@ pressed: { border: 1px };</string>
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Serial port</string>
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Resources.qrc">:/icons/icons/usb-24x24.png</pixmap>
         </property>
        </widget>
       </item>

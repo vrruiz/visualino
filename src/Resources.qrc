@@ -1,14 +1,17 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>arrow_right_alt1_24x24.png</file>
-        <file>check_alt_24x24.png</file>
-        <file>document_alt_stroke_18x24.png</file>
-        <file>download_18x24.png</file>
-        <file>upload_18x24.png</file>
-        <file>cog_24x24.png</file>
-        <file>magnifying_glass_24x24.png</file>
+        <file>../icons/arrow_right_alt1_24x24.png</file>
+        <file>../icons/check_alt_24x24.png</file>
+        <file>../icons/document_alt_stroke_18x24.png</file>
+        <file>../icons/download_18x24.png</file>
+        <file>../icons/upload_18x24.png</file>
+        <file>../icons/cog_24x24.png</file>
+        <file>../icons/magnifying_glass_24x24.png</file>
+        <file>../icons/chip-micro-24x24.png</file>
+        <file>../icons/usb-24x24.png</file>
+        <file>../icons/enter-16x16.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>splashscreen.png</file>
+        <file>../icons/splashscreen.png</file>
     </qresource>
 </RCC>
