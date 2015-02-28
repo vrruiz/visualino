@@ -2,6 +2,7 @@
 
 #include <QCoreApplication>
 #include <QDir>
+#include <QFileInfo>
 #include <QString>
 #include <QSettings>
 #include <QStandardPaths>
@@ -40,7 +41,7 @@ SettingsStore::SettingsStore(const QString &fileName) {
 
         // Set final settings path
         QString localSettingsFile = settings->fileName();
-        QString localSettingsDir = QDir(localSettingsFile).dirName();
+        QString localSettingsDir = QFileInfo(localSettingsFile).absolutePath();
 
         // Free settings file
         delete settings;
