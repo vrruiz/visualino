@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
 #ifdef SPLASH
-    QImage img(":/splashscreen.png");
+    QImage img(":/icons/splashscreen.png");
     QPixmap pixmap = QPixmap::fromImage(img);
     QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
     splash.show();

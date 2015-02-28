@@ -168,26 +168,6 @@
            <string>en-GB</string>
           </property>
          </item>
-         <item>
-          <property name="text">
-           <string>es-ES</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>ca-ES</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>it-IT</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>pt-PT</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item>
