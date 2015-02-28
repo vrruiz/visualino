@@ -82,6 +82,10 @@ QString SettingsStore::htmlIndex() {
     return relativePath("html_index", "/usr/share/visualino/html/index.html");
 }
 
+QString SettingsStore::defaultLanguage() {
+    return settings->value(platform + "language", "en-GB").toString();
+}
+
 void SettingsStore::setArduinoIdePath(const QString &value) {
     settings->setValue(platform + "arduino_ide_path", value);
 }
@@ -96,6 +100,10 @@ void SettingsStore::setTmpFileName(const QString &value) {
 
 void SettingsStore::setHtmlIndex(const QString &value) {
     settings->setValue(platform + "html_index", value);
+}
+
+void SettingsStore::setDefaultLanguage(const QString &value) {
+    settings->setValue(platform + "language", value);
 }
 
 QString SettingsStore::relativePath(const QString &value,

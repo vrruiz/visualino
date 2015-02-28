@@ -121,7 +121,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -142,7 +142,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Language</string>
+          <string>Roboblocks language</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -150,9 +150,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="languageBox">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -161,8 +161,33 @@
           </sizepolicy>
          </property>
          <property name="currentText">
-          <string/>
+          <string>en-GB</string>
          </property>
+         <item>
+          <property name="text">
+           <string>en-GB</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>es-ES</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ca-ES</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>it-IT</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>pt-PT</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item>

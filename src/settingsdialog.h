@@ -14,7 +14,9 @@ class SettingsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SettingsDialog(SettingsStore *settings, QWidget *parent = 0);
+    explicit SettingsDialog(SettingsStore *settings,
+                            const QStringList &languageList,
+                            QWidget *parent = 0);
     ~SettingsDialog();
 
     bool changed();
@@ -28,6 +30,7 @@ public slots:
 private:
     Ui::SettingsDialog *ui;
     SettingsStore *settings;
+    QStringList languageList;
     bool settingsChanged;
 };
 

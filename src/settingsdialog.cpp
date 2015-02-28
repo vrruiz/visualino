@@ -3,8 +3,11 @@
 
 #include <QDebug>
 #include <QFileDialog>
+#include <QLocale>
 
-SettingsDialog::SettingsDialog(SettingsStore *settings, QWidget *parent) :
+SettingsDialog::SettingsDialog(SettingsStore *settings,
+                               const QStringList &languageList,
+                               QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SettingsDialog)
 {
@@ -13,6 +16,22 @@ SettingsDialog::SettingsDialog(SettingsStore *settings, QWidget *parent) :
     // Set values
     ui->arduinoIdePathEdit->setText(settings->arduinoIdePath());
     ui->htmlIndexEdit->setText(settings->htmlIndex());
+
+    // Set values for list of languages. languageList must be in
+    // "languageCode-countryCode" format (e.g. "en-US").
+    ui->languageBox->clear();
+    this->languageList = languageList;
+    // Generate a list with the language names for the combo box
+    foreach (QString language, languageList) {
+        QLocale locale(language);
+        QString languageName = QString("%1 (%2)").
+                arg(QLocale::languageToString(locale.language())).
+                arg(QLocale::countryToString(locale.country()));
+        ui->languageBox->addItem(languageName);
+    }
+    // Set active language in the combo box, according to the setting
+    ui->languageBox->setCurrentIndex(
+                languageList.indexOf(settings->defaultLanguage()));
 
     this->settings = settings;
     settingsChanged = false;
@@ -33,10 +52,19 @@ void SettingsDialog::accept() {
         settings->setArduinoIdePath(ui->arduinoIdePathEdit->text());
         settingsChanged = true;
     }
+
     if (ui->htmlIndexEdit->text() != settings->htmlIndex()) {
         settings->setHtmlIndex(ui->htmlIndexEdit->text());
         settingsChanged = true;
     }
+
+    // Convert selected item in the combo box to selected language
+    QString language = languageList.at(ui->languageBox->currentIndex());
+    if (language != settings->defaultLanguage()) {
+        settings->setDefaultLanguage(language);
+        settingsChanged = true;
+    }
+
     done(QDialog::Accepted);
 }
 

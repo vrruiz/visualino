@@ -43,13 +43,14 @@ private:
 
 public slots:
     void actionAbout();
-    void actionOpenMessages();
     void actionCloseMessages();
-    void actionNew();
+    void actionInsertLanguage();
     void actionMessages();
     void actionMonitor();
     void actionMonitorSend();
+    void actionNew();
     void actionOpen();
+    void actionOpenMessages();
     void actionQuit();
     void actionUpload();
     void actionVerify();

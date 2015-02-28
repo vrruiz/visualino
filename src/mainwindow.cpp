@@ -119,14 +119,11 @@ void MainWindow::arduinoExec(const QString &action) {
 void MainWindow::actionAbout() {
 }
 
-void MainWindow::actionNew() {
-    // Unset file name
-    xmlFileName = "";
-
-    // Clear workspace
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(
-                "Blockly.mainWorkspace.clear(); renderContent();");
+void MainWindow::actionInsertLanguage() {
+    // Set language in Roboblocks
+    QString jsLanguage = QString("var roboblocksLanguage = '%1';").
+            arg(settings->defaultLanguage());
+    ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
 }
 
 void MainWindow::actionMonitor() {
@@ -151,7 +148,7 @@ void MainWindow::actionMonitorSend() {
     if (result != -1) {
         // If data was sent successfully, clear line edit
         ui->consoleText->insertHtml("&rarr;&nbsp;");
-        ui->consoleText->insertPlainText(data.toLocal8Bit() + "\n");
+        ui->consoleText->insertPlainText(data + "\n");
         ui->consoleEdit->clear();
     }
 }
@@ -165,21 +162,32 @@ void MainWindow::actionMessages() {
     }
 }
 
+void MainWindow::actionNew() {
+    // Unset file name
+    xmlFileName = "";
+
+    // Clear workspace
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    frame->evaluateJavaScript(
+                "Blockly.mainWorkspace.clear(); renderContent();");
+}
+
 void MainWindow::actionCloseMessages() {
     // Hide messages window
     ui->messagesWidget->hide();
 }
 
-
 void MainWindow::actionOpen() {
     // Open file dialog
-    QString xmlFileName = QFileDialog::getOpenFileName(
-                this,
-                tr("Open File"),
-                "",
-                tr("Files (*.*)"));
+    QFileDialog fileDialog(this, tr("Open"));
+    fileDialog.setFileMode(QFileDialog::AnyFile);
+    fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
+    fileDialog.setDefaultSuffix("bly");
+    if (!fileDialog.exec()) return; // Return if cancelled
+    QStringList selectedFiles = fileDialog.selectedFiles();
     // Return if no file to open
-    if (xmlFileName.isNull()) return;
+    if (selectedFiles.count() < 1) return;
+    QString xmlFileName = selectedFiles.at(0);
 
     // Open file
     QFile xmlFile(xmlFileName);
@@ -230,13 +238,15 @@ void MainWindow::actionSave() {
 
     if (this->xmlFileName.isEmpty()) {
         // Open file dialog
-         xmlFileName = QFileDialog::getSaveFileName(
-                     this,
-                     tr("Save File"),
-                     "",
-                     tr("Files (*.*)"));
+        QFileDialog fileDialog(this, tr("Save"));
+        fileDialog.setFileMode(QFileDialog::AnyFile);
+        fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
+        fileDialog.setDefaultSuffix("bly");
+        if (!fileDialog.exec()) return; // Return if cancelled
+        QStringList selectedFiles = fileDialog.selectedFiles();
         // Return if no file to open
-        if (xmlFileName.isNull()) return;
+        if (selectedFiles.count() < 1) return;
+        xmlFileName = selectedFiles.at(0);
     } else {
         xmlFileName = this->xmlFileName;
     }
@@ -264,11 +274,16 @@ void MainWindow::actionSave() {
 void MainWindow::actionSettings() {
     // Open preferences dialog
     QString htmlIndex = settings->htmlIndex();
-    SettingsDialog settingsDialog(settings, this);
+    QString defaultLanguage = settings->defaultLanguage();
+    // Supported list of languages
+    QStringList languageList;
+    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pt-PT";
+    SettingsDialog settingsDialog(settings, languageList, this);
     int result = settingsDialog.exec();
     if (result && settingsDialog.changed()) {
         // Reload blockly page
-        if (htmlIndex != settings->htmlIndex()) {
+        if (htmlIndex != settings->htmlIndex()
+                || defaultLanguage != settings->defaultLanguage()) {
             xmlLoadContent = getXml();
             loadBlockly();
             connect(ui->webView,
@@ -311,6 +326,10 @@ bool MainWindow::listIsEqual(const QStringList &listOne,
 
 void MainWindow::loadBlockly() {
     // Load blockly index
+    connect(ui->webView->page()->mainFrame(),
+            SIGNAL(javaScriptWindowObjectCleared()),
+            this,
+            SLOT(actionInsertLanguage()));
     ui->webView->load(QUrl::fromLocalFile(settings->htmlIndex()));
     ui->webView->page()->mainFrame()->setScrollBarPolicy(
                 Qt::Vertical,

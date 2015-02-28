@@ -855,5 +855,6 @@ pressed: { border: 1px };</string>
   <slot>actionMessages()</slot>
   <slot>actionMonitor()</slot>
   <slot>actionMonitorSend()</slot>
+  <slot>actionInsertLanguage()</slot>
  </slots>
 </ui>
