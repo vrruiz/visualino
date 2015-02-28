@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 9),
     libqt5webkit5-dev,
     libqt5serialport5-dev,
     npm,
-    git
+    git,
+    libudev-dev
 Standards-Version: 3.9.5
 Homepage: https://github.com/vrruiz/visualino
 Vcs-Git: git://github.com/vrruiz/visualino.git
@@ -17,7 +18,8 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
     libqt5network5,
     libqt5widgets5,
     libqt5webkit5,
-    libqt5serialport5
+    libqt5serialport5,
+    libudev
 Description: A desktop visual environment to program Arduino.
  Visualino embeds Bitbloq as a desktop application to
  offer a visual GUI to program Arduino.
