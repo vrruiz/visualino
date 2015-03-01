@@ -1,3 +1,11 @@
+visualino (0.2-1) utopic; urgency=medium
+
+  * Set monitor action as checkable.
+  * Roboblocks: Scrollbar for code block.
+  * Fix save menu (connect to action).
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sun, 01 Mar 2015 12:27:17 +0000
+
 visualino (0.2) utopic; urgency=medium
 
   * Settings dialog.
