@@ -10,6 +10,7 @@ html, body {
     height: 100%;
     background-color: #D2D2D2;
     color: #5F5F5F;
+    overflow: auto;
 }
 
 #wrap {
