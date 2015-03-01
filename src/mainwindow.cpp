@@ -130,9 +130,11 @@ void MainWindow::actionMonitor() {
     // Open close monitor
     if (ui->widgetConsole->isVisible()) {
         serialPortClose();
+        ui->actionMonitor->setChecked(false);
     } else {
         serialPortOpen();
         ui->consoleEdit->setFocus();
+        ui->actionMonitor->setChecked(true);
     }
 }
 

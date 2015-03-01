@@ -528,6 +528,12 @@ pressed: { border: 1px };</string>
    </property>
   </action>
   <action name="actionMonitor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="enabled">
     <bool>true</bool>
    </property>
