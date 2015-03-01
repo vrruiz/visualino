@@ -378,16 +378,27 @@ void MainWindow::serialPortOpen() {
     ui->webView->hide();
     ui->widgetConsole->show();
 
-    if (serial == NULL && ui->serialPortBox->currentText() != "") {
+    // No available connections, nothing to do
+    if (ui->serialPortBox->currentText() == "") return;
+
+    if (serial == NULL) {
+        // Create serial connection
         serial = new QSerialPort(this);
-        serial->setPortName(ui->serialPortBox->currentText());
-        serial->setBaudRate(QSerialPort::Baud9600);
-        serial->setDataBits(QSerialPort::Data8);
-        serial->setParity(QSerialPort::NoParity);
-        serial->setStopBits(QSerialPort::OneStop);
-        serial->setFlowControl(QSerialPort::HardwareControl);
+    } else if (serial->isOpen()) {
+        serial->close();
     }
+
+    // Set default connection parameters
+    serial->setPortName(ui->serialPortBox->currentText());
+    serial->setBaudRate(QSerialPort::Baud9600);
+    serial->setDataBits(QSerialPort::Data8);
+    serial->setParity(QSerialPort::NoParity);
+    serial->setStopBits(QSerialPort::OneStop);
+    serial->setFlowControl(QSerialPort::HardwareControl);
+
+    // Connect
     if (serial->open(QIODevice::ReadWrite)) {
+        // Execute readSerial if data is available
         connect(serial, SIGNAL(readyRead()), this, SLOT(readSerial()));
     }
 }
