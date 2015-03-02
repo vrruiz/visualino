@@ -6,6 +6,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileDialog>
+#include <QFontDatabase>
 #include <QMessageBox>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QScrollBar>
@@ -27,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QWidget* empty = new QWidget(this);
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
+
+    // Set monospaced font in the monitor
+    const QFont fixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
+    ui->consoleText->setFont(fixedFont);
 
     // Set environment
     settings = new SettingsStore(CONFIG_INI);
@@ -475,7 +480,12 @@ void MainWindow::updateSerialPorts() {
     // Update the list of available serial ports in the combo box
     QStringList ports = portList();
     if (!listIsEqual(serialPortList, ports)) {
-        ui->serialPortBox->addItems(ports);
+        QString currentPort = ui->serialPortBox->currentText();
+        ui->serialPortBox->clear();
+        ui->serialPortBox->insertItems(0, ports);
+        if (ports.indexOf(currentPort) != -1) {
+            ui->serialPortBox->setCurrentText(currentPort);
+        }
         serialPortList = ports;
     }
 }
