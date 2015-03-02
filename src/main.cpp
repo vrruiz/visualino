@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     w.hide();
 
     QTimer::singleShot(2500, &splash, SLOT(close()));
-    QTimer::singleShot(1500, &w, SLOT(unhide()));
+    QTimer::singleShot(500, &w, SLOT(unhide()));
 #else
     w.show();
 #endif
