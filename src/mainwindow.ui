@@ -406,6 +406,17 @@ pressed: { border: 1px };</string>
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
   <action name="actionVerify">
    <property name="icon">
     <iconset resource="Resources.qrc">
@@ -873,6 +884,22 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>boardBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onBoardChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>548</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -888,5 +915,6 @@ pressed: { border: 1px };</string>
   <slot>actionMonitor()</slot>
   <slot>actionMonitorSend()</slot>
   <slot>actionInsertLanguage()</slot>
+  <slot>onBoardChanged()</slot>
  </slots>
 </ui>

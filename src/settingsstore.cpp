@@ -67,8 +67,18 @@ SettingsStore::~SettingsStore() {
     delete settings;
 }
 
+
+QString SettingsStore::arduinoBoard() {
+    return settings->value(platform + "arduino_board",
+                           "arduino:avr:uno").toString();
+}
+
 QString SettingsStore::arduinoIdePath() {
     return relativePath("arduino_ide_path", "/usr/bin/arduino");
+}
+
+QString SettingsStore::defaultLanguage() {
+    return settings->value(platform + "language", "en-GB").toString();
 }
 
 QString SettingsStore::tmpDirName() {
@@ -83,8 +93,8 @@ QString SettingsStore::htmlIndex() {
     return relativePath("html_index", "/usr/share/visualino/html/index.html");
 }
 
-QString SettingsStore::defaultLanguage() {
-    return settings->value(platform + "language", "en-GB").toString();
+void SettingsStore::setArduinoBoard(const QString &value) {
+    settings->setValue(platform + "arduino_board", value);
 }
 
 void SettingsStore::setArduinoIdePath(const QString &value) {

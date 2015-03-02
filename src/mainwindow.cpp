@@ -30,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Set environment
     settings = new SettingsStore(CONFIG_INI);
+    setArduinoBoard();
     xmlFileName = "";
     serial = NULL;
 
@@ -339,6 +340,16 @@ void MainWindow::loadBlockly() {
     ui->webView->page()->mainFrame()->setScrollBarPolicy(
                 Qt::Horizontal,
                 Qt::ScrollBarAlwaysOff);
+}
+
+void MainWindow::setArduinoBoard() {
+    // Select combo box value according to stored value in settings
+    ui->boardBox->setCurrentText(settings->arduinoBoard());
+}
+
+void MainWindow::onBoardChanged() {
+    // Board changed, update settings
+    settings->setArduinoBoard(ui->boardBox->currentText());
 }
 
 void MainWindow::onLoadFinished(bool finished) {

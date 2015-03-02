@@ -36,6 +36,7 @@ private:
     void setXml(const QString &xml);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
+    void setArduinoBoard();
     void serialPortOpen();
     void serialPortClose();
     QStringList portList();
@@ -56,6 +57,7 @@ public slots:
     void actionVerify();
     void actionSave();
     void actionSettings();
+    void onBoardChanged();
     void onLoadFinished(bool finished);
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
