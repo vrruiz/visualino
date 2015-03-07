@@ -316,10 +316,11 @@ void MainWindow::setXml(const QString &xml) {
 
     QWebFrame *frame = ui->webView->page()->mainFrame();
     frame->evaluateJavaScript(QString(
+        "Blockly.mainWorkspace.clear();"
         "var data = '%1'; "
         "var xml = Blockly.Xml.textToDom(data);"
-        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),"
-        "xml);").arg(escapedXml));
+        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),xml);"
+        ).arg(escapedXml));
 }
 
 bool MainWindow::listIsEqual(const QStringList &listOne,
