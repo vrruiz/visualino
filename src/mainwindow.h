@@ -33,6 +33,7 @@ private:
     void arduinoExec(const QString &action);
     QString escapeCharacters(const QString& string);
     QString getXml();
+    QString getCode();
     void setXml(const QString &xml);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
@@ -41,10 +42,12 @@ private:
     void serialPortClose();
     QStringList portList();
     int saveXml(const QString &xmlFilePath);
+    int saveSketch(const QString &inoFilePath);
 
 public slots:
     void actionAbout();
     void actionCloseMessages();
+    void actionExportSketch();
     void actionInsertLanguage();
     void actionMessages();
     void actionMonitor();

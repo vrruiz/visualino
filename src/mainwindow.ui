@@ -358,9 +358,16 @@ pressed: { border: 1px };</string>
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menuExport_as_ino">
+     <property name="title">
+      <string>Export as...</string>
+     </property>
+     <addaction name="action_export_sketch"/>
+    </widget>
     <addaction name="actionNew_2"/>
     <addaction name="actionOpen_2"/>
     <addaction name="actionSave_2"/>
+    <addaction name="menuExport_as_ino"/>
     <addaction name="actionUpload_2"/>
     <addaction name="actionPreferences"/>
     <addaction name="actionQuit"/>
@@ -405,6 +412,17 @@ pressed: { border: 1px };</string>
    <property name="enabled">
     <bool>true</bool>
    </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
   </widget>
   <action name="actionVerify">
    <property name="icon">
@@ -554,6 +572,11 @@ pressed: { border: 1px };</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+M</string>
+   </property>
+  </action>
+  <action name="action_export_sketch">
+   <property name="text">
+    <string>Sketch (.ino)</string>
    </property>
   </action>
  </widget>
@@ -889,6 +912,22 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>action_export_sketch</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionExportSketch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -905,5 +944,6 @@ pressed: { border: 1px };</string>
   <slot>actionMonitorSend()</slot>
   <slot>actionInsertLanguage()</slot>
   <slot>onBoardChanged()</slot>
+  <slot>actionExportSketch()</slot>
  </slots>
 </ui>
