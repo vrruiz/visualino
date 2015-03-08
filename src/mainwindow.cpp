@@ -16,8 +16,6 @@
 #include <QTimer>
 #include <QWebFrame>
 
-#define CONFIG_INI "config.ini"
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -340,11 +338,18 @@ void MainWindow::actionSettings() {
         // Reload blockly page
         if (htmlIndex != settings->htmlIndex()
                 || defaultLanguage != settings->defaultLanguage()) {
+            // Refresh workspace with new language
             xmlLoadContent = getXml();
             loadBlockly();
             connect(ui->webView,
                     SIGNAL(loadFinished(bool)),
                     SLOT(onLoadFinished(bool)));
+
+            // Reload app warning
+            QMessageBox msgBox;
+            msgBox.setText(tr("Please, restart the application to display "
+                              "the selected language."));
+            msgBox.exec();
         }
     }
 }
