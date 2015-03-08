@@ -209,8 +209,10 @@ void MainWindow::actionMessages() {
 
 void MainWindow::actionNew() {
     // Unset file name
-    xmlFileName = "";
-    statusBar()->clearMessage();
+    setXmlFileName("");
+
+    // Disable save as
+    ui->actionSave_as->setEnabled(false);
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
@@ -254,11 +256,8 @@ void MainWindow::actionOpen() {
     // Set XML to Workspace
     setXml(xml);
 
-    // Set file name
-    this->xmlFileName = xmlFileName;
-
-    // Show message in status bar
-    onStatusMessageChanged(NULL);
+    // Set XML file name
+    setXmlFileName(xmlFileName);
 }
 
 void MainWindow::actionOpenMessages() {
@@ -281,11 +280,11 @@ void MainWindow::actionVerify() {
     arduinoExec("--verify");
 }
 
-void MainWindow::actionSave() {
+void MainWindow::actionSaveAndSaveAs(bool askFileName) {
     // Save XML file
     QString xmlFileName;
 
-    if (this->xmlFileName.isEmpty()) {
+    if (this->xmlFileName.isEmpty() || askFileName == true) {
         // Open file dialog
         QFileDialog fileDialog(this, tr("Save"));
         fileDialog.setFileMode(QFileDialog::AnyFile);
@@ -312,12 +311,20 @@ void MainWindow::actionSave() {
     }
 
     // Set file name
-    if (this->xmlFileName.isEmpty()) {
-        this->xmlFileName = xmlFileName;
-    }
+    setXmlFileName(xmlFileName);
 
     // Feedback
     statusBar()->showMessage(tr("Done saving."), 2000);
+}
+
+void MainWindow::actionSave() {
+    // Save XML file
+    actionSaveAndSaveAs(false);
+}
+
+void MainWindow::actionSaveAs() {
+    // Save XML file with other name
+    actionSaveAndSaveAs(true);
 }
 
 void MainWindow::actionSettings() {
@@ -434,6 +441,20 @@ void MainWindow::onStatusMessageChanged(const QString &message) {
     if (message.isNull()) {
         statusBar()->showMessage(this->xmlFileName);
     }
+}
+
+void MainWindow::setXmlFileName(const QString &fileName) {
+    // Set file name and related widgets: Status bar message and Save as menu
+    this->xmlFileName = fileName;
+    if (fileName.isNull() || fileName.isEmpty()) {
+        // Enable save as
+        ui->actionSave_as->setEnabled(false);
+        // Show message in status bar
+    } else {
+        // Enable save as
+        ui->actionSave_as->setEnabled(true);
+    }
+    onStatusMessageChanged(NULL);
 }
 
 void MainWindow::serialPortClose() {

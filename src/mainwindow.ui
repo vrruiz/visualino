@@ -367,6 +367,7 @@ pressed: { border: 1px };</string>
     <addaction name="actionNew_2"/>
     <addaction name="actionOpen_2"/>
     <addaction name="actionSave_2"/>
+    <addaction name="actionSave_as"/>
     <addaction name="menuExport_as_ino"/>
     <addaction name="actionUpload_2"/>
     <addaction name="actionPreferences"/>
@@ -577,6 +578,14 @@ pressed: { border: 1px };</string>
   <action name="action_export_sketch">
    <property name="text">
     <string>Sketch (.ino)</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save as...</string>
    </property>
   </action>
  </widget>
@@ -928,6 +937,22 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionSave_as</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionSaveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -945,5 +970,6 @@ pressed: { border: 1px };</string>
   <slot>actionInsertLanguage()</slot>
   <slot>onBoardChanged()</slot>
   <slot>actionExportSketch()</slot>
+  <slot>actionSaveAs()</slot>
  </slots>
 </ui>

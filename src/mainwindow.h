@@ -30,6 +30,7 @@ private:
     QStringList serialPortList;
     QSerialPort *serial;
 
+    void actionSaveAndSaveAs(bool askFileName);
     void arduinoExec(const QString &action);
     QString escapeCharacters(const QString& string);
     QString getXml();
@@ -38,11 +39,13 @@ private:
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
     void setArduinoBoard();
+    void setXmlFileName(const QString &fileName);
     void serialPortOpen();
     void serialPortClose();
     QStringList portList();
     int saveXml(const QString &xmlFilePath);
     int saveSketch(const QString &inoFilePath);
+
 
 public slots:
     void actionAbout();
@@ -59,6 +62,7 @@ public slots:
     void actionUpload();
     void actionVerify();
     void actionSave();
+    void actionSaveAs();
     void actionSettings();
     void onBoardChanged();
     void onLoadFinished(bool finished);
