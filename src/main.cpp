@@ -6,8 +6,6 @@
 #include <QTranslator>
 #include "settingsstore.h"
 
-#include <QDebug>
-
 #define SPLASH
 
 int main(int argc, char *argv[])
@@ -36,7 +34,6 @@ int main(int argc, char *argv[])
 
     QTranslator appTranslator;
     QString tsFile = "visualino_" + defaultLocale.toLower();
-    qDebug() << tsFile;
     QStringList directories;
     // List of directories to search
     // In Windows and Mac, the translation files must be located in the same
