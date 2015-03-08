@@ -69,6 +69,12 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(finished(int)),
             this,
             SLOT(onProcessFinished(int)));
+
+    // Show opened file name in status bar
+    connect(statusBar(),
+            SIGNAL(messageChanged(QString)),
+            this,
+            SLOT(onStatusMessageChanged(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -204,6 +210,7 @@ void MainWindow::actionMessages() {
 void MainWindow::actionNew() {
     // Unset file name
     xmlFileName = "";
+    statusBar()->clearMessage();
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
@@ -249,6 +256,9 @@ void MainWindow::actionOpen() {
 
     // Set file name
     this->xmlFileName = xmlFileName;
+
+    // Show message in status bar
+    onStatusMessageChanged(NULL);
 }
 
 void MainWindow::actionOpenMessages() {
@@ -417,6 +427,13 @@ void MainWindow::onProcessOutputUpdated() {
 void MainWindow::onProcessStarted() {
     ui->textBrowser->clear();
     ui->textBrowser->append(tr("Building..."));
+}
+
+void MainWindow::onStatusMessageChanged(const QString &message) {
+    // Show the file name if no message
+    if (message.isNull()) {
+        statusBar()->showMessage(this->xmlFileName);
+    }
 }
 
 void MainWindow::serialPortClose() {

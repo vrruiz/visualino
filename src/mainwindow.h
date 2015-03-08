@@ -65,6 +65,7 @@ public slots:
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
     void onProcessStarted();
+    void onStatusMessageChanged(const QString &message);
     void readSerial();
     void unhide();
     void updateSerialPorts();
