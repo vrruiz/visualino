@@ -365,12 +365,19 @@ pressed: { border: 1px };</string>
      <addaction name="action_export_sketch"/>
     </widget>
     <addaction name="actionNew_2"/>
+    <addaction name="separator"/>
     <addaction name="actionOpen_2"/>
+    <addaction name="actionInclude"/>
+    <addaction name="separator"/>
     <addaction name="actionSave_2"/>
     <addaction name="actionSave_as"/>
     <addaction name="menuExport_as_ino"/>
+    <addaction name="separator"/>
+    <addaction name="actionVerify_2"/>
     <addaction name="actionUpload_2"/>
+    <addaction name="separator"/>
     <addaction name="actionPreferences"/>
+    <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -586,6 +593,19 @@ pressed: { border: 1px };</string>
    </property>
    <property name="text">
     <string>Save as...</string>
+   </property>
+  </action>
+  <action name="actionInclude">
+   <property name="text">
+    <string>Include...</string>
+   </property>
+   <property name="toolTip">
+    <string>Include</string>
+   </property>
+  </action>
+  <action name="actionVerify_2">
+   <property name="text">
+    <string>Verify</string>
    </property>
   </action>
  </widget>
@@ -953,6 +973,38 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionVerify_2</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionVerify()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionInclude</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionInclude()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -971,5 +1023,6 @@ pressed: { border: 1px };</string>
   <slot>onBoardChanged()</slot>
   <slot>actionExportSketch()</slot>
   <slot>actionSaveAs()</slot>
+  <slot>actionInclude()</slot>
  </slots>
 </ui>

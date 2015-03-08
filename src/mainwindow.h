@@ -31,11 +31,12 @@ private:
     QSerialPort *serial;
 
     void actionSaveAndSaveAs(bool askFileName);
+    void actionOpenInclude(const QString &title, bool clear = true);
     void arduinoExec(const QString &action);
     QString escapeCharacters(const QString& string);
     QString getXml();
     QString getCode();
-    void setXml(const QString &xml);
+    void setXml(const QString &xml, bool clear = false);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
     void setArduinoBoard();
@@ -51,6 +52,7 @@ public slots:
     void actionAbout();
     void actionCloseMessages();
     void actionExportSketch();
+    void actionInclude();
     void actionInsertLanguage();
     void actionMessages();
     void actionMonitor();

@@ -160,6 +160,11 @@ void MainWindow::actionExportSketch() {
     statusBar()->showMessage(message, 2000);
 }
 
+void MainWindow::actionInclude() {
+    // Include blockly file to the current workspace
+    actionOpenInclude(tr("Include file"), false);
+}
+
 void MainWindow::actionInsertLanguage() {
     // Set language in Roboblocks
     QString jsLanguage = QString("var roboblocksLanguage = '%1';").
@@ -224,10 +229,15 @@ void MainWindow::actionCloseMessages() {
 }
 
 void MainWindow::actionOpen() {
+    // Open file
+    actionOpenInclude(tr("Open file"), true);
+}
+
+void MainWindow::actionOpenInclude(const QString &title, bool clear) {
     // Open file dialog
-    QFileDialog fileDialog(this, tr("Open"));
+    QFileDialog fileDialog(this, title);
     fileDialog.setFileMode(QFileDialog::AnyFile);
-    fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
+    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).arg("(*.bly)"));
     fileDialog.setDefaultSuffix("bly");
     if (!fileDialog.exec()) return; // Return if cancelled
     QStringList selectedFiles = fileDialog.selectedFiles();
@@ -252,10 +262,12 @@ void MainWindow::actionOpen() {
     xmlFile.close();
 
     // Set XML to Workspace
-    setXml(xml);
+    setXml(xml, clear);
 
     // Set XML file name
-    setXmlFileName(xmlFileName);
+    if (clear) {
+        setXmlFileName(xmlFileName);
+    }
 }
 
 void MainWindow::actionOpenMessages() {
@@ -371,17 +383,20 @@ QString MainWindow::getCode() {
     return xml.toString();
 }
 
-void MainWindow::setXml(const QString &xml) {
+void MainWindow::setXml(const QString &xml, bool clear) {
     // Set XML
     QString escapedXml(escapeCharacters(xml));
 
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString(
-        "Blockly.mainWorkspace.clear();"
-        "var data = '%1'; "
+    QString js = QString("var data = '%1'; "
         "var xml = Blockly.Xml.textToDom(data);"
         "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),xml);"
-        ).arg(escapedXml));
+         "").arg(escapedXml);
+
+    if (clear) {
+        js.prepend("Blockly.mainWorkspace.clear();");
+    }
+    frame->evaluateJavaScript(js);
 }
 
 bool MainWindow::listIsEqual(const QStringList &listOne,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="es_ES">
+<TS version="2.1" language="es_ES">
 <context>
     <name>MainWindow</name>
     <message>
@@ -44,151 +44,161 @@
         <translation>Exportar como...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="378"/>
+        <location filename="../src/mainwindow.ui" line="385"/>
         <source>&amp;Help</source>
         <translation>Ay&amp;uda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="384"/>
+        <location filename="../src/mainwindow.ui" line="391"/>
         <source>&amp;Tools</source>
         <translation>&amp;Herramientas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="419"/>
+        <location filename="../src/mainwindow.ui" line="426"/>
         <source>toolBar</source>
         <translation>toolBar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="434"/>
-        <location filename="../src/mainwindow.ui" line="437"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/mainwindow.ui" line="608"/>
         <source>Verify</source>
         <translation>Verificar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="440"/>
+        <location filename="../src/mainwindow.ui" line="447"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.ui" line="452"/>
-        <location filename="../src/mainwindow.ui" line="517"/>
+        <location filename="../src/mainwindow.ui" line="456"/>
+        <location filename="../src/mainwindow.ui" line="459"/>
+        <location filename="../src/mainwindow.ui" line="524"/>
         <source>Upload</source>
         <translation>Subir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="461"/>
-        <location filename="../src/mainwindow.cpp" line="228"/>
+        <location filename="../src/mainwindow.ui" line="468"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="470"/>
+        <location filename="../src/mainwindow.ui" line="477"/>
         <location filename="../src/mainwindow.cpp" line="137"/>
-        <location filename="../src/mainwindow.cpp" line="287"/>
+        <location filename="../src/mainwindow.cpp" line="299"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="479"/>
-        <location filename="../src/mainwindow.ui" line="493"/>
+        <location filename="../src/mainwindow.ui" line="486"/>
+        <location filename="../src/mainwindow.ui" line="500"/>
         <source>New</source>
         <translation>Nuevo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="488"/>
+        <location filename="../src/mainwindow.ui" line="495"/>
         <source>Settings</source>
         <translation>Preferencias</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
+        <location filename="../src/mainwindow.ui" line="503"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="501"/>
+        <location filename="../src/mainwindow.ui" line="508"/>
         <source>Open...</source>
         <translation>Abrir...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="504"/>
+        <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="509"/>
+        <location filename="../src/mainwindow.ui" line="516"/>
         <source>Save...</source>
         <translation>Guardar...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="512"/>
+        <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="520"/>
+        <location filename="../src/mainwindow.ui" line="527"/>
         <source>Ctrl+U</source>
         <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="525"/>
+        <location filename="../src/mainwindow.ui" line="532"/>
         <source>Preferences</source>
         <translation>Preferencias</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="528"/>
+        <location filename="../src/mainwindow.ui" line="535"/>
         <source>Ctrl+,</source>
         <translation>Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="533"/>
+        <location filename="../src/mainwindow.ui" line="540"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="536"/>
+        <location filename="../src/mainwindow.ui" line="543"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="541"/>
+        <location filename="../src/mainwindow.ui" line="548"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="546"/>
+        <location filename="../src/mainwindow.ui" line="553"/>
         <source>Show/hide messages</source>
         <translation>Mostrar/ocultar mensajes</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="564"/>
-        <location filename="../src/mainwindow.ui" line="567"/>
+        <location filename="../src/mainwindow.ui" line="571"/>
+        <location filename="../src/mainwindow.ui" line="574"/>
         <source>Monitor</source>
         <translation>Monitor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="572"/>
+        <location filename="../src/mainwindow.ui" line="579"/>
         <source>Show/hide monitor</source>
         <translation>Mostrar/ocultar monitor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="575"/>
+        <location filename="../src/mainwindow.ui" line="582"/>
         <source>Ctrl+Shift+M</source>
         <translation>Ctrl+Mayus+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="580"/>
+        <location filename="../src/mainwindow.ui" line="587"/>
         <source>Sketch (.ino)</source>
         <translation>Sketch (.ino)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="588"/>
+        <location filename="../src/mainwindow.ui" line="595"/>
         <source>Save as...</source>
         <translation>Guardar como...</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="600"/>
+        <source>Include...</source>
+        <translation>Incluir...</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="603"/>
+        <source>Include</source>
+        <translation>Incluir</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="152"/>
-        <location filename="../src/mainwindow.cpp" line="305"/>
+        <location filename="../src/mainwindow.cpp" line="317"/>
         <source>Couldn&apos;t open file to save content: %1.</source>
         <translation>No se pudo abrir el fichero para guardar el contenido:%1.</translation>
     </message>
@@ -198,27 +208,46 @@
         <translation>Exportación realizada: %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="243"/>
+        <source>Import file</source>
+        <translation type="vanished">Importar fichero</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="165"/>
+        <source>Include file</source>
+        <translation>Incluir fichero</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="233"/>
+        <source>Open file</source>
+        <translation>Abrir fichero</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="240"/>
+        <source>Blockly Files %1</source>
+        <translation>Ficheros Blockly %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="253"/>
         <source>Couldn&apos;t open file to read content: %1.</source>
         <translation>No se pudo abrir el fichero para leer el contenido: %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="315"/>
+        <location filename="../src/mainwindow.cpp" line="327"/>
         <source>Done saving.</source>
         <translation>Guardado finalizado.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="350"/>
+        <location filename="../src/mainwindow.cpp" line="362"/>
         <source>Please, restart the application to display the selected language.</source>
         <translation>Reinicie la aplicación para mostrar el idioma seleccionado.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="432"/>
+        <location filename="../src/mainwindow.cpp" line="447"/>
         <source>Finished.</source>
         <translation>Finalizó.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="441"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>Building...</source>
         <translation>Compilando...</translation>
     </message>
