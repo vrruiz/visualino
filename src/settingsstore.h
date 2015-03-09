@@ -6,6 +6,8 @@
 #include <QSettings>
 #include <QString>
 
+#define CONFIG_INI "config.ini"
+
 class SettingsStore : public QObject
 {
     Q_OBJECT

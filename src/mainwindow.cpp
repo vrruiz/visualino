@@ -16,8 +16,6 @@
 #include <QTimer>
 #include <QWebFrame>
 
-#define CONFIG_INI "config.ini"
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -69,6 +67,12 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(finished(int)),
             this,
             SLOT(onProcessFinished(int)));
+
+    // Show opened file name in status bar
+    connect(statusBar(),
+            SIGNAL(messageChanged(QString)),
+            this,
+            SLOT(onStatusMessageChanged(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -125,6 +129,42 @@ void MainWindow::arduinoExec(const QString &action) {
 void MainWindow::actionAbout() {
 }
 
+void MainWindow::actionExportSketch() {
+    // Export workspace as Arduino Sketch
+    QString inoFileName;
+
+    // Open file dialog
+    QFileDialog fileDialog(this, tr("Save"));
+    fileDialog.setFileMode(QFileDialog::AnyFile);
+    fileDialog.setNameFilter(QString("Sketches %1").arg("(*.ino)"));
+    fileDialog.setDefaultSuffix("ino");
+    if (!fileDialog.exec()) return; // Return if cancelled
+    QStringList selectedFiles = fileDialog.selectedFiles();
+    // Return if no file to open
+    if (selectedFiles.count() < 1) return;
+    inoFileName = selectedFiles.at(0);
+
+    int result = saveSketch(inoFileName);
+
+    if (result == 0) {
+        // Display error message
+        QMessageBox msgBox(this);
+        msgBox.setText(QString(tr("Couldn't open file to save content: %1.")
+                               ).arg(inoFileName));
+        msgBox.exec();
+        return;
+    }
+
+    // Feedback
+    QString message(tr("Done exporting: %1.").arg(inoFileName));
+    statusBar()->showMessage(message, 2000);
+}
+
+void MainWindow::actionInclude() {
+    // Include blockly file to the current workspace
+    actionOpenInclude(tr("Include file"), false);
+}
+
 void MainWindow::actionInsertLanguage() {
     // Set language in Roboblocks
     QString jsLanguage = QString("var roboblocksLanguage = '%1';").
@@ -172,7 +212,10 @@ void MainWindow::actionMessages() {
 
 void MainWindow::actionNew() {
     // Unset file name
-    xmlFileName = "";
+    setXmlFileName("");
+
+    // Disable save as
+    ui->actionSave_as->setEnabled(false);
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
@@ -186,10 +229,15 @@ void MainWindow::actionCloseMessages() {
 }
 
 void MainWindow::actionOpen() {
+    // Open file
+    actionOpenInclude(tr("Open file"), true);
+}
+
+void MainWindow::actionOpenInclude(const QString &title, bool clear) {
     // Open file dialog
-    QFileDialog fileDialog(this, tr("Open"));
+    QFileDialog fileDialog(this, title);
     fileDialog.setFileMode(QFileDialog::AnyFile);
-    fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
+    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).arg("(*.bly)"));
     fileDialog.setDefaultSuffix("bly");
     if (!fileDialog.exec()) return; // Return if cancelled
     QStringList selectedFiles = fileDialog.selectedFiles();
@@ -214,10 +262,12 @@ void MainWindow::actionOpen() {
     xmlFile.close();
 
     // Set XML to Workspace
-    setXml(xml);
+    setXml(xml, clear);
 
-    // Set file name
-    this->xmlFileName = xmlFileName;
+    // Set XML file name
+    if (clear) {
+        setXmlFileName(xmlFileName);
+    }
 }
 
 void MainWindow::actionOpenMessages() {
@@ -240,11 +290,11 @@ void MainWindow::actionVerify() {
     arduinoExec("--verify");
 }
 
-void MainWindow::actionSave() {
+void MainWindow::actionSaveAndSaveAs(bool askFileName) {
     // Save XML file
     QString xmlFileName;
 
-    if (this->xmlFileName.isEmpty()) {
+    if (this->xmlFileName.isEmpty() || askFileName == true) {
         // Open file dialog
         QFileDialog fileDialog(this, tr("Save"));
         fileDialog.setFileMode(QFileDialog::AnyFile);
@@ -271,12 +321,20 @@ void MainWindow::actionSave() {
     }
 
     // Set file name
-    if (this->xmlFileName.isEmpty()) {
-        this->xmlFileName = xmlFileName;
-    }
+    setXmlFileName(xmlFileName);
 
     // Feedback
     statusBar()->showMessage(tr("Done saving."), 2000);
+}
+
+void MainWindow::actionSave() {
+    // Save XML file
+    actionSaveAndSaveAs(false);
+}
+
+void MainWindow::actionSaveAs() {
+    // Save XML file with other name
+    actionSaveAndSaveAs(true);
 }
 
 void MainWindow::actionSettings() {
@@ -292,11 +350,18 @@ void MainWindow::actionSettings() {
         // Reload blockly page
         if (htmlIndex != settings->htmlIndex()
                 || defaultLanguage != settings->defaultLanguage()) {
+            // Refresh workspace with new language
             xmlLoadContent = getXml();
             loadBlockly();
             connect(ui->webView,
                     SIGNAL(loadFinished(bool)),
                     SLOT(onLoadFinished(bool)));
+
+            // Reload app warning
+            QMessageBox msgBox;
+            msgBox.setText(tr("Please, restart the application to display "
+                              "the selected language."));
+            msgBox.exec();
         }
     }
 }
@@ -310,16 +375,28 @@ QString MainWindow::getXml() {
     return xml.toString();
 }
 
-void MainWindow::setXml(const QString &xml) {
+QString MainWindow::getCode() {
+    // Get code
+    QWebFrame *frame = ui->webView->page()->mainFrame();
+    QVariant xml = frame->evaluateJavaScript(
+        "Blockly.Arduino.workspaceToCode();");
+    return xml.toString();
+}
+
+void MainWindow::setXml(const QString &xml, bool clear) {
     // Set XML
     QString escapedXml(escapeCharacters(xml));
 
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(QString(
-        "var data = '%1'; "
+    QString js = QString("var data = '%1'; "
         "var xml = Blockly.Xml.textToDom(data);"
-        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),"
-        "xml);").arg(escapedXml));
+        "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),xml);"
+         "").arg(escapedXml);
+
+    if (clear) {
+        js.prepend("Blockly.mainWorkspace.clear();");
+    }
+    frame->evaluateJavaScript(js);
 }
 
 bool MainWindow::listIsEqual(const QStringList &listOne,
@@ -377,6 +454,27 @@ void MainWindow::onProcessOutputUpdated() {
 void MainWindow::onProcessStarted() {
     ui->textBrowser->clear();
     ui->textBrowser->append(tr("Building..."));
+}
+
+void MainWindow::onStatusMessageChanged(const QString &message) {
+    // Show the file name if no message
+    if (message.isNull()) {
+        statusBar()->showMessage(this->xmlFileName);
+    }
+}
+
+void MainWindow::setXmlFileName(const QString &fileName) {
+    // Set file name and related widgets: Status bar message and Save as menu
+    this->xmlFileName = fileName;
+    if (fileName.isNull() || fileName.isEmpty()) {
+        // Enable save as
+        ui->actionSave_as->setEnabled(false);
+        // Show message in status bar
+    } else {
+        // Enable save as
+        ui->actionSave_as->setEnabled(true);
+    }
+    onStatusMessageChanged(NULL);
 }
 
 void MainWindow::serialPortClose() {
@@ -457,17 +555,37 @@ int MainWindow::saveXml(const QString &xmlFilePath) {
 
     // Save XML to file
     QFile xmlFile(xmlFilePath);
-
     if (!xmlFile.open(QIODevice::WriteOnly)) {
         return 0;
     }
-    xmlFile.write(xml.toByteArray());
+    if (xmlFile.write(xml.toByteArray()) == -1) {
+        return 0;
+    }
     xmlFile.close();
 
     // Set file name
     if (this->xmlFileName.isEmpty()) {
         this->xmlFileName = xmlFileName;
     }
+
+    return 1;
+}
+
+int MainWindow::saveSketch(const QString &inoFilePath) {
+    // Save sketch
+
+    // Get code
+    QVariant code = getCode();
+
+    // Save code
+    QFile inoFile(inoFilePath);
+    if (!inoFile.open(QIODevice::WriteOnly)) {
+        return 0;
+    }
+    if (inoFile.write(code.toByteArray()) == -1) {
+        return 0;
+    }
+    inoFile.close();
 
     return 1;
 }

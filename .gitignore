@@ -30,3 +30,9 @@ build-*
 
 blockly/*
 roboblocks/roboblocks/
+
+# L10N
+*.qm
+
+# Makefiles
+Makefile

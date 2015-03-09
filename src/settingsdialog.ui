@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>600</width>
     <height>250</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>180</width>
+           <width>225</width>
            <height>0</height>
           </size>
          </property>
@@ -86,7 +86,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>180</width>
+           <width>225</width>
            <height>0</height>
           </size>
          </property>
@@ -131,7 +131,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>180</width>
+           <width>225</width>
            <height>0</height>
           </size>
          </property>
@@ -142,7 +142,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Roboblocks language</string>
+          <string>Language</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -161,13 +161,8 @@
           </sizepolicy>
          </property>
          <property name="currentText">
-          <string>en-GB</string>
+          <string/>
          </property>
-         <item>
-          <property name="text">
-           <string>en-GB</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item>
