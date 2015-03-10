@@ -1,6 +1,7 @@
 #include "settingsstore.h"
 
 #include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QString>
@@ -123,8 +124,12 @@ QString SettingsStore::relativePath(const QString &value,
     QString settingsValue = settings->value(platform + value,
                                              defaultValue).toString();
 
-    // Append the binary path if relative
-    if (QDir::isRelativePath(settingsValue)) {
+    if (settingsValue.left(2) == "~/") {
+        // Substitute with home dir
+        qDebug() << QDir::homePath() + settingsValue.remove(0,1);
+        return QDir::homePath() + settingsValue.remove(0,1);
+    } else if (QDir::isRelativePath(settingsValue)) {
+        // Append the binary path if relative
         return QDir(QCoreApplication::applicationDirPath()).
                 filePath(settingsValue);
     }

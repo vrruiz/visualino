@@ -17,8 +17,24 @@ HEADERS += mainwindow.h \
 FORMS += mainwindow.ui \
     settingsdialog.ui
 
-OTHER_FILES += ../config.ini
+OTHER_FILES += ../config.ini ../ts/*.ts ../roboblocks/html/* ../icons/*
 
 RESOURCES += Resources.qrc
 
-# SUBDIRS = roboblocks
+DESTDIR = $${OUT_PWD}
+INSTALLS_DESTDIR = $${DESTDIR}
+
+macx {
+  INSTALLS_DESTDIR = $${OUT_PWD}/visualino.app/Contents/MacOS/
+}
+
+config.path = $${INSTALLS_DESTDIR}
+config.files = ../config.ini
+
+html.path = $${INSTALLS_DESTDIR}/html
+html.files = ../roboblocks/html/*
+
+translation.path = $${INSTALLS_DESTDIR}/ts
+translation.files = ../ts/*.qm
+
+INSTALLS += config html translation
