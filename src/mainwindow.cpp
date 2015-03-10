@@ -540,6 +540,8 @@ QStringList MainWindow::portList() {
         QString portName = info.portName();
 #ifdef Q_OS_LINUX
         portName.insert(0, "/dev/");
+#elif Q_OS_MACOSX
+        portName.insert(0, "/dev/tty.");
 #endif
         serialPorts.append(portName);
     }
