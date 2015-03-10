@@ -26,6 +26,7 @@ INSTALLS_DESTDIR = $${DESTDIR}
 
 macx {
   INSTALLS_DESTDIR = $${OUT_PWD}/visualino.app/Contents/MacOS/
+  ICON = ../icons/visualino.icns
 }
 
 config.path = $${INSTALLS_DESTDIR}
