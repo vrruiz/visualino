@@ -1,3 +1,28 @@
+visualino (0.3-1) utopic; urgency=medium
+
+  * Mac OS X specific paths and settings.
+  * App icon for Mac OSX.
+  * Remove unwanted toolbar.
+  * Fix serial port naming in MacOSX.
+  * Menu option for show/hide code view.
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Wed, 11 Mar 2015 23:24:39 +0000
+
+visualino (0.3) utopic; urgency=medium
+
+  * Include file support.
+  * Remove debug line.
+  * L10N support.
+  * Support for Save as...
+  * Show file name in status bar.
+  * Export as sketch.
+  * Clear workspace on open.
+  * Monospaced font for console. Fix serial port combo update.
+  * Remove unwanted toolbar.
+  * Save selected board in settings file.
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sun, 08 Mar 2015 16:05:39 +0000
+
 visualino (0.2-1) utopic; urgency=medium
 
   * Set monitor action as checkable.
