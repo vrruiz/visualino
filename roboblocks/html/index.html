@@ -35,9 +35,25 @@
 
             // Update code
             Blockly.addChangeListener(function () {
-                document.getElementById('code').innerHTML = '<pre>' + 
-                    Blockly.Arduino.workspaceToCode() + '</pre>';
+                $('#code').html('<pre>' + Blockly.Arduino.workspaceToCode()
+                    + '</pre>');
             });
+
+            // Show/hide code
+            function toogleCode() {
+                if ($('#code').css('display') == 'none') {
+                    // Show
+                    $('#code').show();
+                    $('#blockly').width('66%');
+                } else {
+                    // Hide
+                    $('#code').hide();
+                    $('#blockly').width('100%');
+                }
+                // Resize workspace
+                Blockly.fireUiEvent(window, "resize");
+            }
+
     </script>
 </body>
 </html>

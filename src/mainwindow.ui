@@ -391,8 +391,8 @@ pressed: { border: 1px };</string>
      <string>&amp;Tools</string>
     </property>
     <addaction name="actionMessages"/>
-    <addaction name="separator"/>
     <addaction name="actionShow_hide_monitor"/>
+    <addaction name="actionShow_hide_code"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menuView"/>
@@ -595,6 +595,11 @@ pressed: { border: 1px };</string>
   <action name="actionVerify_2">
    <property name="text">
     <string>Verify</string>
+   </property>
+  </action>
+  <action name="actionShow_hide_code">
+   <property name="text">
+    <string>Show/hide code</string>
    </property>
   </action>
  </widget>
@@ -994,6 +999,22 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionShow_hide_code</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -1013,5 +1034,6 @@ pressed: { border: 1px };</string>
   <slot>actionExportSketch()</slot>
   <slot>actionSaveAs()</slot>
   <slot>actionInclude()</slot>
+  <slot>actionCode()</slot>
  </slots>
 </ui>

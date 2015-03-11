@@ -51,6 +51,7 @@ private:
 public slots:
     void actionAbout();
     void actionCloseMessages();
+    void actionCode();
     void actionExportSketch();
     void actionInclude();
     void actionInsertLanguage();

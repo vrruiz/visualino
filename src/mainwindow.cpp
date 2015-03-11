@@ -129,6 +129,12 @@ void MainWindow::arduinoExec(const QString &action) {
 void MainWindow::actionAbout() {
 }
 
+void MainWindow::actionCode() {
+    // Show/hide code
+    QString jsLanguage = QString("toogleCode();");
+    ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
+}
+
 void MainWindow::actionExportSketch() {
     // Export workspace as Arduino Sketch
     QString inoFileName;
