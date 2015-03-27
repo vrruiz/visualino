@@ -8,11 +8,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     settingsdialog.cpp \
-    settingsstore.cpp
+    settingsstore.cpp \
+    graphwidget.cpp
 
 HEADERS += mainwindow.h \
     settingsdialog.h \
-    settingsstore.h
+    settingsstore.h \
+    graphwidget.h
 
 FORMS += mainwindow.ui \
     settingsdialog.ui

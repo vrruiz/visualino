@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
 
+    ui->graphWidget->setVisible(false);
+
     // Set monospaced font in the monitor
     const QFont fixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
     ui->consoleText->setFont(fixedFont);
@@ -164,6 +166,17 @@ void MainWindow::actionExportSketch() {
     // Feedback
     QString message(tr("Done exporting: %1.").arg(inoFileName));
     statusBar()->showMessage(message, 2000);
+}
+
+void MainWindow::actionGraph() {
+    // Show/hide graph
+    if (ui->consoleText->isVisible() == true) {
+        ui->consoleText->setVisible(false);
+        ui->graphWidget->setVisible(true);
+    } else {
+        ui->consoleText->setVisible(true);
+        ui->graphWidget->setVisible(false);
+    }
 }
 
 void MainWindow::actionInclude() {
@@ -528,8 +541,22 @@ void MainWindow::serialPortOpen() {
 void MainWindow::readSerial() {
     // Read serial port data and display it in the console
     QByteArray data = serial->readAll();
-    QString stringData(data);
-    ui->consoleText->insertPlainText(stringData);
+
+    // Read serial port data and display it in the console
+    for (int i = 0; i < data.size(); i++) {
+        int c = data.at(i);
+        if (c > 13) {
+            dataString.append(data.at(i));
+        } else if (c == 13) {
+            bool ok;
+            ui->consoleText->insertPlainText(dataString + "\n");
+            int value = dataString.toInt(&ok);
+            if (ok) {
+                ui->graphWidget->append(value);
+            }
+            dataString.clear();
+        }
+    }
 
     // Move scroll to the bottom
     QScrollBar *bar = ui->consoleText->verticalScrollBar();

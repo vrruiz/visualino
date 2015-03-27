@@ -29,6 +29,7 @@ private:
     QString xmlLoadContent;
     QStringList serialPortList;
     QSerialPort *serial;
+    QString dataString;
 
     void actionSaveAndSaveAs(bool askFileName);
     void actionOpenInclude(const QString &title, bool clear = true);
@@ -61,6 +62,7 @@ public slots:
     void actionNew();
     void actionOpen();
     void actionOpenMessages();
+    void actionGraph();
     void actionQuit();
     void actionUpload();
     void actionVerify();
