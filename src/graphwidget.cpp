@@ -4,29 +4,35 @@
 #include <QPainter>
 #include <QTimer>
 
-#define MAX_VALUE 1023
+#define COLUMN_WIDTH 5
+#define MAX_VALUE 1
 #define MIN_VALUE 0
 
 GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent)
 {
     count = 0;
+    max_value = MAX_VALUE;
+    min_value = MIN_VALUE;
+    font = new QFont("Courier", 8);
 }
 
 GraphWidget::~GraphWidget() {
+    delete font;
 }
 
-void GraphWidget::append(int point) {
-    if (count == MAX_DATA) {
+void GraphWidget::append(long point) {
+    if (data.count() == MAX_DATA) {
         // Remove first point
-        for (int i = 1; i < MAX_DATA; i++) {
-            data[i - 1] = data[i];
-        }
-        data[MAX_DATA - 1] = point;
-    } else {
-        // Append point
-        data[count] = point;
-        count++;
+        data.pop_back();
+    }
+    data.append(point);
+    // Autoresize
+    if (max_value < point) {
+        max_value = point;
+    }
+    if (min_value > point) {
+        min_value = point;
     }
     // Draw new data point
     repaint();
@@ -34,37 +40,38 @@ void GraphWidget::append(int point) {
 
 
 void GraphWidget::paintEvent(QPaintEvent *event) {
-    if (count == 0) return;
+    if (data.count() == 0) return;
 
     QPainter p(this);
     QSize s = size();
-    float data_width = s.width() / MAX_DATA;
-    if (data_width < 5) data_width = 5;
+
+    int num_columns = s.width() / COLUMN_WIDTH;
 
     // Ticks
     p.setPen(Qt::gray);
+    p.setFont(*font);
     int div = 10;
     if (s.height() < 400) div = 5;
     for (int n = 1; n <= div; n++) {
         int y = s.height() / div * n;
         p.drawLine(0, y, s.width(), y);
+        QString value(QString::number(max_value / div * (div - n)));
+        p.drawText(0, y - 1, value);
     }
-    p.drawLine(0,0,s.width(),0);
+    p.drawLine(0, 0, s.width(), 0);
+    p.drawText(0, 10, QString::number(max_value));
 
-    for (int i = 0; i < count; i++) {
-        // Check boundaries
-        int value = data[i];
-        if (value > MAX_VALUE) {
-            value = MAX_VALUE;
-        } else if (value < MIN_VALUE) {
-            value = MIN_VALUE;
-        }
+    // Draw columns, from last to first
+    int i = data.count() - 1;
+    int n = 1;
+    while (i >= 0 && n <= num_columns) {
         // Draw rectangle
-        p.fillRect(s.width() - data_width * (count - i) - 1,
+        p.fillRect(s.width() - COLUMN_WIDTH * n + 1,
                    s.height(),
-                   data_width - 1,
-                   -(s.height() * data[i] / 1023),
-                   Qt::red);
+                   COLUMN_WIDTH - 1,
+                   -(s.height() * data.at(i) / max_value),
+                   QColor(134, 196, 64, 170));
+        i--;
+        n++;
     }
-
 }

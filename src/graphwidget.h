@@ -1,8 +1,9 @@
 #ifndef GRAPHWIDGET_H
 #define GRAPHWIDGET_H
 
-#define MAX_DATA 100
+#define MAX_DATA 1000
 
+#include <QFont>
 #include <QWidget>
 
 class GraphWidget : public QWidget
@@ -11,11 +12,15 @@ class GraphWidget : public QWidget
 public:
     explicit GraphWidget(QWidget *parent = 0);
     ~GraphWidget();
-    void append(int point);
+    void append(long point);
 
 protected:
-    int data[MAX_DATA];
+    QFont *font;
+    QVector<long> data;
+    int max_value;
+    int min_value;
     int count;
+
     void paintEvent(QPaintEvent *event);
 
 signals:
