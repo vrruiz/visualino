@@ -173,9 +173,11 @@ void MainWindow::actionGraph() {
     if (ui->consoleText->isVisible() == true) {
         ui->consoleText->setVisible(false);
         ui->graphWidget->setVisible(true);
+        ui->graphButton->setChecked(true);
     } else {
         ui->consoleText->setVisible(true);
         ui->graphWidget->setVisible(false);
+        ui->graphButton->setChecked(false);
     }
 }
 

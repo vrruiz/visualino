@@ -10,6 +10,7 @@
         <file>../icons/chip-micro-24x24.png</file>
         <file>../icons/usb-24x24.png</file>
         <file>../icons/enter-16x16.png</file>
+        <file>../icons/bar-chart-2x.png</file>
     </qresource>
     <qresource prefix="/">
         <file>../icons/splashscreen.png</file>

@@ -114,9 +114,16 @@
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="graphButton">
+              <widget class="QPushButton" name="graphButton">
                <property name="text">
-                <string>||||</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="Resources.qrc">
+                 <normaloff>:/icons/icons/bar-chart-2x.png</normaloff>:/icons/icons/bar-chart-2x.png</iconset>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -1045,7 +1052,7 @@ pressed: { border: 1px };</string>
    <slot>actionGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>775</x>
+     <x>770</x>
      <y>80</y>
     </hint>
     <hint type="destinationlabel">
