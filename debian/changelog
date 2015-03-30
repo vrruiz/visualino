@@ -1,3 +1,9 @@
+visualino (0.4) utopic; urgency=medium
+
+  * Graph support. 
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sun, 29 Mar 2015 21:41:15 +0100
+
 visualino (0.3-1) utopic; urgency=medium
 
   * Mac OS X specific paths and settings.
