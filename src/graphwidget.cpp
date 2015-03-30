@@ -24,7 +24,7 @@ GraphWidget::~GraphWidget() {
 void GraphWidget::append(long point) {
     if (data.count() == MAX_DATA) {
         // Remove first point
-        data.pop_back();
+        data.removeFirst();
     }
     data.append(point);
     // Autoresize
