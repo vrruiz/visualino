@@ -11,6 +11,7 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include <QScrollBar>
 #include <QSettings>
+#include <QSizePolicy>
 #include <QStandardPaths>
 #include <QThread>
 #include <QTimer>
@@ -27,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
 
-    ui->graphWidget->setVisible(false);
+    ui->graphsWidget->setVisible(false);
 
     // Set monospaced font in the monitor
     const QFont fixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
@@ -171,12 +172,14 @@ void MainWindow::actionExportSketch() {
 void MainWindow::actionGraph() {
     // Show/hide graph
     if (ui->consoleText->isVisible() == true) {
+        // Show graph
         ui->consoleText->setVisible(false);
-        ui->graphWidget->setVisible(true);
+        ui->graphsWidget->setVisible(true);
         ui->graphButton->setChecked(true);
     } else {
+        // Hide graph
         ui->consoleText->setVisible(true);
-        ui->graphWidget->setVisible(false);
+        ui->graphsWidget->setVisible(false);
         ui->graphButton->setChecked(false);
     }
 }
@@ -540,6 +543,28 @@ void MainWindow::serialPortOpen() {
     }
 }
 
+bool MainWindow::isCommaSeparatedNumbers(const QString data) {
+    // Is data of format number,number,number?
+
+    if (data.indexOf(",") < 0) return false; // Nope, at least two values needed
+
+    // Separate values
+    QStringList strings = dataString.split(",");
+    bool allNumbers = true;
+    // Check values
+    foreach (QString s, strings) {
+        bool ok;
+        s.toLong(&ok);
+        if (ok == false) {
+            // This value is not an int
+            allNumbers = false;
+            break;
+        }
+    }
+
+    return allNumbers;
+}
+
 void MainWindow::readSerial() {
     // Read serial port data and display it in the console
     QByteArray data = serial->readAll();
@@ -551,11 +576,54 @@ void MainWindow::readSerial() {
             dataString.append(data.at(i));
         } else if (c == 13) {
             bool ok;
+            bool display = false;
             ui->consoleText->insertPlainText(dataString + "\n");
             int value = dataString.toInt(&ok);
-            if (ok) {
-                ui->graphWidget->append(value);
+
+            // Check if values are all numbers
+            QList<long> longList;
+
+            if (isCommaSeparatedNumbers(dataString)) {
+                // More than one value
+                display = true;
+                QStringList strings = dataString.split(",");
+                foreach (QString s, strings) {
+                    long value = s.toLong();
+                    longList.append(value);
+                }
+            } else if (ok) {
+                // One value
+                display = true;
+                longList.append(value);
             }
+
+            // Add new graphs if needed
+            if (display) {
+                int diff = longList.count() - graphList.count();
+                if (diff > 0 && graphList.count() <= 10) {
+                    for (int n = 0; n < diff; n++) {
+                        GraphWidget *gwidget = new GraphWidget();
+                        gwidget->setSizePolicy(QSizePolicy::Expanding,
+                                               QSizePolicy::Expanding);
+                        ui->graphLayout->addWidget(gwidget);
+                        graphList.append(gwidget);
+                        // No more than 10 graphics
+                        if (graphList.count() == 10) break;
+                    }
+                }
+
+                // Display numbers
+                for (int n = 0; n < graphList.count(); n++) {
+                    GraphWidget *graphWidget = graphList.at(n);
+                    long value = 0;
+                    if (longList.count() > n) {
+                        value = longList.at(n);
+                    }
+                    graphWidget->append(value);
+                }
+            }
+
+            // Reset string
             dataString.clear();
         }
     }

@@ -25,6 +25,18 @@ void GraphWidget::append(long point) {
     if (data.count() == MAX_DATA) {
         // Remove first point
         data.removeFirst();
+        // Autoresize
+        max_value = data.at(0);
+        min_value = data.at(0);
+        for (int i = 1; i < data.count(); i++) {
+            long value = data.at(i);
+            if (max_value < value) {
+                max_value = value;
+            }
+            if (min_value > value) {
+                min_value = value;
+            }
+        }
     }
     data.append(point);
     // Autoresize

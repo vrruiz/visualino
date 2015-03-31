@@ -146,13 +146,27 @@
             </widget>
            </item>
            <item>
-            <widget class="GraphWidget" name="graphWidget" native="true">
+            <widget class="QWidget" name="graphsWidget" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <layout class="QVBoxLayout" name="graphLayout">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+             </layout>
             </widget>
            </item>
           </layout>
@@ -633,12 +647,6 @@ pressed: { border: 1px };</string>
    <class>QWebView</class>
    <extends>QWidget</extends>
    <header>QtWebKitWidgets/QWebView</header>
-  </customwidget>
-  <customwidget>
-   <class>GraphWidget</class>
-   <extends>QWidget</extends>
-   <header>graphwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

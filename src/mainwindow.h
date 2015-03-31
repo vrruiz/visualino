@@ -3,6 +3,7 @@
 
 #include "settingsstore.h"
 #include "settingsdialog.h"
+#include "graphwidget.h"
 
 #include <QMainWindow>
 #include <QWebView>
@@ -30,6 +31,7 @@ private:
     QStringList serialPortList;
     QSerialPort *serial;
     QString dataString;
+    QList<GraphWidget *> graphList;
 
     void actionSaveAndSaveAs(bool askFileName);
     void actionOpenInclude(const QString &title, bool clear = true);
@@ -38,6 +40,7 @@ private:
     QString getXml();
     QString getCode();
     void setXml(const QString &xml, bool clear = false);
+    bool isCommaSeparatedNumbers(const QString data);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
     void setArduinoBoard();
