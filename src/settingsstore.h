@@ -31,6 +31,8 @@ public:
     void setTmpDirName(const QString &value);
     void setTmpFileName(const QString &value);
     void setHtmlIndex(const QString &value);
+    void copyDefaultSettings(const QString &fileName = CONFIG_INI,
+                             bool overwrite = false);
 
 private:
     QString platform;

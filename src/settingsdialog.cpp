@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QLocale>
+#include <QMessageBox>
+#include <QPushButton>
 
 SettingsDialog::SettingsDialog(SettingsStore *settings,
                                const QStringList &languageList,
@@ -15,7 +17,6 @@ SettingsDialog::SettingsDialog(SettingsStore *settings,
 
     // Set values
     ui->arduinoIdePathEdit->setText(settings->arduinoIdePath());
-    ui->htmlIndexEdit->setText(settings->htmlIndex());
 
     // Set values for list of languages. languageList must be in
     // "languageCode-countryCode" format (e.g. "en-US").
@@ -35,6 +36,14 @@ SettingsDialog::SettingsDialog(SettingsStore *settings,
 
     this->settings = settings;
     settingsChanged = false;
+
+    // Connect restore default button signal to slot. Can't be done in Qt Creator
+    QPushButton *restoreButton = ui->buttonBox->button(
+                QDialogButtonBox::RestoreDefaults);
+    connect(restoreButton,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(restoreSettings()));
 }
 
 SettingsDialog::~SettingsDialog()
@@ -50,11 +59,6 @@ void SettingsDialog::accept() {
     // Save settings to file and close dialog
     if (ui->arduinoIdePathEdit->text() != settings->arduinoIdePath()) {
         settings->setArduinoIdePath(ui->arduinoIdePathEdit->text());
-        settingsChanged = true;
-    }
-
-    if (ui->htmlIndexEdit->text() != settings->htmlIndex()) {
-        settings->setHtmlIndex(ui->htmlIndexEdit->text());
         settingsChanged = true;
     }
 
@@ -83,13 +87,21 @@ void SettingsDialog::arduinoIdePathOpenDialog() {
     if (!newPath.isNull()) ui->arduinoIdePathEdit->setText(newPath);
 }
 
-void SettingsDialog::htmlIndexOpenDialog() {
-    // Show open file dialog
-    QString newPath = QFileDialog::getOpenFileName(
-                this,
-                tr("Roboblocks"),
-                settings->htmlIndex(),
-                tr("HTML (*.html)")
-                );
-    if (!newPath.isNull()) ui->htmlIndexEdit->setText(newPath);
+void SettingsDialog::restoreSettings() {
+    // Restore default settings
+    QMessageBox::StandardButton confirm;
+    // Confirm
+    confirm = QMessageBox::question(this,
+                                    tr("Default settings"),
+                                    tr("Are you sure? This will "
+                                       "erase your current preferences "
+                                       "and replace them with the "
+                                       "defaults."),
+                                    QMessageBox::Yes | QMessageBox::No);
+    if (confirm == QMessageBox::Yes) {
+        // Do restore
+        settings->copyDefaultSettings(CONFIG_INI, true);
+        settingsChanged = true;
+        done(QDialog::Accepted);
+    }
 }

@@ -75,48 +75,6 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>225</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Roboblocks Path</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="htmlIndexEdit"/>
-       </item>
-       <item>
-        <widget class="QToolButton" name="htmlIndexButton">
-         <property name="text">
-          <string>...</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="label_3">
@@ -186,7 +144,7 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="standardButtons">
-        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
        </property>
       </widget>
      </item>
@@ -203,8 +161,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>258</x>
+     <y>239</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -219,8 +177,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>326</x>
+     <y>239</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -235,24 +193,8 @@
    <slot>arduinoIdePathOpenDialog()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>476</x>
-     <y>40</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>249</x>
-     <y>124</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>htmlIndexButton</sender>
-   <signal>clicked()</signal>
-   <receiver>SettingsDialog</receiver>
-   <slot>htmlIndexOpenDialog()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>476</x>
-     <y>108</y>
+     <x>588</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>249</x>
@@ -263,6 +205,5 @@
  </connections>
  <slots>
   <slot>arduinoIdePathOpenDialog()</slot>
-  <slot>htmlIndexOpenDialog()</slot>
  </slots>
 </ui>

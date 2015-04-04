@@ -3,6 +3,7 @@
 
 #include "settingsstore.h"
 
+#include <QAbstractButton>
 #include <QDialog>
 
 namespace Ui {
@@ -25,7 +26,7 @@ public:
 
 public slots:
     void arduinoIdePathOpenDialog();
-    void htmlIndexOpenDialog();
+    void restoreSettings();
 
 private:
     Ui::SettingsDialog *ui;
