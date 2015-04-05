@@ -406,6 +406,7 @@ pressed: { border: 1px };</string>
     <addaction name="separator"/>
     <addaction name="actionOpen_2"/>
     <addaction name="actionInclude"/>
+    <addaction name="actionExamples"/>
     <addaction name="separator"/>
     <addaction name="actionSave_2"/>
     <addaction name="actionSave_as"/>
@@ -647,6 +648,16 @@ pressed: { border: 1px };</string>
   <action name="actionShow_hide_icon_labels">
    <property name="text">
     <string>Show/hide icon labels</string>
+   </property>
+  </action>
+  <action name="actionList_of_examples">
+   <property name="text">
+    <string>List of examples</string>
+   </property>
+  </action>
+  <action name="actionExamples">
+   <property name="text">
+    <string>Examples...</string>
    </property>
   </action>
  </widget>
@@ -1094,6 +1105,22 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionExamples</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionExamples()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -1116,5 +1143,6 @@ pressed: { border: 1px };</string>
   <slot>actionCode()</slot>
   <slot>actionGraph()</slot>
   <slot>actionIconLabels()</slot>
+  <slot>actionExamples()</slot>
  </slots>
 </ui>

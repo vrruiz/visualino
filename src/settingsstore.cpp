@@ -49,6 +49,11 @@ QString SettingsStore::defaultLanguage() {
     return settings->value(platform + "language", "en-GB").toString();
 }
 
+QString SettingsStore::examplesPath() {
+    return settings->value(platform + "examples_path",
+                           "/usr/share/visualino/examples/").toString();
+}
+
 QString SettingsStore::tmpDirName() {
     return relativePath("tmp_dir_name", "/tmp/visualino/");
 }
@@ -136,6 +141,10 @@ void SettingsStore::setIconLabels(bool icon_labels) {
 
 void SettingsStore::setDefaultLanguage(const QString &value) {
     settings->setValue(platform + "language", value);
+}
+
+void SettingsStore::setExamplesPath(const QString &value) {
+    settings->setValue(platform + "examples_path", value);
 }
 
 QString SettingsStore::relativePath(const QString &value,

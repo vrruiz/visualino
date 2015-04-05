@@ -33,8 +33,10 @@ private:
     QString dataString;
     QList<GraphWidget *> graphList;
 
-    void actionSaveAndSaveAs(bool askFileName);
-    void actionOpenInclude(const QString &title, bool clear = true);
+    void actionSaveAndSaveAs(bool askFileName, const QString &directory = "");
+    void actionOpenInclude(const QString &title,
+                           bool clear = true,
+                           const QString &directory = "");
     void arduinoExec(const QString &action);
     QString escapeCharacters(const QString& string);
     QString getXml();
@@ -44,6 +46,8 @@ private:
     bool isCommaSeparatedNumbers(const QString data);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
+    void openFileToWorkspace(const QString &xmlFileName,
+                             bool clear = true);
     void setArduinoBoard();
     void setXmlFileName(const QString &fileName);
     void serialPortOpen();
@@ -57,6 +61,7 @@ public slots:
     void actionAbout();
     void actionCloseMessages();
     void actionCode();
+    void actionExamples();
     void actionExportSketch();
     void actionIconLabels();
     void actionInclude();

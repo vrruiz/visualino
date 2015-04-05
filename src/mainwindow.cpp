@@ -146,6 +146,13 @@ void MainWindow::actionCode() {
     ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
 }
 
+void MainWindow::actionExamples() {
+    // Open an example from the examples folder
+    actionOpenInclude(tr("Examples"), true, settings->examplesPath());
+    // Void file name to prevent overwriting the original file by mistake
+    setXmlFileName("");
+}
+
 void MainWindow::actionExportSketch() {
     // Export workspace as Arduino Sketch
     QString inoFileName;
@@ -272,21 +279,33 @@ void MainWindow::actionCloseMessages() {
 
 void MainWindow::actionOpen() {
     // Open file
-    actionOpenInclude(tr("Open file"), true);
+    QString directory = QStandardPaths::locate(
+                QStandardPaths::DocumentsLocation,
+                "",
+                QStandardPaths::LocateDirectory);
+    actionOpenInclude(tr("Open file"), true, directory);
 }
 
-void MainWindow::actionOpenInclude(const QString &title, bool clear) {
+void MainWindow::actionOpenInclude(const QString &title,
+                                   bool clear,
+                                   const QString &directory) {
     // Open file dialog
     QFileDialog fileDialog(this, title);
     fileDialog.setFileMode(QFileDialog::AnyFile);
     fileDialog.setNameFilter(QString(tr("Blockly Files %1")).arg("(*.bly)"));
     fileDialog.setDefaultSuffix("bly");
+    if (!directory.isEmpty()) fileDialog.setDirectory(directory);
     if (!fileDialog.exec()) return; // Return if cancelled
     QStringList selectedFiles = fileDialog.selectedFiles();
     // Return if no file to open
     if (selectedFiles.count() < 1) return;
     QString xmlFileName = selectedFiles.at(0);
 
+    // Open file
+    openFileToWorkspace(xmlFileName, clear);
+}
+
+void MainWindow::openFileToWorkspace(const QString &xmlFileName, bool clear) {
     // Open file
     QFile xmlFile(xmlFileName);
     if (!xmlFile.open(QIODevice::ReadOnly)) {
@@ -310,6 +329,7 @@ void MainWindow::actionOpenInclude(const QString &title, bool clear) {
     if (clear) {
         setXmlFileName(xmlFileName);
     }
+
 }
 
 void MainWindow::actionOpenMessages() {
@@ -332,7 +352,8 @@ void MainWindow::actionVerify() {
     arduinoExec("--verify");
 }
 
-void MainWindow::actionSaveAndSaveAs(bool askFileName) {
+void MainWindow::actionSaveAndSaveAs(bool askFileName,
+                                     const QString &directory) {
     // Save XML file
     QString xmlFileName;
 
@@ -342,6 +363,7 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName) {
         fileDialog.setFileMode(QFileDialog::AnyFile);
         fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
         fileDialog.setDefaultSuffix("bly");
+        if (!directory.isEmpty()) fileDialog.setDirectory(directory);
         if (!fileDialog.exec()) return; // Return if cancelled
         QStringList selectedFiles = fileDialog.selectedFiles();
         // Return if no file to open
@@ -371,12 +393,20 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName) {
 
 void MainWindow::actionSave() {
     // Save XML file
-    actionSaveAndSaveAs(false);
+    QString directory = QStandardPaths::locate(
+                QStandardPaths::DocumentsLocation,
+                "",
+                QStandardPaths::LocateDirectory);
+    actionSaveAndSaveAs(false, directory);
 }
 
 void MainWindow::actionSaveAs() {
     // Save XML file with other name
-    actionSaveAndSaveAs(true);
+    QString directory = QStandardPaths::locate(
+                QStandardPaths::DocumentsLocation,
+                "",
+                QStandardPaths::LocateDirectory);
+    actionSaveAndSaveAs(true, directory);
 }
 
 void MainWindow::actionSettings() {
