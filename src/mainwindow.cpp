@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "aboutdialog.h"
 
 #include <QApplication>
 #include <QDebug>
@@ -130,6 +131,9 @@ void MainWindow::arduinoExec(const QString &action) {
 }
 
 void MainWindow::actionAbout() {
+    // Open About dialog
+    AboutDialog aboutDialog(this);
+    aboutDialog.exec();
 }
 
 void MainWindow::actionCode() {

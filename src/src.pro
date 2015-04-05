@@ -9,15 +9,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     settingsdialog.cpp \
     settingsstore.cpp \
-    graphwidget.cpp
+    graphwidget.cpp \
+    aboutdialog.cpp
 
 HEADERS += mainwindow.h \
     settingsdialog.h \
     settingsstore.h \
-    graphwidget.h
+    graphwidget.h \
+    aboutdialog.h
 
 FORMS += mainwindow.ui \
-    settingsdialog.ui
+    settingsdialog.ui \
+    aboutdialog.ui
 
 OTHER_FILES += ../config.ini ../ts/*.ts ../roboblocks/html/* ../icons/*
 

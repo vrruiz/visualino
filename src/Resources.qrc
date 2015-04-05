@@ -14,5 +14,6 @@
     </qresource>
     <qresource prefix="/">
         <file>../icons/splashscreen.png</file>
+        <file>../icons/about-header.png</file>
     </qresource>
 </RCC>
