@@ -104,11 +104,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="526"/>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="534"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
@@ -139,6 +134,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="526"/>
         <location filename="../src/mainwindow.ui" line="563"/>
         <source>Preferences</source>
         <translation type="unfinished"></translation>

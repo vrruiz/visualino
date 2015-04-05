@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="es_ES">
+<TS version="2.1" language="es_ES">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino is open source software (MIT license). Visit the web site at &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2015 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;It uses the following open source projects:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (LGPL license 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (MIT license).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (LGPL license).&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino es software libre (licencia MIT). Visite el sitio web en &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2015 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Este programa utiliza los siguientes proyectos de software libre:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (licencia LGPL 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (licencia MIT).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (licencia LGPL).&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino es software libre (licencia MIT). Visite el sitio web en &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2015 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Este programa utiliza los siguientes proyectos de software libre:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (licencia LGPL 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (licencia MIT).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (licencia LGPL).&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
@@ -112,9 +112,8 @@
         <translation>Nuevo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="526"/>
         <source>Settings</source>
-        <translation>Preferencias</translation>
+        <translation type="vanished">Preferencias</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="534"/>
@@ -147,6 +146,7 @@
         <translation>Ctrl+U</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="526"/>
         <location filename="../src/mainwindow.ui" line="563"/>
         <source>Preferences</source>
         <translation>Preferencias</translation>
@@ -235,7 +235,7 @@
     </message>
     <message>
         <source>Import file</source>
-        <translation>Importar fichero</translation>
+        <translation type="vanished">Importar fichero</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="207"/>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Roboblocks Path</source>
-        <translation>Ruta de Roboblocks</translation>
+        <translation type="vanished">Ruta de Roboblocks</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.ui" line="103"/>
@@ -329,11 +329,11 @@
     </message>
     <message>
         <source>Roboblocks</source>
-        <translation>Roboblocks</translation>
+        <translation type="vanished">Roboblocks</translation>
     </message>
     <message>
         <source>HTML (*.html)</source>
-        <translation>HTML (*.html)</translation>
+        <translation type="vanished">HTML (*.html)</translation>
     </message>
 </context>
 </TS>

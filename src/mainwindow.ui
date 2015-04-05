@@ -523,7 +523,7 @@ pressed: { border: 1px };</string>
      <normaloff>:/icons/icons/cog_24x24.png</normaloff>:/icons/icons/cog_24x24.png</iconset>
    </property>
    <property name="text">
-    <string>Settings</string>
+    <string>Preferences</string>
    </property>
   </action>
   <action name="actionNew_2">
