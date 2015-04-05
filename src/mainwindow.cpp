@@ -552,7 +552,6 @@ void MainWindow::serialPortOpen() {
     serial->setDataBits(QSerialPort::Data8);
     serial->setParity(QSerialPort::NoParity);
     serial->setStopBits(QSerialPort::OneStop);
-    serial->setFlowControl(QSerialPort::HardwareControl);
 
     // Connect
     if (serial->open(QIODevice::ReadWrite)) {
