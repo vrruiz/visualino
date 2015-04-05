@@ -40,6 +40,7 @@ private:
     QString getXml();
     QString getCode();
     void setXml(const QString &xml, bool clear = false);
+    void iconLabels();
     bool isCommaSeparatedNumbers(const QString data);
     bool listIsEqual(const QStringList &listOne, const QStringList &listTwo);
     void loadBlockly();
@@ -57,6 +58,7 @@ public slots:
     void actionCloseMessages();
     void actionCode();
     void actionExportSketch();
+    void actionIconLabels();
     void actionInclude();
     void actionInsertLanguage();
     void actionMessages();

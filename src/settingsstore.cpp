@@ -61,6 +61,10 @@ QString SettingsStore::htmlIndex() {
     return relativePath("html_index", "/usr/share/visualino/html/index.html");
 }
 
+bool SettingsStore::iconLabels() {
+    return settings->value(platform + "icon_labels", true).toBool();
+}
+
 void SettingsStore::copyDefaultSettings(const QString &fileName,
                                         bool overwrite) {
     // Locate config.ini in standard locations
@@ -124,6 +128,10 @@ void SettingsStore::setTmpFileName(const QString &value) {
 
 void SettingsStore::setHtmlIndex(const QString &value) {
     settings->setValue(platform + "html_index", value);
+}
+
+void SettingsStore::setIconLabels(bool icon_labels) {
+    settings->setValue(platform + "icon_labels", icon_labels);
 }
 
 void SettingsStore::setDefaultLanguage(const QString &value) {

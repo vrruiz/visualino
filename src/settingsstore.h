@@ -24,15 +24,17 @@ public:
     QString tmpDirName();
     QString tmpFileName();
     QString htmlIndex();
+    bool iconLabels();
 
+    void copyDefaultSettings(const QString &fileName = CONFIG_INI,
+                             bool overwrite = false);
     void setArduinoBoard(const QString &value);
     void setArduinoIdePath(const QString &value);
+    void setIconLabels(bool icon_labels);
     void setDefaultLanguage(const QString &value);
     void setTmpDirName(const QString &value);
     void setTmpFileName(const QString &value);
     void setHtmlIndex(const QString &value);
-    void copyDefaultSettings(const QString &fileName = CONFIG_INI,
-                             bool overwrite = false);
 
 private:
     QString platform;

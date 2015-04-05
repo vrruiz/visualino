@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
 
+    // Hide graphs widget
     ui->graphsWidget->setVisible(false);
 
     // Set monospaced font in the monitor
@@ -55,6 +56,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(5000);
 
     ui->consoleText->document()->setMaximumBlockCount(100);
+
+    // Show/hide icon labels in the menu bar
+    iconLabels();
 
     // Set process
     process = new QProcess();
@@ -186,6 +190,16 @@ void MainWindow::actionGraph() {
         ui->graphsWidget->setVisible(false);
         ui->graphButton->setChecked(false);
     }
+}
+
+void MainWindow::actionIconLabels() {
+    // Change icon labels mode
+    bool showIconLabels = settings->iconLabels();
+    showIconLabels = !showIconLabels;
+    // Update settings
+    settings->setIconLabels(showIconLabels);
+    // Update display
+    iconLabels();
 }
 
 void MainWindow::actionInclude() {
@@ -544,6 +558,15 @@ void MainWindow::serialPortOpen() {
     if (serial->open(QIODevice::ReadWrite)) {
         // Execute readSerial if data is available
         connect(serial, SIGNAL(readyRead()), this, SLOT(readSerial()));
+    }
+}
+
+void MainWindow::iconLabels() {
+    // Show/hide icon labels
+    if (settings->iconLabels() == true) {
+        ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    } else {
+        ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
     }
 }
 

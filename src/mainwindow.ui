@@ -431,6 +431,7 @@ pressed: { border: 1px };</string>
     <addaction name="actionMessages"/>
     <addaction name="actionShow_hide_monitor"/>
     <addaction name="actionShow_hide_code"/>
+    <addaction name="actionShow_hide_icon_labels"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menuView"/>
@@ -641,6 +642,11 @@ pressed: { border: 1px };</string>
   <action name="actionShow_hide_code">
    <property name="text">
     <string>Show/hide code</string>
+   </property>
+  </action>
+  <action name="actionShow_hide_icon_labels">
+   <property name="text">
+    <string>Show/hide icon labels</string>
    </property>
   </action>
  </widget>
@@ -855,8 +861,8 @@ pressed: { border: 1px };</string>
    <slot>actionCloseMessages()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>783</x>
-     <y>459</y>
+     <x>790</x>
+     <y>444</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -919,8 +925,8 @@ pressed: { border: 1px };</string>
    <slot>actionMonitorSend()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>747</x>
-     <y>80</y>
+     <x>745</x>
+     <y>110</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -935,8 +941,8 @@ pressed: { border: 1px };</string>
    <slot>actionMonitorSend()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>669</x>
-     <y>80</y>
+     <x>701</x>
+     <y>110</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -1063,8 +1069,24 @@ pressed: { border: 1px };</string>
    <slot>actionGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>770</x>
-     <y>80</y>
+     <x>789</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_hide_icon_labels</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionIconLabels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -1093,5 +1115,6 @@ pressed: { border: 1px };</string>
   <slot>actionInclude()</slot>
   <slot>actionCode()</slot>
   <slot>actionGraph()</slot>
+  <slot>actionIconLabels()</slot>
  </slots>
 </ui>
