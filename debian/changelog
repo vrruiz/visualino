@@ -1,3 +1,21 @@
+visualino (0.5) utopic; urgency=medium
+
+  * IDE: Add Examples feature. First batch of examples.
+  * IDE: Fix write in serial.
+  * IDE: Change label Settings to Preferences for coherence.
+  * IDE: Show/hide icon labels.
+  * About text modification.
+  * IDE: Add about dialog.
+  * IDE: Add restore defaults option to settings.
+  * Change default config for Windows. This closes #1 #2 #3
+  * IDE: Show labels for icons.
+  * Graph: Support for multiple values
+  * Graph: Fix remove first.
+  * Contributors file.
+  * Translation to Catalonian, by Jordi Binefa @JordiBinefa
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sun, 05 Apr 2015 22:47:14 +0100
+
 visualino (0.4) utopic; urgency=medium
 
   * Graph support. 
