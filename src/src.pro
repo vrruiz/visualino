@@ -40,7 +40,10 @@ config.files = ../config.ini
 html.path = $${INSTALLS_DESTDIR}/html
 html.files = ../roboblocks/html/*
 
+examples.path = $${INSTALLS_DESTDIR}/examples
+examples.files = ../roboblocks/examples/*
+
 translation.path = $${INSTALLS_DESTDIR}/ts
 translation.files = ../ts/*.qm
 
-INSTALLS += config html translation
+INSTALLS += config examples html translation
