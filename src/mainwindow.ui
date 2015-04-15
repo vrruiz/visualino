@@ -338,6 +338,11 @@ pressed: { border: 1px };</string>
           <string>arduino:avr:mega</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>arduino:avr:bt</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item>
