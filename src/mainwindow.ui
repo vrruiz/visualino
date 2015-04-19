@@ -586,6 +586,9 @@ pressed: { border: 1px };</string>
    </property>
   </action>
   <action name="actionMessages">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Show/hide messages</string>
    </property>
@@ -612,6 +615,9 @@ pressed: { border: 1px };</string>
    </property>
   </action>
   <action name="actionShow_hide_monitor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Show/hide monitor</string>
    </property>
@@ -651,6 +657,12 @@ pressed: { border: 1px };</string>
    </property>
   </action>
   <action name="actionShow_hide_icon_labels">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Show/hide icon labels</string>
    </property>

@@ -162,6 +162,7 @@ void MainWindow::actionExportSketch() {
     fileDialog.setFileMode(QFileDialog::AnyFile);
     fileDialog.setNameFilter(QString("Sketches %1").arg("(*.ino)"));
     fileDialog.setDefaultSuffix("ino");
+    fileDialog.setLabelText(QFileDialog::Accept, tr("Export"));
     if (!fileDialog.exec()) return; // Return if cancelled
     QStringList selectedFiles = fileDialog.selectedFiles();
     // Return if no file to open
@@ -275,6 +276,7 @@ void MainWindow::actionNew() {
 void MainWindow::actionCloseMessages() {
     // Hide messages window
     ui->messagesWidget->hide();
+    ui->actionMessages->setChecked(false);
 }
 
 void MainWindow::actionOpen() {
@@ -335,6 +337,7 @@ void MainWindow::openFileToWorkspace(const QString &xmlFileName, bool clear) {
 void MainWindow::actionOpenMessages() {
     // Open messages
     ui->messagesWidget->show();
+    ui->actionMessages->setChecked(true);
 }
 
 void MainWindow::actionQuit() {
@@ -363,6 +366,7 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName,
         fileDialog.setFileMode(QFileDialog::AnyFile);
         fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
         fileDialog.setDefaultSuffix("bly");
+        fileDialog.setLabelText(QFileDialog::Accept, tr("Save"));
         if (!directory.isEmpty()) fileDialog.setDirectory(directory);
         if (!fileDialog.exec()) return; // Return if cancelled
         QStringList selectedFiles = fileDialog.selectedFiles();
@@ -595,8 +599,10 @@ void MainWindow::iconLabels() {
     // Show/hide icon labels
     if (settings->iconLabels() == true) {
         ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        ui->actionShow_hide_icon_labels->setChecked(true);
     } else {
         ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui->actionShow_hide_icon_labels->setChecked(false);
     }
 }
 
