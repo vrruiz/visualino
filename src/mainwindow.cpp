@@ -25,9 +25,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Align last toolbar action to the right
-    QWidget* empty = new QWidget(this);
+    QWidget *empty = new QWidget(this);
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
+
+    // Align last action to the right in the monitor toolbar
+    QWidget *emptyMonitor = new QWidget(this);
+    emptyMonitor->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    ui->monitorToolBar->insertWidget(ui->actionMonitor, emptyMonitor);
+    // Hide monitor toolbar
+    ui->monitorToolBar->setVisible(false);
 
     // Hide graphs widget
     ui->graphsWidget->setVisible(false);
@@ -191,12 +198,12 @@ void MainWindow::actionGraph() {
         // Show graph
         ui->consoleText->setVisible(false);
         ui->graphsWidget->setVisible(true);
-        ui->graphButton->setChecked(true);
+        ui->actionGraph->setChecked(true);
     } else {
         // Hide graph
         ui->consoleText->setVisible(true);
         ui->graphsWidget->setVisible(false);
-        ui->graphButton->setChecked(false);
+        ui->actionGraph->setChecked(false);
     }
 }
 
@@ -227,10 +234,16 @@ void MainWindow::actionMonitor() {
     if (ui->widgetConsole->isVisible()) {
         serialPortClose();
         ui->actionMonitor->setChecked(false);
+        // Show main toolbar, hide monitor toolbar
+        ui->mainToolBar->setVisible(true);
+        ui->monitorToolBar->setVisible(false);
     } else {
         serialPortOpen();
         ui->consoleEdit->setFocus();
         ui->actionMonitor->setChecked(true);
+        // Hide main toolbar, show monitor toolbar
+        ui->mainToolBar->setVisible(false);
+        ui->monitorToolBar->setVisible(true);
     }
 }
 
