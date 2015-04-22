@@ -307,7 +307,8 @@ void MainWindow::actionOpenInclude(const QString &title,
     // Open file dialog
     QFileDialog fileDialog(this, title);
     fileDialog.setFileMode(QFileDialog::AnyFile);
-    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).arg("(*.bly)"));
+    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).
+                             arg("(*.bly *.xml)"));
     fileDialog.setDefaultSuffix("bly");
     if (!directory.isEmpty()) fileDialog.setDirectory(directory);
     if (!fileDialog.exec()) return; // Return if cancelled
