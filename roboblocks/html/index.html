@@ -37,6 +37,8 @@
             Blockly.addChangeListener(function () {
                 $('#code').html('<pre>' + Blockly.Arduino.workspaceToCode()
                     + '</pre>');
+                // webHelper is injected in Visualino
+                webHelper.sourceChanged();
             });
 
             // Show/hide code

@@ -1,14 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "settingsstore.h"
-#include "settingsdialog.h"
 #include "graphwidget.h"
+#include "jswebhelpers.h"
+#include "settingsdialog.h"
+#include "settingsstore.h"
 
 #include <QMainWindow>
-#include <QWebView>
 #include <QProcess>
 #include <QtSerialPort/QSerialPort>
+#include <QWebView>
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +33,8 @@ private:
     QSerialPort *serial;
     QString dataString;
     QList<GraphWidget *> graphList;
+    JsWebHelpers *webHelper;
+    bool sourceChanged;
 
     void actionSaveAndSaveAs(bool askFileName, const QString &directory = "");
     void actionOpenInclude(const QString &title,
@@ -55,7 +58,9 @@ private:
     QStringList portList();
     int saveXml(const QString &xmlFilePath);
     int saveSketch(const QString &inoFilePath);
+    void checkSourceChanged();
 
+    void closeEvent(QCloseEvent *bar);
 
 public slots:
     void actionAbout();
@@ -65,6 +70,7 @@ public slots:
     void actionExportSketch();
     void actionIconLabels();
     void actionInclude();
+    void actionInjectWebHelper();
     void actionInsertLanguage();
     void actionMessages();
     void actionMonitor();

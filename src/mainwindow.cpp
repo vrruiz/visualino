@@ -85,6 +85,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete webHelper;
     delete serial;
     delete settings;
     delete process;
@@ -147,6 +148,9 @@ void MainWindow::actionCode() {
 }
 
 void MainWindow::actionExamples() {
+    // Check whether source was changed
+    checkSourceChanged();
+
     // Open an example from the examples folder
     actionOpenInclude(tr("Examples"), true, settings->examplesPath());
     // Void file name to prevent overwriting the original file by mistake
@@ -260,11 +264,17 @@ void MainWindow::actionMessages() {
 }
 
 void MainWindow::actionNew() {
+    // Check whether source was changed
+    checkSourceChanged();
+
     // Unset file name
     setXmlFileName("");
 
     // Disable save as
     ui->actionSave_as->setEnabled(false);
+
+    // Reset source change status
+    webHelper->resetSourceChanged();
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
@@ -278,12 +288,18 @@ void MainWindow::actionCloseMessages() {
 }
 
 void MainWindow::actionOpen() {
+    // Check whether source was changed
+    checkSourceChanged();
+
     // Open file
     QString directory = QStandardPaths::locate(
                 QStandardPaths::DocumentsLocation,
                 "",
                 QStandardPaths::LocateDirectory);
     actionOpenInclude(tr("Open file"), true, directory);
+
+    // Reset source changed status
+    webHelper->resetSourceChanged();
 }
 
 void MainWindow::actionOpenInclude(const QString &title,
@@ -338,6 +354,9 @@ void MainWindow::actionOpenMessages() {
 }
 
 void MainWindow::actionQuit() {
+    // Check whether source was changed
+    checkSourceChanged();
+
     // Quit
     close();
 }
@@ -389,6 +408,9 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName,
 
     // Feedback
     statusBar()->showMessage(tr("Done saving."), 2000);
+
+    // Reset status changed status
+    webHelper->resetSourceChanged();
 }
 
 void MainWindow::actionSave() {
@@ -494,6 +516,13 @@ void MainWindow::loadBlockly() {
     ui->webView->page()->mainFrame()->setScrollBarPolicy(
                 Qt::Horizontal,
                 Qt::ScrollBarAlwaysOff);
+
+    // Signal is emitted before frame loads any web content
+    webHelper = new JsWebHelpers();
+    connect(ui->webView->page()->mainFrame(),
+            SIGNAL(javaScriptWindowObjectCleared()),
+            this,
+            SLOT(actionInjectWebHelper()));
 }
 
 void MainWindow::setArduinoBoard() {
@@ -782,4 +811,34 @@ QString MainWindow::escapeCharacters(const QString& string)
     // Replace " with \"
     rValue = rValue.replace('"', quote);
     return rValue;
+}
+
+void MainWindow::actionInjectWebHelper() {
+    // Inject the webHelper object in the webview. This is used in index.html,
+    // where a call is made back to webHelper.sourceChanged() function.
+    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject(
+                QString("webHelper"),
+                webHelper);
+}
+
+void MainWindow::checkSourceChanged() {
+    // Check whether source has changed
+    if (webHelper->sourceChanges() > 1) {
+        // Does the user want to save the changes?
+        QMessageBox msgBox(this);
+        msgBox.setText(QString(tr("There are unsaved changes that could be "
+                                  "lost. Do you want to save them before "
+                                  "continuing?")));
+        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        int result = msgBox.exec();
+        if (result == QMessageBox::Yes) {
+            // Yes, save changes
+            actionSave();
+        }
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    // Check whether source was changed
+    checkSourceChanged();
 }

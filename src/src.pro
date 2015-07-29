@@ -10,13 +10,15 @@ SOURCES += main.cpp\
     settingsdialog.cpp \
     settingsstore.cpp \
     graphwidget.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    jswebhelpers.cpp
 
 HEADERS += mainwindow.h \
     settingsdialog.h \
     settingsstore.h \
     graphwidget.h \
-    aboutdialog.h
+    aboutdialog.h \
+    jswebhelpers.h
 
 FORMS += mainwindow.ui \
     settingsdialog.ui \
