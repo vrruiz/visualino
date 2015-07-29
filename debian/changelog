@@ -1,3 +1,9 @@
+visualino (0.5.2) utopic; urgency=medium
+
+  * Ubuntu PPA.
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sat, 18 Apr 2015 02:52:24 +0100
+
 visualino (0.5) utopic; urgency=medium
 
   * IDE: Add Examples feature. First batch of examples.

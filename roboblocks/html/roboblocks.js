@@ -1,4 +1,4 @@
-/*! roboblocks - v0.1.12 - 2015-02-28
+/*! roboblocks - v0.1.12 - 2015-01-16
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -49,7 +49,7 @@
             return this;
         };
         RoboBlocks.locales.initialize = function() {
-            var lang = options.lang || window.roboblocksLanguage || 'en-GB';
+            var lang = options.lang || 'en-GB';
             this.setDefaultLang(lang);
             return this;
         };

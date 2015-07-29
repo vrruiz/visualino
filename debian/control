@@ -1,4 +1,5 @@
 Source: visualino
+Section: electronics
 Maintainer: Víctor R. Ruiz <vrruiz@gmail.com>
 Build-Depends: debhelper (>= 9),
     qt5-default,
@@ -7,7 +8,7 @@ Build-Depends: debhelper (>= 9),
     libqt5serialport5-dev,
     qttools5-dev-tools
 Standards-Version: 3.9.5
-Homepage: https://github.com/vrruiz/visualino
+Homepage: http://www.visualino.net/
 Vcs-Git: git://github.com/vrruiz/visualino.git
 
 Package: visualino

@@ -25,9 +25,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Align last toolbar action to the right
-    QWidget* empty = new QWidget(this);
+    QWidget *empty = new QWidget(this);
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     ui->mainToolBar->insertWidget(ui->actionMonitor, empty);
+
+    // Align last action to the right in the monitor toolbar
+    QWidget *emptyMonitor = new QWidget(this);
+    emptyMonitor->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    ui->monitorToolBar->insertWidget(ui->actionMonitor, emptyMonitor);
+    // Hide monitor toolbar
+    ui->monitorToolBar->setVisible(false);
 
     // Hide graphs widget
     ui->graphsWidget->setVisible(false);
@@ -166,6 +173,7 @@ void MainWindow::actionExportSketch() {
     fileDialog.setFileMode(QFileDialog::AnyFile);
     fileDialog.setNameFilter(QString("Sketches %1").arg("(*.ino)"));
     fileDialog.setDefaultSuffix("ino");
+    fileDialog.setLabelText(QFileDialog::Accept, tr("Export"));
     if (!fileDialog.exec()) return; // Return if cancelled
     QStringList selectedFiles = fileDialog.selectedFiles();
     // Return if no file to open
@@ -194,12 +202,12 @@ void MainWindow::actionGraph() {
         // Show graph
         ui->consoleText->setVisible(false);
         ui->graphsWidget->setVisible(true);
-        ui->graphButton->setChecked(true);
+        ui->actionGraph->setChecked(true);
     } else {
         // Hide graph
         ui->consoleText->setVisible(true);
         ui->graphsWidget->setVisible(false);
-        ui->graphButton->setChecked(false);
+        ui->actionGraph->setChecked(false);
     }
 }
 
@@ -230,10 +238,16 @@ void MainWindow::actionMonitor() {
     if (ui->widgetConsole->isVisible()) {
         serialPortClose();
         ui->actionMonitor->setChecked(false);
+        // Show main toolbar, hide monitor toolbar
+        ui->mainToolBar->setVisible(true);
+        ui->monitorToolBar->setVisible(false);
     } else {
         serialPortOpen();
         ui->consoleEdit->setFocus();
         ui->actionMonitor->setChecked(true);
+        // Hide main toolbar, show monitor toolbar
+        ui->mainToolBar->setVisible(false);
+        ui->monitorToolBar->setVisible(true);
     }
 }
 
@@ -285,6 +299,7 @@ void MainWindow::actionNew() {
 void MainWindow::actionCloseMessages() {
     // Hide messages window
     ui->messagesWidget->hide();
+    ui->actionMessages->setChecked(false);
 }
 
 void MainWindow::actionOpen() {
@@ -308,7 +323,8 @@ void MainWindow::actionOpenInclude(const QString &title,
     // Open file dialog
     QFileDialog fileDialog(this, title);
     fileDialog.setFileMode(QFileDialog::AnyFile);
-    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).arg("(*.bly)"));
+    fileDialog.setNameFilter(QString(tr("Blockly Files %1")).
+                             arg("(*.bly *.xml)"));
     fileDialog.setDefaultSuffix("bly");
     if (!directory.isEmpty()) fileDialog.setDirectory(directory);
     if (!fileDialog.exec()) return; // Return if cancelled
@@ -351,6 +367,7 @@ void MainWindow::openFileToWorkspace(const QString &xmlFileName, bool clear) {
 void MainWindow::actionOpenMessages() {
     // Open messages
     ui->messagesWidget->show();
+    ui->actionMessages->setChecked(true);
 }
 
 void MainWindow::actionQuit() {
@@ -382,6 +399,7 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName,
         fileDialog.setFileMode(QFileDialog::AnyFile);
         fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
         fileDialog.setDefaultSuffix("bly");
+        fileDialog.setLabelText(QFileDialog::Accept, tr("Save"));
         if (!directory.isEmpty()) fileDialog.setDirectory(directory);
         if (!fileDialog.exec()) return; // Return if cancelled
         QStringList selectedFiles = fileDialog.selectedFiles();
@@ -437,7 +455,8 @@ void MainWindow::actionSettings() {
     QString defaultLanguage = settings->defaultLanguage();
     // Supported list of languages
     QStringList languageList;
-    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pt-PT";
+    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pt-BR"
+                 << "pt-PT";
     SettingsDialog settingsDialog(settings, languageList, this);
     int result = settingsDialog.exec();
     if (result && settingsDialog.changed()) {
@@ -623,8 +642,10 @@ void MainWindow::iconLabels() {
     // Show/hide icon labels
     if (settings->iconLabels() == true) {
         ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        ui->actionShow_hide_icon_labels->setChecked(true);
     } else {
         ui->mainToolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui->actionShow_hide_icon_labels->setChecked(false);
     }
 }
 
