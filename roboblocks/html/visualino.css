@@ -8,7 +8,7 @@ html, body {
     float: right;
     width: 33%;
     height: 100%;
-    background-color: #D2D2D2;
+    background-color: #f0f0f0;
     color: #5F5F5F;
     overflow: auto;
 }
@@ -18,4 +18,3 @@ html, body {
     width: 100%;
     margin: 0;
 }
-
