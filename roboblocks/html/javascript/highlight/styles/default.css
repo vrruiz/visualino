@@ -6,7 +6,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 .hljs {
   display: block;
-  overflow-x: auto;
+  overflow-x: none;
   padding: 0.5em;
   background: #f0f0f0;
   -webkit-text-size-adjust: none;
