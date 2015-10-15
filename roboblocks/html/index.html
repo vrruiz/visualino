@@ -35,6 +35,25 @@
             $('.blocklySvg, #blockly').height('100%');
             $('.blocklySvg').width('100%');
 
+            var colors = [
+                "",
+                RoboBlocks.LANG_COLOUR_PROCEDURES,
+                RoboBlocks.LANG_COLOUR_CONTROL,
+                RoboBlocks.LANG_COLOUR_LOGIC,
+                RoboBlocks.LANG_COLOUR_MATH,
+                RoboBlocks.LANG_COLOUR_VARIABLES,
+                RoboBlocks.LANG_COLOUR_TEXT,
+                RoboBlocks.LANG_COLOUR_COMMUNICATION,
+                RoboBlocks.LANG_COLOUR_ZUM,
+                RoboBlocks.LANG_COLOUR_BQ,
+                RoboBlocks.LANG_COLOUR_ADVANCED,
+                RoboBlocks.LANG_COLOUR_LCD,
+                RoboBlocks.LANG_COLOUR_SERVO,
+            ];
+            $('.blocklyTreeRow').each( function (i,e) {
+                $(e).prepend('<span class="treeLabelBlock" style="background-color:' + colors[i] + '"></span>');
+            });
+
             // Update code
             Blockly.addChangeListener(function () {
                 $('#code').html('<code class="c++"><pre>'
@@ -69,6 +88,7 @@
                 str = str.replace(/>/g, "&gt;");
                 return str;
             }
+
     </script>
 </body>
 </html>

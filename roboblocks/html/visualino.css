@@ -18,3 +18,10 @@ html, body {
     width: 100%;
     margin: 0;
 }
+
+.treeLabelBlock {
+  float: left;
+  margin: 0 5px 0 5px;
+  width: 10px;
+  height: 100%; 
+}
