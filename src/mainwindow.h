@@ -62,6 +62,9 @@ private:
 
     void closeEvent(QCloseEvent *bar);
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *event);
+
 public slots:
     void actionAbout();
     void actionCloseMessages();

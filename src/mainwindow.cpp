@@ -9,6 +9,7 @@
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QMessageBox>
+#include <QKeyEvent>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QScrollBar>
 #include <QSettings>
@@ -88,6 +89,9 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(messageChanged(QString)),
             this,
             SLOT(onStatusMessageChanged(QString)));
+
+    // Filter events to capture backspace key
+    ui->webView->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -862,4 +866,40 @@ void MainWindow::checkSourceChanged() {
 void MainWindow::closeEvent(QCloseEvent *event) {
     // Check whether source was changed
     checkSourceChanged();
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
+    // Backspace filter to prevent a blank page.
+    //
+    // Based on this code: http://ynonperek.com/qt-event-filters.html
+    //
+    // Specially in Mac OS X, the backspace key generates a page back event. In
+    // order to disable that action, this event filter captures the key presses
+    // to capture Backspace. Then, if there is a text edit field in focus, then
+    // let the event to flow, but if not, it ignores it.
+    //
+    if (obj == ui->webView) {
+        if (event->type() == QEvent::KeyPress) {
+            QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+            if (keyEvent->key() == Qt::Key_Backspace) {
+                // Is the active element a text field?
+                QWebFrame *frame = ui->webView->page()->mainFrame();
+                QVariant code = frame->evaluateJavaScript(
+                    "document.activeElement.type");
+                QString type = code.toString();
+                if (type == "text") {
+                    // Text field: pass the event to the widget
+                    return false;
+                } else {
+                    // No text field: ignore the event
+                    return true;
+                }
+            }
+        }
+        // Pass the event to the widget
+        return false;
+    } else {
+        // Pass the event on to the parent class
+        return QMainWindow::eventFilter(obj, event);
+    }
 }
