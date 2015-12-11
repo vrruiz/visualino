@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-11-28
+/*! roboblocks - v0.2.3 - 2015-12-05
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -6956,6 +6956,12 @@
                 // branch = branch.substring(0, branch.length - 2);
             }
             // branch=branch.replace(/&amp;/g, '');
+            if (this.getFieldValue('MODE') === 'UNTIL') {
+                if (!argument0.match(/^\w+$/)) {
+                    argument0 = '(' + argument0 + ')';
+                }
+                argument0 = '!' + argument0;
+            }
             code += JST['controls_doWhile']({
                 'argument0': argument0,
                 'branch': branch
@@ -6969,7 +6975,11 @@
             init: function() {
                 this.setColour(RoboBlocks.LANG_COLOUR_CONTROL);
                 this.appendStatementInput('DO').appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILE_OPERATOR_DO'));
-                this.appendValueInput('WHILE').setCheck(Boolean).appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILE_OPERATOR_WHILE'));
+                this.appendValueInput('WHILE').setCheck(Boolean).appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_WHILEUNTIL_TITLE_REPEAT')).appendField(new Blockly.FieldDropdown([
+                    [RoboBlocks.locales.getKey('LANG_CONTROLS_WHILEUNTIL_OPERATOR_WHILE'), 'WHILE'],
+                    [RoboBlocks.locales.getKey('LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL'), 'UNTIL']
+                ]), 'MODE');
+                // this.appendValueInput('WHILE').setCheck(Boolean).appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILE_OPERATOR_WHILE'));
                 this.setPreviousStatement(true);
                 this.setNextStatement(true);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILE_TOOLTIP'));
