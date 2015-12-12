@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="javascript/highlight/styles/default.css">
 </head>
 <body>
+    <xml id="startBlocks" style="display: none">
+        <block type="controls_setupLoop" id="10" x="20" y="20" deletable="false" movable="false">
+        </block>
+    </xml>
     <div id="wrap">
         <div id="blockly" style="float: left; width: 66%;"></div>
         <div id="code" style="float: right; width: 34%;"></div>
@@ -24,14 +28,20 @@
                 || window.roboblocksLanguage == null) {
                 var roboblocksLanguage = 'en-GB';
             }
+
             RoboBlocks.load({
-                zoom:0.5
+                zoom: 0.5
             });
+
             // New workspace for each test case
             var el = document.getElementById('blockly');
             Blockly.inject(el, {
                 toolbox: Blockly.createToolbox()
             });
+            // Create a default setup/loop block
+            Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),
+                document.getElementById('startBlocks'));
+
             $('.blocklySvg, #blockly').height('100%');
             $('.blocklySvg').width('100%');
 

@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-12-05
+/*! roboblocks - v0.2.3 - 2015-12-12
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -239,6 +239,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Interrompre el bucle que conté aquesta instrucció.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Saltar-se la resta d\'accions d\'aquesta iteració i continuar amb la següent iteració.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Atenció: Aquest bloc només pot ser usat dins d\'un bucle.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Inicio',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Repetir',
                 LANG_CONTROLS_SWITCH: 'si ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Executa les accions del cas que es compleixi.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Executa les accions del cas que es compleixi.',
@@ -657,6 +659,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Break out of the containing loop.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Skip the rest of this loop, and continue with the next iteration.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Warning: This block may only be used within a loop.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'switch ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Execute the statement of the case .',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Use the switch statement to select one of many blocks of code to be executed.',
@@ -1075,6 +1079,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Interrumpir el bucle que contiene esta instrucción.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Saltarse el resto de acciones de esta iteración y continuar con la siguiente iteración.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Atención: Este bloque sólo puede ser usado dentro de un bucle.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Inicio',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Repetir',
                 LANG_CONTROLS_SWITCH: 'si ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Ejecuta las acciones del caso que se cumpla.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Ejecuta las acciones del caso que se cumpla.',
@@ -1494,6 +1500,8 @@
                 LANG_CONTROLS_SWITCH_SWITCH_TOOLTIP: 'Kasu desberdinak betetzen diren banan-bana alderatzen ditu bloke honek.',
                 LANG_CONTROLS_SWITCH_CASE_TOOLTIP: 'kasu ',
                 LANG_CONTROLS_SWITCH_DEFAULT_TOOLTIP: '"default" blokeak aurreko kasuetatik bat ere ez bada bete exekutatu behar den ekintza zehazten du.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH_IS: 'kasua: ',
                 LANG_CONTROLS_SWITCH_CASE: 'kasua ',
                 LANG_CONTROLS_SWITCH_COLON: ': ',
@@ -1898,6 +1906,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Interrompre la boucle contenant ces instructions.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Passer le reste de cette boucle et continuer avec la prochaine itération.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Attention : Ce bloc ne peut être utilisé que dans une boucle.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'si ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Exécute les instructions du cas.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Utiliser l’instruction “si” pour sélectionner un des nombreux blocs de code à exécuter.',
@@ -2311,6 +2321,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Condizione d\'uscita dal ciclo.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Saltare il resto del ciclo e continuare con la prossima interazione.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Attenzione: questo blocco può essere usato solo insieme ad un CICLO.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'commuta ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Esegue il codice in un determinato caso.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Usa il comando COMMUTA per selezionare uno o più blocchi di codice da eseguire.',
@@ -2724,6 +2736,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Przerwij wewnętrzną pętlę wykonania.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Pomiń resztę tej pętli i kontynuuj następny przebieg.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Ostrzeżenie: Ten blok może być użyty tylko w pętli.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'Przełącznik',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Wykonaj polecenie danego przypadku.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Użyj polecenia Przełącznik aby wybrać jeden z wielu bloków kodu do wykonania.',
@@ -3137,6 +3151,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Sair do "loop" nesta instrução.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Saltar o resto das ações desta volta e continuar com para a próxima volta.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Atenção: Este bloco só pode ser usado dentro de um "loop".',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'se ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'executa as ações se for este o caso.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'executa as ações se for este o caso.',
@@ -3550,6 +3566,8 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Sair do "loop" nesta instrução.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Saltar o resto das accões desta volta e continuar com para a próxima volta.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Atenção: Este bloco só pode ser usado dentro de um "loop".',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                 LANG_CONTROLS_SWITCH: 'se ',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'executa as acções se for este o caso.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'executa as acções se for este o caso.',
@@ -3963,6 +3981,8 @@
                         LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Выйдите из "петли" в этом действии.',
                         LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Пропустите оставшуюся часть действий этого круга, и продолжить со следующего круга.',
                         LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Внимание: Этот блок может быть использован только в пределах "петли".',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
                         LANG_CONTROLS_SWITCH: 'если',
                         LANG_CONTROLS_SWITCH_TOOLTIP_1: 'выполняет действия, если это так.',
                         LANG_CONTROLS_SWITCH_TOOLTIP_2: 'выполняет действия, если это так.',
@@ -4897,7 +4917,7 @@
             return __p
         };
 
-        this["JST"]["controls_setup"] = function(obj) {
+        this["JST"]["controls_setupLoop"] = function(obj) {
             obj || (obj = {});
             var __t, __p = '',
                 __e = _.escape;
@@ -5096,7 +5116,7 @@
             var __t, __p = '',
                 __e = _.escape;
             with(obj) {
-                __p += 'lcd.begin(16, 2);\n  lcd.clear();\n';
+                __p += 'lcd.begin(16, 2);\nlcd.clear();\n';
 
             }
             return __p
@@ -7513,7 +7533,7 @@
 
 
 
-        // Source: src/blocks/controls_setup/controls_setup.js
+        // Source: src/blocks/controls_setupLoop/controls_setupLoop.js
         /* global Blockly, JST, RoboBlocks */
         /* jshint sub:true */
         /**
@@ -7521,24 +7541,30 @@
          * @return {String} Code generated with block parameters
          */
 
-        Blockly.Arduino.controls_setup = function() {
+        Blockly.Arduino.controls_setupLoop = function() {
             // Add statements to setup.
             var branch = Blockly.Arduino.statementToCode(this, 'SETUP');
             branch = branch.replace(/&quot;/g, '"');
 
-            Blockly.Arduino.setups_['X_SETUP'] = JST['controls_setup']({
+            Blockly.Arduino.setups_['X_SETUP'] = JST['controls_setupLoop']({
                 'branch': branch
             });
 
-            return '';
+            var content = Blockly.Arduino.statementToCode(this, 'LOOP');
+            content = content.replace(/&quot;/g, '"');
+            content = JST['controls_setupLoop']({
+                'branch': content
+            });
+            return content;
         };
-        Blockly.Blocks.controls_setup = {
+        Blockly.Blocks.controls_setupLoop = {
             // Setup statements.
             category: RoboBlocks.locales.getKey('LANG_CATEGORY_CONTROLS'),
             // helpUrl: RoboBlocks.URL_SETUP,
             init: function() {
                 this.setColour(RoboBlocks.LANG_COLOUR_CONTROL);
-                this.appendStatementInput('SETUP').appendField('Setup');
+                this.appendStatementInput('SETUP').appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE'));
+                this.appendStatementInput('LOOP').appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE'));
                 this.setPreviousStatement(false);
                 this.setNextStatement(false);
             }
@@ -8204,7 +8230,7 @@
          */
         Blockly.Arduino.lcd_def = function() {
             Blockly.Arduino.definitions_['define_lcd'] = JST['lcd_def_definitions']({});
-            Blockly.Arduino.definitions_['declare_var_LCD'] = 'LiquidCrystal lcd(0);\n';
+            Blockly.Arduino.definitions_['declare_var_LCD'] = 'LiquidCrystal lcd(12, 11, 5, 4, 3, 2);\n';
             Blockly.Arduino.setups_['setup_lcd_'] = JST['lcd_def_setups']({});
             return '';
         };
@@ -8229,6 +8255,7 @@
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_LCD_DEF_TOOLTIP'));
             }
         };
+
         // Source: src/blocks/lcd_print/lcd_print.js
         /* global Blockly, JST, RoboBlocks */
         /* jshint sub:true */
