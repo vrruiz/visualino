@@ -1,3 +1,20 @@
+visualino (0.6.1) wily; urgency=medium
+
+  * Update examples with setupLoop block.
+  * Add setupLoop block.
+  * Update roboblocks (do/while).
+  * Fix #15: Delete key in Mac makes the environment to disappear.
+  * Smaller inline block images.
+  * Update contributors.
+  * Polish translation.
+  * Russian translation.
+  * Assign colors to block menus.
+  * Syntax highlighting.
+  * Polish UI translation.
+  * Warning for unsaved changes.
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sun, 13 Dec 2015 00:56:44 +0000
+
 visualino (0.5.2) utopic; urgency=medium
 
   * Ubuntu PPA.
