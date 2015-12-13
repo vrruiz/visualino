@@ -296,8 +296,7 @@ void MainWindow::actionNew() {
 
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript(
-                "Blockly.mainWorkspace.clear(); renderContent();");
+    frame->evaluateJavaScript("resetWorkspace();");
 }
 
 void MainWindow::actionCloseMessages() {

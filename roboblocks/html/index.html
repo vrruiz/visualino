@@ -9,8 +9,7 @@
 </head>
 <body>
     <xml id="startBlocks" style="display: none">
-        <block type="controls_setupLoop" id="10" x="20" y="20" deletable="false" movable="false">
-        </block>
+        <block type="controls_setupLoop" deletable="false"></block>
     </xml>
     <div id="wrap">
         <div id="blockly" style="float: left; width: 66%;"></div>
@@ -97,6 +96,12 @@
                 str = str.replace(/</g, "&lt;");
                 str = str.replace(/>/g, "&gt;");
                 return str;
+            }
+
+            function resetWorkspace() {
+                Blockly.mainWorkspace.clear();
+                Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),
+                    document.getElementById('startBlocks'));
             }
 
     </script>
