@@ -1,7 +1,10 @@
 #!/usr/bin/make -f
 # See debhelper(7) (uncomment to enable)
 # output every command that modifies files on the build system.
-#DH_VERBOSE = 1
+export DH_VERBOSE = 1
+export DH_ALWAYS_EXCLUDE=CVS:.svn:.git:.gitignore:*.pyc:LICENSE:LICENSE.*:COPYING:COPYING.*:
+
+export QT_SELECT=qt5
 
 # see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*
 DPKG_EXPORT_BUILDFLAGS = 1
@@ -19,7 +22,7 @@ include /usr/share/dpkg/default.mk
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ 
+	dh $@
 
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )
