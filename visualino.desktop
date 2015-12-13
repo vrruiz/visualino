@@ -1,9 +1,11 @@
 [Desktop Entry]
-Version=0.1
-Name=Visualino
-Comment=Visual Programming Environment for Arduino.
-Exec=/usr/bin/visualino
-Icon=/usr/share/visualino/icons/icon.png
-Terminal=false
 Type=Application
-Categories=Utility;Application;Programming;
+Version=0.6
+Name=Visualino
+Comment=Visual Programming Environment for Arduino
+Icon=/usr/share/visualino/icons/icon.png
+Exec=visualino %f
+TryExec=visualino
+Categories=Education;Development;
+StartupNotify=true
+Terminal=false
