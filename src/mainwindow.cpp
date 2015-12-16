@@ -458,8 +458,8 @@ void MainWindow::actionSettings() {
     QString defaultLanguage = settings->defaultLanguage();
     // Supported list of languages
     QStringList languageList;
-    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pl-PL" << "pt-BR"
-                 << "pt-PT";
+    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pl-PL"
+                 << "pt-BR" << "pt-PT" << "ru";
     SettingsDialog settingsDialog(settings, languageList, this);
     int result = settingsDialog.exec();
     if (result && settingsDialog.changed()) {
