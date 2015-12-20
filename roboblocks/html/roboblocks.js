@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-12-12
+/*! roboblocks - v0.2.3 - 2015-12-20
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -2601,22 +2601,22 @@
                 LANG_CATEGORY_LOGIC: 'Logiczne',
                 LANG_LOGIC_OPERATION_AND: 'i',
                 LANG_LOGIC_OPERATION_OR: 'lub',
-                LANG_LOGIC_COMPARE_TOOLTIP_EQ: 'Sprawdza czy oba wejścia są równe.',
-                LANG_LOGIC_COMPARE_TOOLTIP_NEQ: 'Sprawdza czy oba wejścia są różne.',
-                LANG_LOGIC_COMPARE_TOOLTIP_LT: 'Sprawdza czy pierwsze wejście jest mniejsze od drugiego.',
-                LANG_LOGIC_COMPARE_TOOLTIP_LTE: 'Sprawdza czy pierwsze wejście jest równe lub mniejsze od drugiego.',
-                LANG_LOGIC_COMPARE_TOOLTIP_GT: 'Sprawdza czy pierwsze wejście jest większe od drugiego.',
-                LANG_LOGIC_COMPARE_TOOLTIP_GTE: 'Sprawdza czy pierwsze wejście jest równe lub większe od drugiego.',
-                LANG_LOGIC_OPERATION_TOOLTIP_AND: 'Sprawdza czy oba wejścia są prawdą.',
-                LANG_LOGIC_OPERATION_TOOLTIP_OR: 'Sprawdza czy którekolwiek wejście jest prawdą.',
+                LANG_LOGIC_COMPARE_TOOLTIP_EQ: 'Sprawdza czy obie wartości są równe.',
+                LANG_LOGIC_COMPARE_TOOLTIP_NEQ: 'Sprawdza czy obie wartości są różne.',
+                LANG_LOGIC_COMPARE_TOOLTIP_LT: 'Sprawdza czy pierwsza wartość jest mniejsza od drugiej.',
+                LANG_LOGIC_COMPARE_TOOLTIP_LTE: 'Sprawdza czy pierwsza wartość jest równa lub mniejsza od drugiej.',
+                LANG_LOGIC_COMPARE_TOOLTIP_GT: 'Sprawdza czy pierwsza wartość jest większa od drugiej.',
+                LANG_LOGIC_COMPARE_TOOLTIP_GTE: 'Sprawdza czy pierwsza wartość jest równa lub większa od drugiea.',
+                LANG_LOGIC_OPERATION_TOOLTIP_AND: 'Sprawdza czy obie wartości są prawdą.',
+                LANG_LOGIC_OPERATION_TOOLTIP_OR: 'Sprawdza czy którakolwiek wartość jest prawdą.',
                 LANG_LOGIC_NEGATE_INPUT_NOT: 'nie',
-                LANG_LOGIC_NEGATE_TOOLTIP: 'Zwraca zaprzeczenie wejścia.',
+                LANG_LOGIC_NEGATE_TOOLTIP: 'Zwraca zaprzeczenie wartości.',
                 LANG_LOGIC_NEGATE_HELPURL: '',
                 LANG_LOGIC_BOOLEAN_TRUE: 'prawda',
                 LANG_LOGIC_BOOLEAN_FALSE: 'fałsz',
                 LANG_LOGIC_BOOLEAN_TOOLTIP: 'Zwraca prawdę lub fałsz.',
                 //bloki komunikacyjne:
-                LANG_CATEGORY_COMMUNICATION: 'Komunikacja',
+                LANG_CATEGORY_COMMUNICATION: 'Komunikacyjne',
                 LANG_BQ_BLUETOOTH_RECEIVE: 'Odbiera dane przez Bluetooth',
                 LANG_BQ_BLUETOOTH_RECEIVE_BLUETOOTH: 'Bluetooth',
                 LANG_BQ_BLUETOOTH_RECEIVE_TOOLTIP: 'Zwraca dane odebrane przez moduł Bluetooth',
@@ -2650,7 +2650,7 @@
                 LANG_ADVANCED_SERIAL_SPECIAL_LINE_FEED: 'Znak następnej linii (LF)',
                 LANG_ADVANCED_SERIAL_SPECIAL_TOOLTIP: 'Wpisuje znaki specjalne.',
                 //bloki bq:
-                LANG_CATEGORY_BQ: 'bloki Octopus',
+                LANG_CATEGORY_BQ: 'Bloki Octopus',
                 LANG_BQ_BAT: 'BAT - czujnik ultradźwiękowy',
                 LANG_BQ_BAT_RED_PIN: 'Echo PIN#',
                 LANG_BQ_BAT_BLUE_PIN: 'Wyzwalacz PIN#',
@@ -2717,40 +2717,40 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: ')',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'ustawia podświetlenie ekranu LCD.',
                 LANG_LCD_PRINT: 'Wyświetl na LCD',
-                LANG_LCD_PRINT_POSITION: 'Ustaw pozycję tekstu?',
+                LANG_LCD_PRINT_POSITION: 'Ustaw pozycję tekstu.',
                 LANG_LCD_PRINT_TOOLTIP: 'Wyświetla ciąg znaków na wyświetlaczu LCD na określonej pozycji lub na następnej dostępnej.',
                 LANG_LCD_CLEAR: 'Czyść LCD',
                 LANG_LCD_CLEAR_TOOLTIP: 'Wygasza segmenty LCD',
                 //bloki sterujące:
-                LANG_CATEGORY_CONTROLS: 'Sterowanie',
+                LANG_CATEGORY_CONTROLS: 'Sterujące',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Czekaj (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Czeka przez czas określony w milisekundach (ms)',
-                LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
-                LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
-                LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
-                LANG_CONTROLS_EXECUTE: 'Execute',
-                LANG_CONTROLS_EXECUTE_TOOLTIP: 'Executes C/C++ code. Use with caution, as it can easily break the program and prevent it from compiling.',
-                LANG_CONTROLS_IF_TOOLTIP_1: 'Jeżeli warunek jest prawdą, wykonaj polecenia.',
-                LANG_CONTROLS_IF_TOOLTIP_2: 'Jeżeli warunek jest prawdą, wykonaj pierwszy blok poleceń. W przeciwnym przypadku wykonaj drugi blok poleceń.',
-                LANG_CONTROLS_IF_TOOLTIP_3: 'Jeżeli pierwszy warunek jest prawdą, wykonaj pierwszy blok poleceń. W przeciwnym przypadku, jeżeli druga wartość jest prawdą, wykonaj drugi blok poleceń.',
-                LANG_CONTROLS_IF_TOOLTIP_4: 'Jeżeli pierwszy warunek jest prawdą, wykonaj pierwszy blok poleceń. W przeciwnym przypadku, jeżeli druga wartość jest prawdą, wykonaj drugi blok poleceń. Jeżeli żadna z wartości nie jest prawdą, wykonaj ostatni blok poleceń.',
+                LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Rób',
+                LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'dopóki',
+                LANG_CONTROLS_DOWHILE_TOOLTIP: 'Powtarzaj wykonanie bloku poleceń dopóki warunek jest spełniony.',
+                LANG_CONTROLS_EXECUTE: 'Wykonaj',
+                LANG_CONTROLS_EXECUTE_TOOLTIP: 'Wykonaj kod C/C++. Używać ostrożnie, gdyż łatwo może przerwać wykonanie programu a także spowodować że nie zostanie skompilowany.',
+                LANG_CONTROLS_IF_TOOLTIP_1: 'Jeżeli warunek jest prawdą, wtedy wykonaj polecenia.',
+                LANG_CONTROLS_IF_TOOLTIP_2: 'Jeżeli warunek jest prawdą, wtedy wykonaj pierwszy blok poleceń. W przeciwnym przypadku wykonaj drugi blok poleceń.',
+                LANG_CONTROLS_IF_TOOLTIP_3: 'Jeżeli pierwszy warunek jest prawdą, wtedy wykonaj pierwszy blok poleceń. W przeciwnym przypadku, jeżeli druga wartość jest prawdą, wykonaj drugi blok poleceń.',
+                LANG_CONTROLS_IF_TOOLTIP_4: 'Jeżeli pierwszy warunek jest prawdą, wtedy wykonaj pierwszy blok poleceń. W przeciwnym przypadku, jeżeli druga wartość jest prawdą, wykonaj drugi blok poleceń. Jeżeli żadna z wartości nie jest prawdą, wykonaj ostatni blok poleceń.',
                 LANG_CONTROLS_IF_MSG_IF: 'Jeżeli',
-                LANG_CONTROLS_IF_MSG_ELSEIF: 'W przeciwnym razie Jeżeli',
-                LANG_CONTROLS_IF_MSG_ELSE: 'W przeciwnym razie',
-                LANG_CONTROLS_IF_MSG_THEN: 'Wykonaj',
+                LANG_CONTROLS_IF_MSG_ELSEIF: 'w przeciwnym razie Jeżeli',
+                LANG_CONTROLS_IF_MSG_ELSE: 'w przeciwnym razie',
+                LANG_CONTROLS_IF_MSG_THEN: 'wtedy',
                 LANG_CONTROLS_IF_IF_Field_IF: 'Jeżeli',
                 LANG_CONTROLS_IF_IF_TOOLTIP: 'Dodaj, usuń lub zmień kolejność sekcji aby przeorganizować blok Jeżeli.',
-                LANG_CONTROLS_IF_ELSEIF_Field_ELSEIF: 'W przeciwnym razie Jeżeli',
-                LANG_CONTROLS_IF_ELSEIF_TOOLTIP: 'Dodaj warunek do bloku Jeżeli.',
-                LANG_CONTROLS_IF_ELSE_Field_ELSE: 'W przeciwnym razie',
-                LANG_CONTROLS_IF_ELSE_TOOLTIP: 'Dodaj ostatni warunek do bloku Jeżeli przechwytujący wszystkie pozostałe możliwości wykonania poleceń.',
+                LANG_CONTROLS_IF_ELSEIF_Field_ELSEIF: 'w przeciwnym razie Jeżeli',
+                LANG_CONTROLS_IF_ELSEIF_TOOLTIP: 'Dodaj warunek bloku W przeciwnym razie Jeżeli.',
+                LANG_CONTROLS_IF_ELSE_Field_ELSE: 'w przeciwnym razie',
+                LANG_CONTROLS_IF_ELSE_TOOLTIP: 'Dodaj ostatni stan bloku Jeżeli dla pozostałych możliwości.',
                 LANG_CONTROLS_FOR_FROM_WARNING: 'Nie można ustawić zmiennej jako wartości początkowej dla bloku DLA.',
                 LANG_CONTROLS_FOR_TO_WARNING: 'Nie można ustawić zmiennej jako wartości końcowej dla bloku DLA.',
                 LANG_CONTROLS_FOR_INPUT_WITH: 'Odliczaj',
                 LANG_CONTROLS_FOR_INPUT_VAR: 'x',
-                LANG_CONTROLS_FOR_INPUT_FROM: 'Od',
-                LANG_CONTROLS_FOR_INPUT_TO: 'Do',
-                LANG_CONTROLS_FOR_INPUT_DO: 'wykonaj',
+                LANG_CONTROLS_FOR_INPUT_FROM: 'od',
+                LANG_CONTROLS_FOR_INPUT_TO: 'do',
+                LANG_CONTROLS_FOR_INPUT_DO: 'rób',
                 LANG_CONTROLS_FOR_TOOLTIP: 'Odlicza od liczby początkowej do liczby końcowej. Za każdym razem, gdy licznik jest zwiększany o 1, zmienna pobiera wartość a następnie wykonuje polecenia.',
                 LANG_CONTROLS_WHILEUNTIL_OPERATOR_WHILE: 'Dopóki',
                 LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL: 'Aż do',
@@ -2758,8 +2758,8 @@
                 LANG_CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL: 'Dopóki warunek nie jest spełniony dopóty powtarzaj wykonanie bloku poleceń.',
                 LANG_CONTROLS_REPEAT_TITLE_REPEAT: 'Powtórz',
                 LANG_CONTROLS_REPEAT_TITLE_TIMES: 'razy',
-                LANG_CONTROLS_REPEAT_INPUT_DO: 'wykonaj',
-                LANG_CONTROLS_REPEAT_TOOLTIP: 'Powtóz polecenia określoną liczbę razy.',
+                LANG_CONTROLS_REPEAT_INPUT_DO: 'rób',
+                LANG_CONTROLS_REPEAT_TOOLTIP: 'Powtórz polecenia określoną liczbę razy.',
                 LANG_CONTROLS_FLOW_STATEMENTS_HELPURL: '',
                 LANG_CONTROLS_FLOW_STATEMENTS_INPUT_OFLOOP: 'pętli',
                 LANG_CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK: 'przerwij',
@@ -2767,9 +2767,9 @@
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK: 'Przerwij wewnętrzną pętlę wykonania.',
                 LANG_CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE: 'Pomiń resztę tej pętli i kontynuuj następny przebieg.',
                 LANG_CONTROLS_FLOW_STATEMENTS_WARNING: 'Ostrzeżenie: Ten blok może być użyty tylko w pętli.',
-                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Setup',
-                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Loop',
-                LANG_CONTROLS_SETUP_LOOP_TOOLTIP: 'Blocks in setup will be executed at start, and blocks in Loop will be repeated continously.',
+                LANG_CONTROLS_SETUP_LOOP_SETUP_TITLE: 'Ustawienia',
+                LANG_CONTROLS_SETUP_LOOP_LOOP_TITLE: 'Pętla',
+                LANG_CONTROLS_SETUP_LOOP_TOOLTIP: 'Bloki w Ustawieniach będą wykonane na początku, następnie bloki w Pętli będą powtarzane ciągle.',
                 LANG_CONTROLS_SWITCH: 'Przełącznik',
                 LANG_CONTROLS_SWITCH_TOOLTIP_1: 'Wykonaj polecenie danego przypadku.',
                 LANG_CONTROLS_SWITCH_TOOLTIP_2: 'Użyj polecenia Przełącznik aby wybrać jeden z wielu bloków kodu do wykonania.',
@@ -2782,15 +2782,15 @@
                 LANG_CONTROLS_SWITCH_CASE: 'przypadek',
                 LANG_CONTROLS_SWITCH_COLON: ': ',
                 LANG_CONTROLS_SWITCH_DEFAULT: 'domyślnie',
-                LANG_CONTROLS_SWITCH_DO: 'wykonaj',
+                LANG_CONTROLS_SWITCH_DO: 'rób',
                 //bloki matematyczne:
-                LANG_CATEGORY_MATH: 'Matematyka',
+                LANG_CATEGORY_MATH: 'Matematyczne',
                 LANG_MATH_ADVANCED_MAP_MAP: 'Skaluj ',
-                LANG_MATH_ADVANCED_MAP_FROM: 'Od [',
+                LANG_MATH_ADVANCED_MAP_FROM: 'od [',
                 LANG_MATH_ADVANCED_MAP_HYPHEN: '-',
                 LANG_MATH_ADVANCED_MAP_BRACKET: ']',
-                LANG_MATH_ADVANCED_MAP_TO: 'Do [',
-                LANG_MATH_ADVANCED_MAP_TOOLTIP: 'Przeskaluj wejście z pewnego zakresu na inny.',
+                LANG_MATH_ADVANCED_MAP_TO: 'do [',
+                LANG_MATH_ADVANCED_MAP_TOOLTIP: 'Przeskaluj wartości z pewnego zakresu na inny.',
                 LANG_MATH_NUMBER_TOOLTIP: 'Liczba',
                 LANG_MATH_ARRAY_ARRAY3: '[3]',
                 LANG_MATH_ARRAY_BRACKET3: '{',
@@ -2804,7 +2804,7 @@
                 LANG_MATH_BASE_MAP: 'Skaluj ',
                 LANG_MATH_BASE_MAP_VALUE_TO: 'Wartość na [0-',
                 LANG_MATH_BASE_MAP_BRACKET: ']',
-                LANG_MATH_BASE_MAP_TOOLTIP: 'Przeskaluj wejście z zakresu [0-1023] na inny.',
+                LANG_MATH_BASE_MAP_TOOLTIP: 'Przeskaluj wartości z zakresu [0-1023] na inny.',
                 LANG_MATH_SINGLE_OP_ROOT: 'pierwiastek kwadratowy',
                 LANG_MATH_SINGLE_OP_ABSOLUTE: 'wartość bezwzględna',
                 LANG_MATH_SINGLE_TOOLTIP_ROOT: 'Zwraca pierwiastek kwadratowy liczby.',
@@ -2815,7 +2815,7 @@
                 LANG_MATH_SINGLE_TOOLTIP_EXP: 'Zwraca e do potęgi liczby.',
                 LANG_MATH_SINGLE_TOOLTIP_POW10: 'Zwraca 10 do potęgi liczby.',
                 //bloki tekstowe:
-                LANG_CATEGORY_TEXT: 'Tekst',
+                LANG_CATEGORY_TEXT: 'Tekstowe',
                 LANG_TEXT_TEXT_HELPURL: '',
                 LANG_TEXT_TEXT_TOOLTIP: 'Litera, słowo lub linia tekstu.',
                 LANG_TEXT_JOIN_HELPURL: '',
@@ -2828,12 +2828,12 @@
                 LANG_TEXT_CREATE_JOIN_TITLE_JOIN: 'Złącz',
                 LANG_TEXT_CREATE_JOIN_ITEM_TITLE_ITEM: 'element',
                 LANG_TEXT_APPEND_HELPURL: '',
-                LANG_TEXT_APPEND_TO: 'Do',
-                LANG_TEXT_APPEND_APPENDTEXT: 'dołącz tekst',
+                LANG_TEXT_APPEND_TO: 'z',
+                LANG_TEXT_APPEND_APPENDTEXT: 'Dołącz tekst',
                 LANG_TEXT_APPEND_VARIABLE: 'element',
                 LANG_TEXT_APPEND_TOOLTIP: 'Dołącz pewien tekst do zmiennej %1.',
                 LANG_TEXT_LENGTH_HELPURL: '',
-                LANG_TEXT_LENGTH_INPUT_LENGTH: 'długość',
+                LANG_TEXT_LENGTH_INPUT_LENGTH: 'Długość',
                 LANG_TEXT_LENGTH_TOOLTIP: 'Zwraca liczbę liter (włącznie ze spacjami) w podanym tekście.',
                 LANG_TEXT_EQUALSIGNORECASE_IS: '',
                 LANG_TEXT_EQUALSIGNORECASE_EQUAL: ' =',
@@ -2844,13 +2844,13 @@
                 LANG_TEXT_SUBSTRING_TO: 'do',
                 LANG_TEXT_SUBSTRING_TOOLTIP: 'Uzyskuje podciąg znaków z ciągu wejściowego z pozycji pomiędzy podanymi liczbami wejściowymi.',
                 //bloki zaawansowane:
-                LANG_CATEGORY_ADVANCED: 'Funkcje zaawansowane',
+                LANG_CATEGORY_ADVANCED: 'Funkcje portów',
                 LANG_ADVANCED_CONVERSION_CONVERT: 'Konwertuj',
                 LANG_ADVANCED_CONVERSION_DECIMAL: 'Dziesiętnie',
                 LANG_ADVANCED_CONVERSION_HEXADECIMAL: 'Heksadecymalnie',
                 LANG_ADVANCED_CONVERSION_OCTAL: 'Ósemkowo',
                 LANG_ADVANCED_CONVERSION_BINARY: 'Dwójkowo',
-                LANG_ADVANCED_CONVERSION_VALUE: 'wartość',
+                LANG_ADVANCED_CONVERSION_VALUE: 'Wartość',
                 LANG_ADVANCED_CONVERSION_TOOLTIP: 'Konwertuje liczbę z jednej podstawy do innej.',
                 LANG_ADVANCED_INOUT_ANALOG_READ: 'Odczyt analogowy PIN#',
                 LANG_ADVANCED_INOUT_ANALOG_READ_TOOLTIP: 'Czyta wartość z określonego wejścia analogowego',
@@ -2867,12 +2867,12 @@
                 LANG_ADVANCED_INOUT_DIGITAL_WRITE: 'Zapis cyfrowy PIN#',
                 LANG_ADVANCED_INOUT_DIGITAL_WRITE_PIN: 'PIN#',
                 LANG_ADVANCED_INOUT_DIGITAL_WRITE_STATE: 'Stan',
-                LANG_ADVANCED_INOUT_DIGITAL_WRITE_HIGH: 'Wysoki',
-                LANG_ADVANCED_INOUT_DIGITAL_WRITE_LOW: 'Niski',
+                LANG_ADVANCED_INOUT_DIGITAL_WRITE_HIGH: 'WYSOKI',
+                LANG_ADVANCED_INOUT_DIGITAL_WRITE_LOW: 'NISKI',
                 LANG_ADVANCED_INOUT_DIGITAL_WRITE_TOOLTIP: 'wpisuje wartość do określonego wyjścia cyfrowego',
-                LANG_ADVANCED_HIGHLOW_HIGH: 'Wysoki',
-                LANG_ADVANCED_HIGHLOW_LOW: 'Niski',
-                LANG_ADVANCED_HIGHLOW_TOOLTIP: 'stan wysoki lub niski',
+                LANG_ADVANCED_HIGHLOW_HIGH: 'WYSOKI',
+                LANG_ADVANCED_HIGHLOW_LOW: 'NISKI',
+                LANG_ADVANCED_HIGHLOW_TOOLTIP: 'stan WYSOKI lub NISKI',
                 LANG_ADVANCED_MATH_RANDOM: 'Losuj z zakresu',
                 LANG_ADVANCED_MATH_RANDOM_AND: ' i ',
                 LANG_ADVANCED_MATH_RANDOM_TOOLTIP: 'Zwraca liczbę losową z zakresu podanych dwóch liczb ograniczających.',
@@ -2882,28 +2882,28 @@
                 LANG_PROCEDURES_RETURN_TOOLTIP: 'Zwraca wartość',
                 LANG_PROCEDURES_CALL_WITHOUT_DEFINITION: 'Wywołanie funkcji bez dopasowanej definicji',
                 LANG_PROCEDURES_DEFNORETURN_HELPURL: '',
-                LANG_PROCEDURES_DEFNORETURN_PROCEDURE: 'procedura',
-                LANG_PROCEDURES_DEFNORETURN_DO: 'Wykonaj',
+                LANG_PROCEDURES_DEFNORETURN_PROCEDURE: 'Procedura',
+                LANG_PROCEDURES_DEFNORETURN_DO: 'rób',
                 LANG_PROCEDURES_DEFNORETURN_TOOLTIP: 'Procedura - nie zwraca wartości.',
                 LANG_PROCEDURES_DEFRETURN_HELPURL: '',
-                LANG_PROCEDURES_DEFRETURN_PROCEDURE: 'funkcja',
-                LANG_PROCEDURES_DEFRETURN_DO: 'Wykonaj',
-                LANG_PROCEDURES_DEFRETURN_RETURN: 'Zwróć',
+                LANG_PROCEDURES_DEFRETURN_PROCEDURE: 'Funkcja',
+                LANG_PROCEDURES_DEFRETURN_DO: 'rób',
+                LANG_PROCEDURES_DEFRETURN_RETURN: 'zwróć',
                 LANG_PROCEDURES_DEFRETURN_TOOLTIP: 'Funkcja - zwraca wartość.',
                 LANG_PROCEDURES_DEF_DUPLICATE_WARNING: 'Ostrzeżenie: Ta funkcja ma powielone parametry.',
                 LANG_PROCEDURES_CALLNORETURN_HELPURL: '',
-                LANG_PROCEDURES_CALLNORETURN_CALL: 'Wykonaj',
-                LANG_PROCEDURES_CALLNORETURN_PROCEDURE: 'procedura',
+                LANG_PROCEDURES_CALLNORETURN_CALL: 'Wywołaj',
+                LANG_PROCEDURES_CALLNORETURN_PROCEDURE: 'Procedura',
                 LANG_PROCEDURES_CALLNORETURN_TOOLTIP: 'Wywołuje procedurę.',
                 LANG_PROCEDURES_CALLRETURN_HELPURL: '',
-                LANG_PROCEDURES_CALLRETURN_CALL: 'Wykonaj',
-                LANG_PROCEDURES_CALLRETURN_PROCEDURE: 'funkcja',
+                LANG_PROCEDURES_CALLRETURN_CALL: 'Wywołaj',
+                LANG_PROCEDURES_CALLRETURN_PROCEDURE: 'Funkcja',
                 LANG_PROCEDURES_CALLRETURN_TOOLTIP: 'Wywołuje funkcję.',
                 LANG_PROCEDURES_MUTATORCONTAINER_Field: 'parametry',
                 LANG_PROCEDURES_MUTATORARG_Field: 'zmienna:',
                 LANG_PROCEDURES_HIGHLIGHT_DEF: 'Funkcja Highlight',
                 LANG_PROCEDURES_IFRETURN_TOOLTIP: 'Jeżeli warunek jest prawdą, zwraca tę wartość.',
-                LANG_PROCEDURES_IFRETURN_WARNING: 'Ostrzeżenei: Ten blok może być użyty wyłącznie w funkcji.',
+                LANG_PROCEDURES_IFRETURN_WARNING: 'Ostrzeżenie: Ten blok może być użyty wyłącznie w funkcji.',
                 //bloki zmiennych:
                 LANG_CATEGORY_VARIABLES: 'Zmienne',
                 LANG_VARIABLES_CALL_WITHOUT_DEFINITION: 'Ta zmienna nie jest zadeklarowana.',
@@ -2918,14 +2918,14 @@
                 LANG_VARIABLES_DEFINE: 'definiuj zmienną ',
                 LANG_VARIABLES_DEFINE_AS: 'jako',
                 LANG_VARIABLES_DEFINE_TOOLTIP: 'Definiuje typ zmiennej.',
-                LANG_VARIABLES_SET: 'Var',
+                LANG_VARIABLES_SET: 'Zmienna',
                 LANG_VARIABLES_SET_AS: '=',
                 LANG_VARIABLES_SET_TOOLTIP: 'Ustawia wartość zmiennej.',
-                LANG_VARIABLES_GET: 'Var',
+                LANG_VARIABLES_GET: 'Zmienna',
                 LANG_VARIABLES_GET_TOOLTIP: 'Zwraca wartość zmiennej.',
                 LANG_VARIABLES_PIN_ANALOG: 'pin analogowy',
                 LANG_VARIABLES_PIN_DIGITAL: 'pin cyfrowy',
-                LANG_VARIABLES_PIN_DIGITAL0: 'Ostrzeżenei: pin cyfrowy 0 (RX pin) jst używany podczas ładowania programu (sketchu). jego użycie do podłączania komponenetów elektronicznych może powodować problemy podczas ładowania nowego programu.',
+                LANG_VARIABLES_PIN_DIGITAL0: 'Ostrzeżenie: pin cyfrowy 0 (RX pin) jst używany podczas ładowania programu (sketchu). Jego użycie do podłączania komponenetów elektronicznych może powodować problemy podczas ładowania nowego programu.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Wybierz PIN.',
                 //bloki Zum:
                 LANG_CATEGORY_ZUM: 'Bloki Zum',
@@ -2970,7 +2970,7 @@
                 LANG_ZUM_POTENTIOMETER_PIN: 'PIN#',
                 LANG_ZUM_POTENTIOMETER_TOOLTIP: 'Zwraca wartość analogową ustawioną na potencjometrze Zum.',
                 //bloki serwomechanizmów:
-                LANG_CATEGORY_SERVO: 'Serwomechanizm',
+                LANG_CATEGORY_SERVO: 'Serwomechanizmy',
                 LANG_SERVO_CONT: 'Serwo obrotu ciągłego',
                 LANG_SERVO_CONT_PIN: 'PIN#',
                 LANG_SERVO_CONT_ROT: 'Rotacja',
@@ -4467,9 +4467,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(value_num) +
+                    ((__t = (value_num)) == null ? '' : __t) +
                     ',' +
-                    __e(convertion);
+                    ((__t = (convertion)) == null ? '' : __t);
 
             }
             return __p
@@ -4481,15 +4481,15 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'map(' +
-                    __e(num) +
+                    ((__t = (num)) == null ? '' : __t) +
                     ',' +
-                    __e(from_min) +
+                    ((__t = (from_min)) == null ? '' : __t) +
                     ',' +
-                    __e(from_max) +
+                    ((__t = (from_max)) == null ? '' : __t) +
                     ',' +
-                    __e(to_min) +
+                    ((__t = (to_min)) == null ? '' : __t) +
                     ',' +
-                    __e(to_max) +
+                    ((__t = (to_max)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4502,7 +4502,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'delay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -4515,9 +4515,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'map(' +
-                    __e(value_num) +
+                    ((__t = (value_num)) == null ? '' : __t) +
                     ',0,1023,0,' +
-                    __e(value_dmax) +
+                    ((__t = (value_dmax)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4530,9 +4530,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Distance(' +
-                    __e(trigger_pin) +
+                    ((__t = (trigger_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(echo_pin) +
+                    ((__t = (echo_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4567,7 +4567,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(echo_pin) +
+                    ((__t = (echo_pin)) == null ? '' : __t) +
                     ' , INPUT );\n';
 
             }
@@ -4580,7 +4580,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(trigger_pin) +
+                    ((__t = (trigger_pin)) == null ? '' : __t) +
                     ' , OUTPUT );\n';
 
             }
@@ -4604,11 +4604,11 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',INPUT);\n  pinMode(' +
-                    __e(NextPIN) +
+                    ((__t = (NextPIN)) == null ? '' : __t) +
                     ', OUTPUT);\n  blueToothSerial.begin(' +
-                    __e(baud_rate) +
+                    ((__t = (baud_rate)) == null ? '' : __t) +
                     ');\n  blueToothSerial.flush();\n';
 
             }
@@ -4632,7 +4632,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'blueToothSerial.write( ' +
-                    __e(statement_send) +
+                    ((__t = (statement_send)) == null ? '' : __t) +
                     ' );\n';
 
             }
@@ -4645,7 +4645,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4658,7 +4658,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',INPUT_PULLUP);\n';
 
             }
@@ -4671,19 +4671,19 @@
                 __e = _.escape;
             with(obj) {
                 __p += '  adc_key_in =analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ');\n  key = get_key(adc_key_in);\n  if (key != oldkey)\n  {\n    delay(50);\n    adc_key_in = analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ');\n    key = get_key(adc_key_in);\n    if (key != oldkey)\n    {\n      oldkey = key;\n      if (key >=0){\n        switch(key)\n        {\n          case 0:\n           ' +
-                    __e(code_btn1) +
+                    ((__t = (code_btn1)) == null ? '' : __t) +
                     '\n          break;\n          case 1:\n           ' +
-                    __e(code_btn2) +
+                    ((__t = (code_btn2)) == null ? '' : __t) +
                     '\n          break;\n          case 2:\n           ' +
-                    __e(code_btn3) +
+                    ((__t = (code_btn3)) == null ? '' : __t) +
                     '\n          break;\n          case 3:\n           ' +
-                    __e(code_btn4) +
+                    ((__t = (code_btn4)) == null ? '' : __t) +
                     '\n          break;  \n          case 4:\n           ' +
-                    __e(code_btn5) +
+                    ((__t = (code_btn5)) == null ? '' : __t) +
                     '\n          break;\n        }      \n      }\n    }\n  }\n';
 
             }
@@ -4718,7 +4718,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4731,7 +4731,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ' , INPUT);\n';
 
             }
@@ -4744,7 +4744,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'readJoystick_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     '()';
 
             }
@@ -4757,21 +4757,21 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'int * readJoystick_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     '(){\n  _internal_readJoystick_array_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     '[0]=analogRead(' +
-                    __e(pinx) +
+                    ((__t = (pinx)) == null ? '' : __t) +
                     ');\n  _internal_readJoystick_array_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     '[1]=analogRead(' +
-                    __e(piny) +
+                    ((__t = (piny)) == null ? '' : __t) +
                     ');\n  _internal_readJoystick_array_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     '[2]=digitalRead(' +
-                    __e(pinbutton) +
+                    ((__t = (pinbutton)) == null ? '' : __t) +
                     ');\n  return _internal_readJoystick_array_' +
-                    __e(name) +
+                    ((__t = (name)) == null ? '' : __t) +
                     ';\n}';
 
             }
@@ -4784,7 +4784,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(pinbutton) +
+                    ((__t = (pinbutton)) == null ? '' : __t) +
                     ',INPUT_PULLUP);\n';
 
             }
@@ -4797,9 +4797,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalWrite(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -4812,7 +4812,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',OUTPUT);\n';
 
             }
@@ -4825,7 +4825,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4838,13 +4838,13 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'tone(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ',' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -4857,13 +4857,13 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'tone(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(Buzztone) +
+                    ((__t = (Buzztone)) == null ? '' : __t) +
                     ',' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n\n';
 
             }
@@ -4876,7 +4876,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -4889,7 +4889,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'if (blueToothSerial.available()>0){\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     '\n}\n';
 
             }
@@ -4902,9 +4902,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'do {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     '\n} while (' +
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -4917,7 +4917,7 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(content) +
+                    ((__t = (content)) == null ? '' : __t) +
                     '\n';
 
             }
@@ -4930,7 +4930,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'else {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     ' }';
 
             }
@@ -4943,9 +4943,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'else if (' +
-                    __e(argument) +
+                    ((__t = (argument)) == null ? '' : __t) +
                     ') {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     ' }';
 
             }
@@ -4958,9 +4958,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'if (' +
-                    __e(argument) +
+                    ((__t = (argument)) == null ? '' : __t) +
                     ') {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     ' }';
 
             }
@@ -4973,7 +4973,7 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     '\n';
 
             }
@@ -4986,9 +4986,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'while (' +
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     ') {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     ' }\n';
 
             }
@@ -5001,7 +5001,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5014,7 +5014,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',INPUT);\n';
 
             }
@@ -5027,9 +5027,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogWrite(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(value_num) +
+                    ((__t = (value_num)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5042,7 +5042,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',OUTPUT);\n';
 
             }
@@ -5055,7 +5055,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalWrite(13,' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5079,7 +5079,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5092,7 +5092,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',INPUT);\n';
 
             }
@@ -5105,9 +5105,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalWrite(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5120,7 +5120,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',OUTPUT);\n';
 
             }
@@ -5133,7 +5133,7 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(bool_value);
+                    ((__t = (bool_value)) == null ? '' : __t);
 
             }
             return __p
@@ -5178,7 +5178,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'lcd.print(' +
-                    __e(val) +
+                    ((__t = (val)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5191,11 +5191,11 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'lcd.setCursor(' +
-                    __e(ycoor) +
+                    ((__t = (ycoor)) == null ? '' : __t) +
                     ',' +
-                    __e(xcoor) +
+                    ((__t = (xcoor)) == null ? '' : __t) +
                     ');\nlcd.print(' +
-                    __e(val) +
+                    ((__t = (val)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5208,7 +5208,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'lcd.setBacklight(' +
-                    __e(state) +
+                    ((__t = (state)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5221,11 +5221,11 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     ' ' +
-                    __e(operator) +
+                    ((__t = (operator)) == null ? '' : __t) +
                     ' ' +
-                    __e(argument1);
+                    ((__t = (argument1)) == null ? '' : __t);
 
             }
             return __p
@@ -5237,7 +5237,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += '!' +
-                    __e(argument0);
+                    ((__t = (argument0)) == null ? '' : __t);
 
             }
             return __p
@@ -5249,11 +5249,11 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     ' ' +
-                    __e(operator) +
+                    ((__t = (operator)) == null ? '' : __t) +
                     ' ' +
-                    __e(argument1);
+                    ((__t = (argument1)) == null ? '' : __t);
 
             }
             return __p
@@ -5265,11 +5265,11 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     '' +
-                    __e(operator) +
+                    ((__t = (operator)) == null ? '' : __t) +
                     '' +
-                    __e(argument1);
+                    ((__t = (argument1)) == null ? '' : __t);
 
             }
             return __p
@@ -5281,9 +5281,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pow(' +
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     ',' +
-                    __e(argument1) +
+                    ((__t = (argument1)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5296,9 +5296,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     '%' +
-                    __e(argument1);
+                    ((__t = (argument1)) == null ? '' : __t);
 
             }
             return __p
@@ -5310,9 +5310,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'random(' +
-                    __e(value_num) +
+                    ((__t = (value_num)) == null ? '' : __t) +
                     ',' +
-                    __e(value_dmax) +
+                    ((__t = (value_dmax)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5325,9 +5325,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(funcName) +
+                    ((__t = (funcName)) == null ? '' : __t) +
                     '(' +
-                    __e(funcArgs) +
+                    ((__t = (funcArgs)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5340,9 +5340,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(funcName) +
+                    ((__t = (funcName)) == null ? '' : __t) +
                     '(' +
-                    __e(funcArgs) +
+                    ((__t = (funcArgs)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5355,13 +5355,13 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(returnType) +
+                    ((__t = (returnType)) == null ? '' : __t) +
                     ' ' +
-                    __e(funcName) +
+                    ((__t = (funcName)) == null ? '' : __t) +
                     ' (' +
-                    __e(args) +
+                    ((__t = (args)) == null ? '' : __t) +
                     ') {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     ' }\n';
 
             }
@@ -5374,15 +5374,15 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(returnType) +
+                    ((__t = (returnType)) == null ? '' : __t) +
                     ' ' +
-                    __e(funcName) +
+                    ((__t = (funcName)) == null ? '' : __t) +
                     ' (' +
-                    __e(args) +
+                    ((__t = (args)) == null ? '' : __t) +
                     ') {\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     '\n' +
-                    __e(returnValue) +
+                    ((__t = (returnValue)) == null ? '' : __t) +
                     ' }\n';
 
             }
@@ -5395,7 +5395,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'if (Serial.available()>0){\n' +
-                    __e(branch) +
+                    ((__t = (branch)) == null ? '' : __t) +
                     '\n}\n';
 
             }
@@ -5408,7 +5408,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.print(' +
-                    __e(content) +
+                    ((__t = (content)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5421,7 +5421,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.begin(' +
-                    __e(bitrate) +
+                    ((__t = (bitrate)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5434,7 +5434,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.println(' +
-                    __e(content) +
+                    ((__t = (content)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5447,7 +5447,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.begin(' +
-                    __e(bitrate) +
+                    ((__t = (bitrate)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5471,7 +5471,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.begin(' +
-                    __e(bitrate) +
+                    ((__t = (bitrate)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5495,7 +5495,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'Serial.begin(' +
-                    __e(bitrate) +
+                    ((__t = (bitrate)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5508,7 +5508,7 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(char);
+                    ((__t = (char)) == null ? '' : __t);
 
             }
             return __p
@@ -5520,11 +5520,11 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'servos[' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     '].write(' +
-                    __e(value_degree) +
+                    ((__t = (value_degree)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5548,9 +5548,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'servos[' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     '].attach(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5563,11 +5563,11 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'servos[' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     '].write(' +
-                    __e(value_degree) +
+                    ((__t = (value_degree)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5591,9 +5591,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'servos[' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     '].attach(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5606,9 +5606,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(string1) +
+                    ((__t = (string1)) == null ? '' : __t) +
                     '.equalsIgnoreCase(' +
-                    __e(string2) +
+                    ((__t = (string2)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5621,7 +5621,7 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(argument0) +
+                    ((__t = (argument0)) == null ? '' : __t) +
                     '.length()';
 
             }
@@ -5634,11 +5634,11 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(string1) +
+                    ((__t = (string1)) == null ? '' : __t) +
                     '.substring(' +
-                    __e(from) +
+                    ((__t = (from)) == null ? '' : __t) +
                     ',' +
-                    __e(to) +
+                    ((__t = (to)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5651,9 +5651,9 @@
                 __e = _.escape;
             with(obj) {
                 __p +=
-                    __e(varName) +
+                    ((__t = (varName)) == null ? '' : __t) +
                     '=' +
-                    __e(varValue) +
+                    ((__t = (varValue)) == null ? '' : __t) +
                     ';\n';
 
             }
@@ -5666,7 +5666,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5679,7 +5679,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',INPUT_PULLUP);\n';
 
             }
@@ -5692,13 +5692,13 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'if(digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')==HIGH)\n{\n  ' +
-                    __e(code_btn1) +
+                    ((__t = (code_btn1)) == null ? '' : __t) +
                     '\n}\nif(digitalRead(' +
-                    __e(NextPIN) +
+                    ((__t = (NextPIN)) == null ? '' : __t) +
                     ')==HIGH)\n{\n  ' +
-                    __e(code_btn2) +
+                    ((__t = (code_btn2)) == null ? '' : __t) +
                     '\n}\n';
 
             }
@@ -5711,7 +5711,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(NextPIN) +
+                    ((__t = (NextPIN)) == null ? '' : __t) +
                     ' , INPUT);\n';
 
             }
@@ -5724,7 +5724,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ' , INPUT);\n';
 
             }
@@ -5737,7 +5737,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5750,7 +5750,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode( ' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ' , INPUT);\n';
 
             }
@@ -5763,9 +5763,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'digitalWrite(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5778,7 +5778,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'pinMode(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',OUTPUT);\n';
 
             }
@@ -5791,7 +5791,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
@@ -5804,13 +5804,13 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'tone(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(dropdown_stat) +
+                    ((__t = (dropdown_stat)) == null ? '' : __t) +
                     ',' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -5823,13 +5823,13 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'tone(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ',' +
-                    __e(Buzztone) +
+                    ((__t = (Buzztone)) == null ? '' : __t) +
                     ',' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\ndelay(' +
-                    __e(delay_time) +
+                    ((__t = (delay_time)) == null ? '' : __t) +
                     ');\n\n';
 
             }
@@ -5842,7 +5842,7 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'analogRead(' +
-                    __e(dropdown_pin) +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
                     ')';
 
             }
