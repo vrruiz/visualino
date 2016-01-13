@@ -329,6 +329,11 @@ pressed: { border: 1px };</string>
         </item>
         <item>
          <property name="text">
+          <string>arduino:avr:diecimila</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>arduino:avr:bt</string>
          </property>
         </item>
