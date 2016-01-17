@@ -1,5 +1,4 @@
 #include "jswebhelpers.h"
-#include <QDebug>
 
 JsWebHelpers::JsWebHelpers(QObject *parent) :
     QObject(parent)
@@ -29,5 +28,4 @@ void JsWebHelpers::sourceChanged() {
     // web brigde setup in MainWindow::onJavaScriptWindowObjectCleared()
     source_changed = true;
     source_changes++;
-    qDebug() << "[JsWebHelper] Source changed" << source_changes;
 }
