@@ -160,7 +160,9 @@ void MainWindow::actionCode() {
 
 void MainWindow::actionExamples() {
     // Check whether source was changed
-    checkSourceChanged();
+    if (checkSourceChanged() == QMessageBox::Cancel) {
+        return;
+    }
 
     // Open an example from the examples folder
     actionOpenInclude(tr("Examples"), true, settings->examplesPath());
@@ -283,7 +285,9 @@ void MainWindow::actionMessages() {
 
 void MainWindow::actionNew() {
     // Check whether source was changed
-    checkSourceChanged();
+    if (checkSourceChanged() == QMessageBox::Cancel) {
+        return;
+    }
 
     // Unset file name
     setXmlFileName("");
@@ -307,7 +311,9 @@ void MainWindow::actionCloseMessages() {
 
 void MainWindow::actionOpen() {
     // Check whether source was changed
-    checkSourceChanged();
+    if (checkSourceChanged() == QMessageBox::Cancel) {
+        return;
+    }
 
     // Open file
     QString directory = QStandardPaths::locate(
@@ -375,7 +381,9 @@ void MainWindow::actionOpenMessages() {
 
 void MainWindow::actionQuit() {
     // Check whether source was changed
-    checkSourceChanged();
+    if (checkSourceChanged() == QMessageBox::Cancel) {
+        return;
+    }
 
     // Quit
     close();
@@ -845,7 +853,7 @@ void MainWindow::actionInjectWebHelper() {
                 webHelper);
 }
 
-void MainWindow::checkSourceChanged() {
+int MainWindow::checkSourceChanged() {
     // Check whether source has changed
     if (webHelper->sourceChanges() > 1) {
         // Does the user want to save the changes?
@@ -853,18 +861,23 @@ void MainWindow::checkSourceChanged() {
         msgBox.setText(QString(tr("There are unsaved changes that could be "
                                   "lost. Do you want to save them before "
                                   "continuing?")));
-        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard |
+                                  QMessageBox::Cancel);
         int result = msgBox.exec();
-        if (result == QMessageBox::Yes) {
+        if (result == QMessageBox::Save) {
             // Yes, save changes
             actionSave();
         }
+        return result;
     }
+    return -1;
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     // Check whether source was changed
-    checkSourceChanged();
+    if (checkSourceChanged() == QMessageBox::Cancel) {
+        event->ignore();
+    }
 }
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {

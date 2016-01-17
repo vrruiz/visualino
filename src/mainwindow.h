@@ -58,7 +58,7 @@ private:
     QStringList portList();
     int saveXml(const QString &xmlFilePath);
     int saveSketch(const QString &inoFilePath);
-    void checkSourceChanged();
+    int checkSourceChanged();
 
     void closeEvent(QCloseEvent *bar);
 
