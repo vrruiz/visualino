@@ -11,14 +11,16 @@ SOURCES += main.cpp\
     settingsstore.cpp \
     graphwidget.cpp \
     aboutdialog.cpp \
-    jswebhelpers.cpp
+    jswebhelpers.cpp \
+    qblockswebview.cpp
 
 HEADERS += mainwindow.h \
     settingsdialog.h \
     settingsstore.h \
     graphwidget.h \
     aboutdialog.h \
-    jswebhelpers.h
+    jswebhelpers.h \
+    qblockswebview.h
 
 FORMS += mainwindow.ui \
     settingsdialog.ui \

@@ -88,6 +88,8 @@ public slots:
     void actionSave();
     void actionSaveAs();
     void actionSettings();
+    void actionZoomIn();
+    void actionZoomOut();
     void onBoardChanged();
     void onLoadFinished(bool finished);
     void onProcessFinished(int exitCode);

@@ -50,6 +50,10 @@ MainWindow::MainWindow(QWidget *parent) :
     xmlFileName = "";
     serial = NULL;
 
+    // Set zoom scale of the web view
+    float zoomScale = settings->zoomScale();
+    ui->webView->setZoomFactor(zoomScale);
+
     // Hide messages
     actionCloseMessages();
     serialPortClose();
@@ -94,8 +98,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->webView->installEventFilter(this);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete webHelper;
     delete serial;
     delete settings;
@@ -490,6 +493,16 @@ void MainWindow::actionSettings() {
     }
 }
 
+void MainWindow::actionZoomIn() {
+    // Zoom in the web view
+    ui->webView->zoomIn();
+}
+
+void MainWindow::actionZoomOut() {
+    // Zoom out the web view
+    ui->webView->zoomOut();
+}
+
 QString MainWindow::getXml() {
     // Get XML
     QWebFrame *frame = ui->webView->page()->mainFrame();
@@ -877,21 +890,22 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     // Check whether source was changed
     if (checkSourceChanged() == QMessageBox::Cancel) {
         event->ignore();
+    } else {
+        // Save zoom state
+        settings->setZoomScale(ui->webView->zoomFactor());
     }
 }
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
-    // Backspace filter to prevent a blank page.
-    //
-    // Based on this code: http://ynonperek.com/qt-event-filters.html
-    //
-    // Specially in Mac OS X, the backspace key generates a page back event. In
-    // order to disable that action, this event filter captures the key presses
-    // to capture Backspace. Then, if there is a text edit field in focus, then
-    // let the event to flow, but if not, it ignores it.
-    //
     if (obj == ui->webView) {
         if (event->type() == QEvent::KeyPress) {
+            // Backspace filter to prevent a blank page.
+            // Based on this code: http://ynonperek.com/qt-event-filters.html
+            //
+            // Specially in Mac OS X, the backspace key generates a page back event. In
+            // order to disable that action, this event filter captures the key presses
+            // to capture Backspace. Then, if there is a text edit field in focus, then
+            // let the event to flow, but if not, it ignores it.
             QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
             if (keyEvent->key() == Qt::Key_Backspace) {
                 // Is the active element a text field?
@@ -906,6 +920,8 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
                     // No text field: ignore the event
                     return true;
                 }
+            } else {
+                return false;
             }
         }
         // Pass the event to the widget

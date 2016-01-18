@@ -26,6 +26,7 @@ public:
     QString tmpFileName();
     QString htmlIndex();
     bool iconLabels();
+    float zoomScale();
 
     void copyDefaultSettings(const QString &fileName = CONFIG_INI,
                              bool overwrite = false);
@@ -37,6 +38,7 @@ public:
     void setTmpDirName(const QString &value);
     void setTmpFileName(const QString &value);
     void setHtmlIndex(const QString &value);
+    void setZoomScale(float value);
 
 private:
     QString platform;

@@ -56,23 +56,12 @@
          <number>9</number>
         </property>
         <item>
-         <widget class="QWebView" name="webView">
+         <widget class="QBlocksWebView" name="webView" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="url">
-           <url>
-            <string>about:blank</string>
-           </url>
           </property>
          </widget>
         </item>
@@ -432,6 +421,9 @@ pressed: { border: 1px };</string>
     <addaction name="actionShow_hide_monitor"/>
     <addaction name="actionShow_hide_code"/>
     <addaction name="actionShow_hide_icon_labels"/>
+    <addaction name="separator"/>
+    <addaction name="actionZoomIn"/>
+    <addaction name="actionZoomOut"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menuView"/>
@@ -702,13 +694,30 @@ pressed: { border: 1px };</string>
     <string>Graph</string>
    </property>
   </action>
+  <action name="actionZoomIn">
+   <property name="text">
+    <string>Zoom +</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="text">
+    <string>Zoom -</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
+   <class>QBlocksWebView</class>
    <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
+   <header>qblockswebview.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
@@ -1163,6 +1172,38 @@ pressed: { border: 1px };</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionZoomIn</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionZoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoomOut</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>actionZoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>actionVerify()</slot>
@@ -1186,5 +1227,7 @@ pressed: { border: 1px };</string>
   <slot>actionGraph()</slot>
   <slot>actionIconLabels()</slot>
   <slot>actionExamples()</slot>
+  <slot>actionZoomIn()</slot>
+  <slot>actionZoomOut()</slot>
  </slots>
 </ui>

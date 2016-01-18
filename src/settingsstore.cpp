@@ -70,6 +70,11 @@ bool SettingsStore::iconLabels() {
     return settings->value(platform + "icon_labels", true).toBool();
 }
 
+float SettingsStore::zoomScale() {
+    return settings->value(platform + "zoom_scale", 1.0).toFloat();
+}
+
+
 void SettingsStore::copyDefaultSettings(const QString &fileName,
                                         bool overwrite) {
     // Locate config.ini in standard locations
@@ -146,6 +151,11 @@ void SettingsStore::setDefaultLanguage(const QString &value) {
 void SettingsStore::setExamplesPath(const QString &value) {
     settings->setValue(platform + "examples_path", value);
 }
+
+void SettingsStore::setZoomScale(float value) {
+    settings->setValue(platform + "zoom_scale", value);
+}
+
 
 QString SettingsStore::relativePath(const QString &value,
                                     const QString &defaultValue) {
