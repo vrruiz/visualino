@@ -1,6 +1,6 @@
-/*! roboblocks - v0.2.3 - 2015-12-20
+/*! roboblocks - v0.2.3 - 2016-02-02
  * https://github.com/bq/roboblocks
- * Copyright (c) 2015 bq; Licensed  */
+ * Copyright (c) 2016 bq; Licensed  */
 
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
@@ -113,6 +113,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Comprova si el mòdul Bluetooth està disponible o no',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Port Sèrie Disponible',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Comprova si el port sèrie està disponible o no',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Imprimir per port sèrie',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Imprimeix les dades com text ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Imprimir per port sèrie amb salt de línia',
@@ -184,7 +186,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Connecta el pin SCL al pin A5 i el pin SDA al pin A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Defineix el LCD',
                 LANG_LCD_ADVANCED_DEF: 'Advanced LCD',
                 LANG_LCD_ADVANCED_ROWS: 'Rows',
@@ -202,6 +204,8 @@
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Espera el temps especificat en mil·lisegons (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -404,6 +408,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Pin digital',
                 LANG_VARIABLES_PIN_DIGITAL0: 'WARNING: digital pin 0 (RX pin) is used when uploading a sketch. Using it to connect electronic components may cause problems when uploading a new sketch.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Selecciona el PIN desitjat.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Botó',
@@ -534,6 +543,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Check wether the bluetooth is available or not.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Serial Available',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Check wether the serial port is available or not',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer',
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer',
                 LANG_ADVANCED_SERIAL_PRINT: 'Serial Print',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Prints data as ASCII text.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Serial Println',
@@ -605,7 +616,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Connect LCD pin SCL to A5, and pin SDA to A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Block that defines the LCD',
                 LANG_LCD_ADVANCED_DEF: 'Advanced LCD',
                 LANG_LCD_ADVANCED_ROWS: 'Rows',
@@ -623,6 +634,8 @@
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Wait (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Waits the specified time in milliseconds (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)',
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)',
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -825,6 +838,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Digital pin',
                 LANG_VARIABLES_PIN_DIGITAL0: 'WARNING: digital pin 0 (RX pin) is used when uploading a sketch. Using it to connect electronic components may cause problems when uploading a new sketch.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Select the PIN.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte',
+                LANG_VARIABLES_TYPE_FLOAT: 'Float',
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer',
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer',
+                LANG_VARIABLES_TYPE_STRING: 'String',
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Button',
@@ -955,6 +973,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Comprueba si el módulo Bluetooth está disponible o no',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Puerto Serie Disponible',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Comprueba si el puerto serie está disponible o no',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Leer entero por el puerto serie', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'Devuelve el primer número entero (largo) desde el puerto serie', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Imprimir por puerto serie',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Imprime los datos como texto ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Imprimir por puerto serie con salto de línea',
@@ -1026,7 +1046,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Conecta el pin SCL al pin A5 y el pin SDA al pin A4',
+                LANG_LCD_PINS: 'Pines del LCD',
                 LANG_LCD_DEF_TOOLTIP: 'Define el LCD',
                 LANG_LCD_ADVANCED_DEF: 'LCD avanzado',
                 LANG_LCD_ADVANCED_ROWS: 'Filas',
@@ -1044,6 +1064,8 @@
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar [ms]',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Espera el tiempo especificado en milisegundos (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Tiempo desde el arranque (ms)',
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Número de milisegundos desde que se inició el programa (entero largo)',
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Hacer',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'mientras',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'Mientras la condición sea verdadera, continúa ejecutando las acciones del bloque.',
@@ -1246,6 +1268,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Pin digital',
                 LANG_VARIABLES_PIN_DIGITAL0: 'CUIDADO: el pin digital 0 (pin Rx) es usado para escribir un programa en la placa desde el ordenador. Usarlo para conectar componentes puede dar problemas al programarla.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Selecciona el PIN deseado.',
+                LANG_VARIABLES_TYPE_BYTE: 'Octeto',
+                LANG_VARIABLES_TYPE_FLOAT: 'Decimal',
+                LANG_VARIABLES_TYPE_INTEGER: 'Entero',
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Entero largo',
+                LANG_VARIABLES_TYPE_STRING: 'Texto',
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Botón',
@@ -1376,6 +1403,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Bluetooth modulua erabilgarri dagoen edo ez egiaztatu',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Serieko Ataka Erabilgarri',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Serieko Ataka erabilgarri dagoen edo ez egiaztatu',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Serieko Atakatik inprimatu',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Datuak ASCII testu bezala inprimatu.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Serieko Atakatik inprimatu lerro-jauziarekin',
@@ -1447,7 +1476,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD blokeak',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'SCL pina A5 pinera eta SDA pina A4 pinera konektatu',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'LCDa definitu',
                 LANG_LCD_ADVANCED_DEF: 'Advanced LCD',
                 LANG_LCD_ADVANCED_ROWS: 'Rows',
@@ -1465,6 +1494,8 @@
                 LANG_CATEGORY_CONTROLS: 'Kontrola',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Itxaron [ms]',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Milisgundotan (ms) zehaztutako denbora itxaroten du',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -1664,6 +1695,11 @@
                 LANG_VARIABLES_PIN_ANALOG: 'Pin analogikoa',
                 LANG_VARIABLES_PIN_DIGITAL: 'Pin digitala',
                 LANG_VARIABLES_PIN_TOOLTIP: 'PINa aukeratu.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'zum blokeak',
                 LANG_ZUM_BUTTON: 'Botoia',
@@ -1794,6 +1830,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Vérifier si le module Bluetooth est disponible ou non.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Port série disponible',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Vérifier si le port série est disponible ou non',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Imprimer via le port série',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Imprime les données en caractères ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Imprimer via le port série avec retour chariot',
@@ -1865,7 +1903,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'Blocs LCD',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Connecter la broche SCL du LCD à A5, et la broche SDA à A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Bloc qui définit l’écran LCD',
                 LANG_LCD_ADVANCED_DEF: 'LCD avancé',
                 LANG_LCD_ADVANCED_ROWS: 'Rangées',
@@ -1883,6 +1921,8 @@
                 LANG_CATEGORY_CONTROLS: 'Contrôle',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendre (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Attend le temps défini en millisecondes (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -2085,6 +2125,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Broche numérique',
                 LANG_VARIABLES_PIN_DIGITAL0: 'ATTENTION : la broche numérique 0 (broche RX) sert à charger les programmes. Si elle est utilisée pour connecter des composants électroniques, des problèmes peuvent survenir lors du chargement d’un nouveau programme.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Sélectionner la BROCHE.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Bouton',
@@ -2215,6 +2260,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Controlla se il Bluetooth è disponibile o meno.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Porta seriale disponibile',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Controlla se la porta seriale è disponibile o meno.',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Invio dati porta seriale',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Scrive i dati come testo ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Invio dati porta seriale (+accapo)',
@@ -2286,7 +2333,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Connetti l\'LCD con il pin SCL a A5, ed il pin SDA a A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Questo blocco definisce l\'LCD',
                 LANG_LCD_ADVANCED_DEF: 'LCD avanzato',
                 LANG_LCD_ADVANCED_ROWS: 'Righe',
@@ -2304,6 +2351,8 @@
                 LANG_CATEGORY_CONTROLS: 'Controllo',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendi (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Attende un determinato tempo in millisecondi (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -2506,6 +2555,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'PIN digitale',
                 LANG_VARIABLES_PIN_DIGITAL0: 'ATTENZIONE: il pin digitale 0 (RX pin) viene utilizzato durante il caricamento di una programma. Non collegare componenti elettronici altrimenti sarà impossibile caricare un nuova programma.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Seleziona il PIN.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Pulsante',
@@ -2636,6 +2690,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Sprawdź czy jest dostępny port szeregowy Bluetooth.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Port szeregowy dostępny.',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Sprawdź czy jest dostępny port szeregowy.',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Wydruk tekstu przez port szeregowy',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Drukuje dane jako tekst ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Wydruk linii tekstu przez port szeregowy',
@@ -2707,7 +2763,7 @@
                 //bloki LCD:
                 LANG_CATEGORY_LCD: 'Wyświetlacze LCD',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Podłącz pin SCL wyświetlacza LCD do A5, a pin SDA - do A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Blok definiujący wyświetlacz LCD',
                 LANG_LCD_ADVANCED_DEF: 'Zaawansowany wyświetlacz LCD',
                 LANG_LCD_ADVANCED_ROWS: 'Rzędy',
@@ -2725,6 +2781,8 @@
                 LANG_CATEGORY_CONTROLS: 'Sterujące',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Czekaj (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Czeka przez czas określony w milisekundach (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Rób',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'dopóki',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'Powtarzaj wykonanie bloku poleceń dopóki warunek jest spełniony.',
@@ -2927,6 +2985,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'pin cyfrowy',
                 LANG_VARIABLES_PIN_DIGITAL0: 'Ostrzeżenie: pin cyfrowy 0 (RX pin) jst używany podczas ładowania programu (sketchu). Jego użycie do podłączania komponenetów elektronicznych może powodować problemy podczas ładowania nowego programu.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Wybierz PIN.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //bloki Zum:
                 LANG_CATEGORY_ZUM: 'Bloki Zum',
                 LANG_ZUM_BUTTON: 'Przycisk',
@@ -3057,6 +3120,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Verifica se o módulo Bluetooth está disponível ou não',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Porta Série disponível',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Verifica se a porta série está disponível ou não',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Imprimir pela porta série',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Imprime os dados como texto ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Imprimir pela porta série com salto de linha',
@@ -3128,7 +3193,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Conecta o pino SCL ao pino A5 e o pino SDA ao pino A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Define o LCD',
                 LANG_LCD_ADVANCED_DEF: 'LCD avançado',
                 LANG_LCD_ADVANCED_ROWS: 'Linhas',
@@ -3146,6 +3211,8 @@
                 LANG_CATEGORY_CONTROLS: 'Controles',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Espera o tempo especificado em milisegundos (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -3348,6 +3415,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Pino digital',
                 LANG_VARIABLES_PIN_DIGITAL0: 'AVISO: o pin digital 0 (pin RX) é utilizado ao carregar um esboço. Utilizá-lo para ligar componentes eletrônicos pode causar problemas ao carregar um novo esboço.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Seleciona o pino desejado.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Botão',
@@ -3478,6 +3550,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Verifica se o módulo Bluetooth está disponível ou não',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Porta Série disponível',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Verifica se a porta série está disponível ou não',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Imprimir pela porta série',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Imprime os dados como texto ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Imprimir pela porta série com salto de linha',
@@ -3549,7 +3623,7 @@
                 //LCD blocks:
                 LANG_CATEGORY_LCD: 'LCD bloqs',
                 LANG_LCD_DEF: 'LCD (2x16)',
-                LANG_LCD_PINS: 'Conecta o pino SCL ao pino A5 e o pino SDA ao pino A4',
+                LANG_LCD_PINS: 'LCD Pins',
                 LANG_LCD_DEF_TOOLTIP: 'Define o LCD',
                 LANG_LCD_ADVANCED_DEF: 'LCD avançado',
                 LANG_LCD_ADVANCED_ROWS: 'Linhas',
@@ -3567,6 +3641,8 @@
                 LANG_CATEGORY_CONTROLS: 'Controlo',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Espera o tempo especificado em milisegundos (ms)',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -3769,6 +3845,11 @@
                 LANG_VARIABLES_PIN_DIGITAL: 'Pino digital',
                 LANG_VARIABLES_PIN_DIGITAL0: 'AVISO: o pin digital 0 (pin RX) é utilizado ao carregar um esboço. Utilizá-lo para ligar componentes eletrónicos pode causar problemas ao carregar um novo esboço.',
                 LANG_VARIABLES_PIN_TOOLTIP: 'Selecciona o pino desejado.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                 //zum blocks :
                 LANG_CATEGORY_ZUM: 'Zum bloqs',
                 LANG_ZUM_BUTTON: 'Botão',
@@ -3899,6 +3980,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Проверяет, доступен ли модуль Bluetooth.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Последовательный порт доступен',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Проверяет, доступен ли последовательный порт',
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
                 LANG_ADVANCED_SERIAL_PRINT: 'Отправляет данные в последовательный порт',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Отправляет данные в последовательный порт в кодировке ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Отправляет данные в последовательный порт одной строкой',
@@ -3970,7 +4053,7 @@
                          // ЖК блоки:
                         LANG_CATEGORY_LCD: 'Блоки ЖК',
                         LANG_LCD_DEF: 'ЖК-дисплей (2x16) ',
-                        LANG_LCD_PINS: 'Подключает SCL вход к контакту А5 и SDA вход к контакту А4 ',
+                        LANG_LCD_PINS: 'LCD Pins',
                         LANG_LCD_DEF_TOOLTIP: 'Установка ЖК',
                         LANG_LCD_ADVANCED_DEF: 'расширенный ЖК ',
                         LANG_LCD_ADVANCED_ROWS: 'Линии',
@@ -3988,6 +4071,8 @@
                         LANG_CATEGORY_CONTROLS: 'Контроль',
                         LANG_CONTROLS_BASE_DELAY_WAIT: 'Ждать (мс)',
                         LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Время ожидания указано в миллисекундах (мс) ',
+                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
                 LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
@@ -4190,6 +4275,11 @@
                         LANG_VARIABLES_PIN_DIGITAL: 'цифровой PIN ',
                         LANG_VARIABLES_PIN_DIGITAL0: 'ВНИМАНИЕ: цифровой контактный 0 (контактный RX) используется для загрузки скетча. Использование его для подключения электронных компонентов может вызвать проблемы при загрузке новых скетчей.',
                         LANG_VARIABLES_PIN_TOOLTIP: 'Выберите нужный контакт.',
+                LANG_VARIABLES_TYPE_BYTE: 'Byte', // To translate
+                LANG_VARIABLES_TYPE_FLOAT: 'Float', // To translate
+                LANG_VARIABLES_TYPE_INTEGER: 'Integer', // To translate
+                LANG_VARIABLES_TYPE_INTEGER_LONG: 'Long Integer', // To translate
+                LANG_VARIABLES_TYPE_STRING: 'String', // To translate
                          // Zum блоки:
                         LANG_CATEGORY_ZUM: 'Блоки Zum',
                         LANG_ZUM_BUTTON: 'Кнопка',
@@ -4519,6 +4609,17 @@
                     ',0,1023,0,' +
                     ((__t = (value_dmax)) == null ? '' : __t) +
                     ')';
+
+            }
+            return __p
+        };
+
+        this["JST"]["base_millis"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'millis()\n';
 
             }
             return __p
@@ -5150,6 +5251,29 @@
             return __p
         };
 
+        this["JST"]["lcd_def_declare"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'LiquidCrystal lcd(' +
+                    ((__t = (lcd_1)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (lcd_2)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (lcd_3)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (lcd_4)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (lcd_5)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (lcd_6)) == null ? '' : __t) +
+                    ');\n';
+
+            }
+            return __p
+        };
+
         this["JST"]["lcd_def_definitions"] = function(obj) {
             obj || (obj = {});
             var __t, __p = '',
@@ -5397,6 +5521,30 @@
                 __p += 'if (Serial.available()>0){\n' +
                     ((__t = (branch)) == null ? '' : __t) +
                     '\n}\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["serial_parseint"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'Serial.parseInt()\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["serial_parseint_setups"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'Serial.begin(' +
+                    ((__t = (bitrate)) == null ? '' : __t) +
+                    ');\n';
 
             }
             return __p
@@ -6159,6 +6307,26 @@
                 this.setInputsInline(true);
                 this.setOutput(true);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_MATH_BASE_MAP_TOOLTIP'));
+            }
+        };
+
+        // Source: src/blocks/base_millis/base_millis.js
+        /* global Blockly, JST, RoboBlocks */
+
+        //register with blockly arduino
+        Blockly.Arduino.base_millis = function() {
+            var code = 'millis()';
+            return [code, Blockly.Arduino.ORDER_ATOMIC];
+        };
+
+        Blockly.Blocks.base_millis = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_CONTROLS'),
+            helpUrl: RoboBlocks.URL_LED,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_CONTROL);
+                this.appendDummyInput('').appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_BASE_MILLIS'));
+                this.setOutput(true, 'Number');
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_CONTROLS_BASE_MILLIS_TOOLTIP'));
             }
         };
 
@@ -8280,8 +8448,15 @@
          * @return {String} Code generated with block parameters
          */
         Blockly.Arduino.lcd_def = function() {
+            var lcd_pins = {};
+            lcd_pins['lcd_1'] = this.getFieldValue('LCD_1');
+            lcd_pins['lcd_2'] = this.getFieldValue('LCD_2');
+            lcd_pins['lcd_3'] = this.getFieldValue('LCD_3');
+            lcd_pins['lcd_4'] = this.getFieldValue('LCD_4');
+            lcd_pins['lcd_5'] = this.getFieldValue('LCD_5');
+            lcd_pins['lcd_6'] = this.getFieldValue('LCD_6');
             Blockly.Arduino.definitions_['define_lcd'] = JST['lcd_def_definitions']({});
-            Blockly.Arduino.definitions_['declare_var_LCD'] = 'LiquidCrystal lcd(12, 11, 5, 4, 3, 2);\n';
+            Blockly.Arduino.definitions_['declare_var_LCD'] = JST['lcd_def_declare'](lcd_pins);
             Blockly.Arduino.setups_['setup_lcd_'] = JST['lcd_def_setups']({});
             return '';
         };
@@ -8299,7 +8474,14 @@
             init: function() {
                 this.setColour(RoboBlocks.LANG_COLOUR_LCD);
                 this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF')).appendField(new Blockly.FieldImage('img/blocks/lcd.png', 208 * options.zoom, 100 * options.zoom));
-                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_PINS'));
+                this.appendDummyInput()
+                    .appendField(RoboBlocks.locales.getKey('LANG_LCD_PINS'))
+                    .appendField(new Blockly.FieldTextInput('11'), 'LCD_1')
+                    .appendField(new Blockly.FieldTextInput('12'), 'LCD_2')
+                    .appendField(new Blockly.FieldTextInput('3'), 'LCD_3')
+                    .appendField(new Blockly.FieldTextInput('4'), 'LCD_4')
+                    .appendField(new Blockly.FieldTextInput('5'), 'LCD_5')
+                    .appendField(new Blockly.FieldTextInput('6'), 'LCD_6');
                 this.setInputsInline(false);
                 this.setPreviousStatement(true, null);
                 this.setNextStatement(true, null);
@@ -9648,7 +9830,7 @@
                 'args': args,
                 'branch': branch
             });
-            code = code.replace(/&amp;/g, '');
+            // code=code.replace(/&amp;/g, '');
 
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
@@ -9894,6 +10076,7 @@
             newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
             return newVar || null;
         };
+
         // Source: src/blocks/procedures_defreturn/procedures_defreturn.js
         /* global Blockly, JST, RoboBlocks */
         /**
@@ -9927,7 +10110,7 @@
                 'branch': branch,
                 'returnValue': returnValue
             });
-            code = code.replace(/&amp;/g, '');
+            // code=code.replace(/&amp;/g, '');
 
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
@@ -10019,6 +10202,7 @@
             validName: Blockly.Blocks.procedures_defnoreturn.validName,
             onchange: Blockly.Blocks.procedures_defnoreturn.onchange
         };
+
         // Source: src/blocks/procedures_ifreturn/procedures_ifreturn.js
         /* global Blockly, RoboBlocks */
 
@@ -10229,6 +10413,45 @@
                 this.setPreviousStatement(true);
                 this.setNextStatement(true);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP'));
+            }
+        };
+
+        // Source: src/blocks/serial_parseint/serial_parseint.js
+        /* global Blockly, profiles, JST, RoboBlocks */
+        /* jshint sub:true */
+
+        /**
+         * serial_parseint code generation
+         * @return {Number} First valid (long) integer number from the serial buffer
+         */
+
+        Blockly.Arduino.serial_parseint = function() {
+            Blockly.Arduino.setups_['setup_serial'] = JST['serial_parseint_setups']({
+                'bitrate': profiles.default.serial
+            });
+            var code = 'Serial.parseInt()'; // JST['serial_parseint']({});
+
+            return [code, Blockly.Arduino.ORDER_ATOMIC];
+        };
+
+        /**
+         * serial_parseint block definition
+         * @type {Object}
+         */
+        Blockly.Blocks.serial_parseint = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_COMMUNICATION'),
+            helpUrl: RoboBlocks.URL_SERIE,
+            tags: ['serial'],
+
+            /**
+             * serial_paraseint initialization
+             */
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_COMMUNICATION);
+                this.appendDummyInput('')
+                    .appendField(RoboBlocks.locales.getKey('LANG_ADVANCED_SERIAL_PARSEINT'));
+                this.setOutput(true, Number);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP'));
             }
         };
 
@@ -11285,6 +11508,127 @@
                 }
             }
         };
+        // Source: src/blocks/variables_global_type/variables_global_type.js
+        /* global Blockly,  RoboBlocks */
+        /* jshint sub:true */
+        /**
+         * variables_global_type code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.variables_global_type = function() {
+            // Variable setter.
+            var varType = this.getFieldValue('VAR_TYPE');
+            var varValue = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ASSIGNMENT);
+            var varName = this.getFieldValue('VAR') || '';
+            var isFunction = false;
+
+            var varName = this.getFieldValue('VAR') || '';
+            var code = '';
+
+            var a = RoboBlocks.findPinMode(varValue);
+            code += a['code'];
+            varValue = a['pin'];
+
+            Blockly.Arduino.definitions_['declare_var' + varName] = varType + ' ' + varName + ';\n';
+            Blockly.Arduino.setups_['define_var' + varName] = varName + '=' + varValue + ';\n';
+
+            RoboBlocks.variables[varName] = [varType, 'global'];
+            RoboBlocks.variables['analogRead(' + varName + ')'] = [varType, 'global'];
+            RoboBlocks.variables['digitalRead(' + varName + ')'] = [varType, 'global'];
+
+            return '';
+        };
+
+        Blockly.Blocks.variables_global_type = {
+            // Variable setter.
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_VARIABLES'), // Variables are handled specially.
+            helpUrl: RoboBlocks.URL_VAR,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_VARIABLES);
+                this.appendValueInput('VALUE').
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_GLOBAL')).
+                appendField(new Blockly.FieldTextInput(''), 'VAR').
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_GLOBAL_TYPE')).
+                appendField(new Blockly.FieldDropdown([
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_STRING'), 'String'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_INTEGER'), 'int'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_INTEGER_LONG'), 'long'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_BYTE'), 'byte'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_FLOAT'), 'float']
+                ]), "VAR_TYPE").
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_GLOBAL_EQUALS'));
+                this.setInputsInline(false);
+                this.setPreviousStatement(true);
+                this.setNextStatement(true);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_VARIABLES_GLOBAL_TOOLTIP'));
+            },
+            getVars: function() {
+                return [this.getFieldValue('VAR')];
+            },
+            renameVar: function(oldName, newName) {
+                if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+                    this.setFieldValue(newName, 'VAR');
+                }
+            },
+            isVariable: function(varValue) {
+                for (var i in Blockly.Variables.allVariables()) {
+                    if (Blockly.Variables.allVariables()[i] === varValue) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            validName: function(name) {
+                if (name && name.length > 0) {
+                    var i = 0;
+                    while (i < name.length) {
+                        if (!isNaN(parseFloat(name[i]))) {
+                            name = name.substring(1, name.length);
+                        } else {
+                            break;
+                        }
+                    }
+                    name = name.replace(/([ ])/g, '_');
+                    name = name.replace(/([áàâä])/g, 'a');
+                    name = name.replace(/([éèêë])/g, 'e');
+                    name = name.replace(/([íìîï])/g, 'i');
+                    name = name.replace(/([óòôö])/g, 'o');
+                    name = name.replace(/([úùûü])/g, 'u');
+                    name = name.replace(/([ñ])/g, 'n');
+                    name = name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&\Ç\%\=\~\{\}\¿\¡\"\@\:\;\-\"\·\|\º\ª\¨\'\·\̣\─\ç\`\´\¨\^])/g, '');
+                    i = 0;
+                    while (i < name.length) {
+                        if (!isNaN(parseFloat(name[i]))) {
+                            name = name.substring(1, name.length);
+                        } else {
+                            break;
+                        }
+                    }
+                    for (var j in Blockly.Arduino.RESERVED_WORDS_) {
+                        var reserved_words = Blockly.Arduino.RESERVED_WORDS_.split(',');
+                        if (name === reserved_words[j]) {
+                            this.setWarningText(RoboBlocks.locales.getKey('LANG_RESERVED_WORDS'));
+                            name = '';
+                            break;
+                        } else {
+                            this.setWarningText(null);
+                        }
+                    }
+                }
+                return name;
+            },
+            onchange: function() {
+                if (this.last_variable !== this.getFieldValue('VAR')) {
+                    var name = this.getFieldValue('VAR');
+                    name = this.validName(name);
+                    try {
+                        this.setFieldValue(name, 'VAR');
+                    } catch (e) {}
+                    this.last_variable = name;
+                }
+            }
+        };
+
         // Source: src/blocks/variables_local/variables_local.js
         /* global Blockly,  RoboBlocks */
         /* jshint sub:true */
@@ -11386,6 +11730,68 @@
             onchange: Blockly.Blocks.variables_global.onchange,
             validName: Blockly.Blocks.variables_global.validName
         };
+        // Source: src/blocks/variables_local_type/variables_local_type.js
+        /* global Blockly,  RoboBlocks */
+        /* jshint sub:true */
+        /**
+         * variable code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.variables_local_type = function() {
+            // Variable setter.
+            var varType = this.getFieldValue('VAR_TYPE');
+            var varValue = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ASSIGNMENT);
+            var varName = this.getFieldValue('VAR') || '';
+            var code = '';
+
+            var a = RoboBlocks.findPinMode(varValue);
+            code += a['code'];
+            varValue = a['pin'];
+
+            code += varType + ' ' + varName + '=' + varValue + ';\n';
+
+            RoboBlocks.variables[varName] = [varType, 'local'];
+            RoboBlocks.variables['analogRead(' + varName + ')'] = [varType, 'local'];
+            RoboBlocks.variables['digitalRead(' + varName + ')'] = [varType, 'local'];
+
+            return code;
+        };
+        Blockly.Blocks.variables_local_type = {
+            // Variable setter.
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_VARIABLES'), // Variables are handled specially.
+            helpUrl: RoboBlocks.URL_VAR,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_VARIABLES);
+                this.appendValueInput('VALUE').
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_LOCAL')).
+                appendField(new Blockly.FieldTextInput(''), 'VAR').
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_LOCAL_TYPE')).
+                appendField(new Blockly.FieldDropdown([
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_STRING'), 'String'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_INTEGER'), 'int'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_INTEGER_LONG'), 'long'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_BYTE'), 'byte'],
+                    [RoboBlocks.locales.getKey('LANG_VARIABLES_TYPE_FLOAT'), 'float']
+                ]), "VAR_TYPE").
+                appendField(RoboBlocks.locales.getKey('LANG_VARIABLES_GLOBAL_EQUALS'));
+                this.setInputsInline(false);
+                this.setPreviousStatement(true);
+                this.setNextStatement(true);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_VARIABLES_LOCAL_TOOLTIP'));
+            },
+            getVars: function() {
+                return [this.getFieldValue('VAR')];
+            },
+            renameVar: function(oldName, newName) {
+                if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+                    this.setFieldValue(newName, 'VAR');
+                }
+            },
+            isVariable: Blockly.Blocks.variables_global.isVariable,
+            onchange: Blockly.Blocks.variables_global.onchange,
+            validName: Blockly.Blocks.variables_global.validName
+        };
+
         // Source: src/blocks/variables_set/variables_set.js
         /* global Blockly, JST, RoboBlocks */
         /* jshint sub:true */
