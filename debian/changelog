@@ -1,3 +1,16 @@
+visualino (0.7) wily; urgency=medium
+
+  * Blocks for typed variables.
+  * Block for serial.parseInt().
+  * Block for millis().
+  * Zoom in/out.
+  * Add support for Arduino Duemilanove.
+  * Add fields to setup LCD pins.
+  * Fix problem with && operator in functions.
+  * Blockly: Fix issue with xml.childNodes returning twice one element.
+
+ -- Víctor R. Ruiz <vrruiz@gmail.com>  Sat, 06 Feb 2016 15:15:10 +0000
+
 visualino (0.6.2) wily; urgency=medium
 
   * Add Russian to dropdown list.
