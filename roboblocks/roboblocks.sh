@@ -3,8 +3,7 @@
 ## Blockly-based HTML application that Visual Arduino
 ## embeds.
 set -ex
-# git clone https://github.com/bq/roboblocks.git
-git clone file:///home/vrruiz/tmp/bitbloq/roboblocks.git-make roboblocks
+git clone https://github.com/bq/roboblocks.git
 cd roboblocks/
 npm install bower
 npm run bower
