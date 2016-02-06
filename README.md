@@ -1,38 +1,49 @@
 Visualino
 =========
 
-A desktop version of Roboblocks, a block-based programming environment
-for Arduino.
+Visual programming environment for Arduino.
+
+
+Install
+-------
+
+Check INSTALL file.
+
 
 Requirements
 ------------
 
-- Qt 5.x.
-- Arduino IDE >= 1.6.
+In order to Visualino to execute sketches, install Arduino IDE >= 1.6.
 
-Visualino uses Arduino IDE to build and upload the sketches to Arduino.
-
-
-Build in Linux/Ubuntu
----------------------
-
-To build Visualino, install Qt 5.x and qmake and run:
-
-```
-$ qmake
-$ make
-```
 
 Configure
 ---------
 
-config.ini contains two important paths that must be correctly defined:
+To setup the path to the Arduino IDE command line tool in your platform
+check the online documentation at [http://www.visualino.net/docs/](www.visualino.net/docs/).
 
-- arduino\_ide\_path: The binary for Arduino IDE.
-- html\_index: The absolute path where Roboblocks' index.html file is stored.
 
-In Linux, config.ini is searched in this folders
+Support
+-------
 
-- ~/.local/share/visualino/
-- /usr/share/visualino/
+Go to the [http://www.visualino.net/forum/](forum).
+
+
+Developer
+---------
+
+Víctor R. Ruiz <rvr@linotipo.es>
+
+
+Credits
+-------
+
+* [https://developers.google.com/blockly/](Google Blockly).
+* [https://github.com/bq/roboblocks](bq's roboblocks).
+
+
+License
+-------
+
+Check LICENSE file.
 
