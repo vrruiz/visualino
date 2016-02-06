@@ -1,0 +1,36 @@
+HOW TO BUILD
+============
+
+The project needs Qt5 and qmake to build properly. It supports Linux,
+Windows and Mac platforms.
+
+
+Qt Creator
+----------
+
+The easiest way to build the project is using Qt Creator. Install a
+recent version with Qt5 support. Then open the project file src.pro
+and build.
+
+Command line
+------------
+
+```
+$ qmake
+$ make
+```
+
+
+Debian-based system
+-------------------
+
+The project comes with debian build rules, in debian/ folder. To build it,
+install the required dependencies.
+
+```
+$ sudo apt-get install qtbase5-dev qt5-qmake libqt5webkit5-dev \
+    libqt5serialport5-dev qttools5-dev-tools libudev-dev \
+    build-essential debhelper
+$ dpkg-buildpackage
+```
+
