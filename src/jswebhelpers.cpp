@@ -28,4 +28,6 @@ void JsWebHelpers::sourceChanged() {
     // web brigde setup in MainWindow::onJavaScriptWindowObjectCleared()
     source_changed = true;
     source_changes++;
+    // Emit signal
+    emit changed();
 }

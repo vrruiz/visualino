@@ -33,14 +33,18 @@ private:
     QSerialPort *serial;
     QString dataString;
     QList<GraphWidget *> graphList;
+    QStringList documentHistory;
     JsWebHelpers *webHelper;
+    bool sourceChanging;
     bool sourceChanged;
+    int documentHistoryStep;
 
     void actionSaveAndSaveAs(bool askFileName, const QString &directory = "");
     void actionOpenInclude(const QString &title,
                            bool clear = true,
                            const QString &directory = "");
     void arduinoExec(const QString &action);
+    void documentHistoryReset();
     QString escapeCharacters(const QString& string);
     QString getXml();
     QString getCode();
@@ -83,6 +87,8 @@ public slots:
     void actionOpenMessages();
     void actionGraph();
     void actionQuit();
+    void actionDocumentRedo();
+    void actionDocumentUndo();
     void actionUpload();
     void actionVerify();
     void actionSave();
@@ -95,6 +101,7 @@ public slots:
     void onProcessFinished(int exitCode);
     void onProcessOutputUpdated();
     void onProcessStarted();
+    void onSourceChanged();
     void onStatusMessageChanged(const QString &message);
     void readSerial();
     void unhide();

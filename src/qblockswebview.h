@@ -14,7 +14,7 @@ public:
     void zoomOut();
 
 private:
-    void wheelEvent(QWheelEvent *event);
+    // void wheelEvent(QWheelEvent *event);
 
     void init();
     void doZoom(float scale);

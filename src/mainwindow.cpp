@@ -205,6 +205,37 @@ void MainWindow::actionExportSketch() {
     statusBar()->showMessage(message, 2000);
 }
 
+void MainWindow::actionDocumentUndo() {
+    // If no history, return
+    if (documentHistory.length() < 2) return;
+    if (documentHistoryStep == -1) {
+        // First undo, get previous document
+        documentHistoryStep = documentHistory.length() - 2;
+    } else {
+        // If already in first change, return
+        if (documentHistoryStep == 0) return;
+        documentHistoryStep--;
+    }
+    sourceChanging = true; // Prevent adding this change to the history
+    setXml(documentHistory[documentHistoryStep], true);
+}
+
+void MainWindow::actionDocumentRedo() {
+    // If already in first change, return
+    if (documentHistory.length() < 2) return;
+    if (documentHistoryStep >= documentHistory.length() - 1) return;
+    documentHistoryStep++;
+    sourceChanging = true; // Prevent adding this change to the history
+    setXml(documentHistory[documentHistoryStep], true);
+}
+
+void MainWindow::documentHistoryReset() {
+    // Clear history of changes
+    sourceChanging = false;
+    documentHistoryStep = -1;
+    documentHistory.clear();
+}
+
 void MainWindow::actionGraph() {
     // Show/hide graph
     if (ui->consoleText->isVisible() == true) {
@@ -304,6 +335,9 @@ void MainWindow::actionNew() {
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
     frame->evaluateJavaScript("resetWorkspace();");
+
+    // Reset history
+    documentHistoryReset();
 }
 
 void MainWindow::actionCloseMessages() {
@@ -325,7 +359,8 @@ void MainWindow::actionOpen() {
                 QStandardPaths::LocateDirectory);
     actionOpenInclude(tr("Open file"), true, directory);
 
-    // Reset source changed status
+    // Reset source changed and history
+    documentHistoryReset();
     webHelper->resetSourceChanged();
 }
 
@@ -566,6 +601,11 @@ void MainWindow::loadBlockly() {
             SIGNAL(javaScriptWindowObjectCleared()),
             this,
             SLOT(actionInjectWebHelper()));
+    // Capture signal
+    connect(webHelper, SIGNAL(changed()), this, SLOT(onSourceChanged()));
+    // Reset history
+    sourceChanging = false;
+    documentHistoryStep = -1;
 }
 
 void MainWindow::setArduinoBoard() {
@@ -598,6 +638,27 @@ void MainWindow::onProcessOutputUpdated() {
 void MainWindow::onProcessStarted() {
     ui->textBrowser->clear();
     ui->textBrowser->append(tr("Building..."));
+}
+
+void MainWindow::onSourceChanged() {
+    if (sourceChanging) {
+        sourceChanging = false;
+        return;
+    }
+    QString xml = getXml();
+    if (documentHistory.length() > 0) {
+        if (documentHistoryStep >= 0) {
+            // Change ocurred at mid history. Remove the rest of steps.
+            while (documentHistory.length() > documentHistoryStep + 1) {
+                documentHistory.removeLast();
+            }
+            documentHistoryStep = -1;
+        } else {
+            // Add step to history only if there is a real change
+            if (documentHistory.last() == xml) return;
+        }
+    }
+    documentHistory.append(xml);
 }
 
 void MainWindow::onStatusMessageChanged(const QString &message) {
