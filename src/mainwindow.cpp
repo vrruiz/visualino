@@ -662,10 +662,7 @@ void MainWindow::onSourceChanged() {
 }
 
 void MainWindow::onStatusMessageChanged(const QString &message) {
-    // Show the file name if no message
-    if (message.isNull()) {
-        statusBar()->showMessage(this->xmlFileName);
-    }
+    // This was used to display the file name when no other message was shown
 }
 
 void MainWindow::setXmlFileName(const QString &fileName) {
@@ -674,12 +671,14 @@ void MainWindow::setXmlFileName(const QString &fileName) {
     if (fileName.isNull() || fileName.isEmpty()) {
         // Enable save as
         ui->actionSave_as->setEnabled(false);
-        // Show message in status bar
+        // Display file name in window title
+        setWindowTitle("Visualino");
     } else {
         // Enable save as
         ui->actionSave_as->setEnabled(true);
+        // Display file name in window title
+        setWindowTitle("Visualino - " + this->xmlFileName);
     }
-    onStatusMessageChanged(NULL);
 }
 
 void MainWindow::serialPortClose() {
