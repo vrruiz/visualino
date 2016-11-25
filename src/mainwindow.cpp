@@ -205,6 +205,37 @@ void MainWindow::actionExportSketch() {
     statusBar()->showMessage(message, 2000);
 }
 
+void MainWindow::actionDocumentUndo() {
+    // If no history, return
+    if (documentHistory.length() < 2) return;
+    if (documentHistoryStep == -1) {
+        // First undo, get previous document
+        documentHistoryStep = documentHistory.length() - 2;
+    } else {
+        // If already in first change, return
+        if (documentHistoryStep == 0) return;
+        documentHistoryStep--;
+    }
+    sourceChanging = true; // Prevent adding this change to the history
+    setXml(documentHistory[documentHistoryStep], true);
+}
+
+void MainWindow::actionDocumentRedo() {
+    // If already in first change, return
+    if (documentHistory.length() < 2) return;
+    if (documentHistoryStep >= documentHistory.length() - 1) return;
+    documentHistoryStep++;
+    sourceChanging = true; // Prevent adding this change to the history
+    setXml(documentHistory[documentHistoryStep], true);
+}
+
+void MainWindow::documentHistoryReset() {
+    // Clear history of changes
+    sourceChanging = false;
+    documentHistoryStep = -1;
+    documentHistory.clear();
+}
+
 void MainWindow::actionGraph() {
     // Show/hide graph
     if (ui->consoleText->isVisible() == true) {
@@ -304,6 +335,9 @@ void MainWindow::actionNew() {
     // Clear workspace
     QWebFrame *frame = ui->webView->page()->mainFrame();
     frame->evaluateJavaScript("resetWorkspace();");
+
+    // Reset history
+    documentHistoryReset();
 }
 
 void MainWindow::actionCloseMessages() {
@@ -325,7 +359,8 @@ void MainWindow::actionOpen() {
                 QStandardPaths::LocateDirectory);
     actionOpenInclude(tr("Open file"), true, directory);
 
-    // Reset source changed status
+    // Reset source changed and history
+    documentHistoryReset();
     webHelper->resetSourceChanged();
 }
 
@@ -469,7 +504,7 @@ void MainWindow::actionSettings() {
     QString defaultLanguage = settings->defaultLanguage();
     // Supported list of languages
     QStringList languageList;
-    languageList << "en-GB" << "ca-ES" << "es-ES" << "it-IT" << "pl-PL"
+    languageList << "en-GB" << "ca-ES" << "es-ES" << "eu-ES" << "it-IT" << "pl-PL"
                  << "pt-BR" << "pt-PT" << "ru";
     SettingsDialog settingsDialog(settings, languageList, this);
     int result = settingsDialog.exec();
@@ -566,6 +601,11 @@ void MainWindow::loadBlockly() {
             SIGNAL(javaScriptWindowObjectCleared()),
             this,
             SLOT(actionInjectWebHelper()));
+    // Capture signal
+    connect(webHelper, SIGNAL(changed()), this, SLOT(onSourceChanged()));
+    // Reset history
+    sourceChanging = false;
+    documentHistoryStep = -1;
 }
 
 void MainWindow::setArduinoBoard() {
@@ -600,11 +640,29 @@ void MainWindow::onProcessStarted() {
     ui->textBrowser->append(tr("Building..."));
 }
 
-void MainWindow::onStatusMessageChanged(const QString &message) {
-    // Show the file name if no message
-    if (message.isNull()) {
-        statusBar()->showMessage(this->xmlFileName);
+void MainWindow::onSourceChanged() {
+    if (sourceChanging) {
+        sourceChanging = false;
+        return;
     }
+    QString xml = getXml();
+    if (documentHistory.length() > 0) {
+        if (documentHistoryStep >= 0) {
+            // Change ocurred at mid history. Remove the rest of steps.
+            while (documentHistory.length() > documentHistoryStep + 1) {
+                documentHistory.removeLast();
+            }
+            documentHistoryStep = -1;
+        } else {
+            // Add step to history only if there is a real change
+            if (documentHistory.last() == xml) return;
+        }
+    }
+    documentHistory.append(xml);
+}
+
+void MainWindow::onStatusMessageChanged(const QString &message) {
+    // This was used to display the file name when no other message was shown
 }
 
 void MainWindow::setXmlFileName(const QString &fileName) {
@@ -613,12 +671,14 @@ void MainWindow::setXmlFileName(const QString &fileName) {
     if (fileName.isNull() || fileName.isEmpty()) {
         // Enable save as
         ui->actionSave_as->setEnabled(false);
-        // Show message in status bar
+        // Display file name in window title
+        setWindowTitle("Visualino");
     } else {
         // Enable save as
         ui->actionSave_as->setEnabled(true);
+        // Display file name in window title
+        setWindowTitle("Visualino - " + this->xmlFileName);
     }
-    onStatusMessageChanged(NULL);
 }
 
 void MainWindow::serialPortClose() {

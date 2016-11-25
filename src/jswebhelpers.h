@@ -20,6 +20,7 @@ private:
     bool source_changed;
 
 signals:
+    void changed();
 
 public slots:
 
