@@ -110,13 +110,13 @@
         <location filename="../src/mainwindow.cpp" line="398"/>
         <location filename="../src/mainwindow.cpp" line="402"/>
         <source>Save</source>
-        <translation>GardarSauver</translation>
+        <translation>Sauver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>New</source>
-        <translation>NOuveau</translation>
+        <translation>Nouveau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="697"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>Open...</source>
-        <translation>Abrir...</translation>
+        <translation>Ouvrir...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="558"/>
         <source>Save...</source>
-        <translation>Gardar...</translation>
+        <translation>Sauver...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
@@ -161,7 +161,7 @@
         <location filename="../src/mainwindow.ui" line="537"/>
         <location filename="../src/mainwindow.ui" line="574"/>
         <source>Preferences</source>
-        <translation>Preferencias</translation>
+        <translation>Préférences</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="577"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="677"/>
         <source>List of examples</source>
-        <translation>Listaxe de exemplos</translation>
+        <translation>Liste des exemples</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="682"/>
@@ -343,11 +343,11 @@
     </message>
     <message>
         <source>Roboblocks language</source>
-        <translation type="obsolete">Idioma de Roboblocks</translation>
+        <translation type="obsolete">Idiome de Roboblocks</translation>
     </message>
     <message>
         <source>en-GB</source>
-        <translation type="obsolete">en-GB</translation>
+        <translation type="obsolete">fr-FR</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.cpp" line="84"/>
@@ -357,12 +357,12 @@
     <message>
         <location filename="../src/settingsdialog.cpp" line="95"/>
         <source>Default settings</source>
-        <translation>Configuration par défault</translation>
+        <translation>Configuration par défaut</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.cpp" line="96"/>
         <source>Are you sure? This will erase your current preferences and replace them with the defaults.</source>
-        <translation>Etes vous sûre ? Ca va effacer les préférrences  actuelles et les remplacer par celles par défaut.</translation>
+        <translation>Etes vous sûre ? Ca va effacer les préférences  actuelles et les remplacer par celles par défaut.</translation>
     </message>
     <message>
         <source>Roboblocks</source>
