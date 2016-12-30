@@ -4,7 +4,7 @@ QBlocksWebView::QBlocksWebView() {
 }
 
 QBlocksWebView::QBlocksWebView(QWidget *parent)
-    : QWebView::QWebView(parent) {
+    : QWebEngineView::QWebEngineView(parent) {
 }
 
 /*

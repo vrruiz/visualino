@@ -1,10 +1,10 @@
 #ifndef QBLOCKSWEBVIEW_H
 #define QBLOCKSWEBVIEW_H
 
-#include <QWebView>
+#include <QWebEngineView>
 #include <QWheelEvent>
 
-class QBlocksWebView : public QWebView
+class QBlocksWebView : public QWebEngineView
 {
 public:
     QBlocksWebView();

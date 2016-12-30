@@ -1,6 +1,6 @@
-QT += core gui serialport widgets
+QT += core gui serialport widgets webenginewidgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkit webkitwidgets
+# greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkit webkitwidgets
 
 TARGET = visualino
 TEMPLATE = app

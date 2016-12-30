@@ -17,7 +17,8 @@
 #include <QStandardPaths>
 #include <QThread>
 #include <QTimer>
-#include <QWebFrame>
+#include <QWebEnginePage>
+#include <QEventLoop>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -123,9 +124,7 @@ void MainWindow::arduinoExec(const QString &action) {
     tmpFile.open(QIODevice::WriteOnly);
 
     // Read code
-    QWebFrame *mainFrame = ui->webView->page()->mainFrame();
-    QVariant codeVariant = mainFrame->evaluateJavaScript(
-                "Blockly.Arduino.workspaceToCode();");
+    QVariant codeVariant = evaluateJavaScript("Blockly.Arduino.workspaceToCode();");
     QString codeString = codeVariant.toString();
 
     // Write code to tmp file
@@ -158,7 +157,7 @@ void MainWindow::actionAbout() {
 void MainWindow::actionCode() {
     // Show/hide code
     QString jsLanguage = QString("toogleCode();");
-    ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
+    evaluateJavaScript(jsLanguage);
 }
 
 void MainWindow::actionExamples() {
@@ -270,7 +269,7 @@ void MainWindow::actionInsertLanguage() {
     // Set language in Roboblocks
     QString jsLanguage = QString("var roboblocksLanguage = '%1';").
             arg(settings->defaultLanguage());
-    ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
+    ui->webView->page()->runJavaScript(jsLanguage);
 }
 
 void MainWindow::actionMonitor() {
@@ -333,8 +332,7 @@ void MainWindow::actionNew() {
     webHelper->resetSourceChanged();
 
     // Clear workspace
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    frame->evaluateJavaScript("resetWorkspace();");
+    evaluateJavaScript("resetWorkspace();");
 
     // Reset history
     documentHistoryReset();
@@ -541,8 +539,7 @@ void MainWindow::actionZoomOut() {
 
 QString MainWindow::getXml() {
     // Get XML
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    QVariant xml = frame->evaluateJavaScript(
+    QVariant xml = evaluateJavaScript(
         "var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());"
         "var data = Blockly.Xml.domToText(xml); data;");
     return xml.toString();
@@ -550,9 +547,7 @@ QString MainWindow::getXml() {
 
 QString MainWindow::getCode() {
     // Get code
-    QWebFrame *frame = ui->webView->page()->mainFrame();
-    QVariant xml = frame->evaluateJavaScript(
-        "Blockly.Arduino.workspaceToCode();");
+    QVariant xml = evaluateJavaScript("Blockly.Arduino.workspaceToCode();");
     return xml.toString();
 }
 
@@ -560,7 +555,6 @@ void MainWindow::setXml(const QString &xml, bool clear) {
     // Set XML
     QString escapedXml(escapeCharacters(xml));
 
-    QWebFrame *frame = ui->webView->page()->mainFrame();
     QString js = QString("var data = '%1'; "
         "var xml = Blockly.Xml.textToDom(data);"
         "Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),xml);"
@@ -569,7 +563,7 @@ void MainWindow::setXml(const QString &xml, bool clear) {
     if (clear) {
         js.prepend("Blockly.mainWorkspace.clear();");
     }
-    frame->evaluateJavaScript(js);
+    evaluateJavaScript(js);
 }
 
 bool MainWindow::listIsEqual(const QStringList &listOne,
@@ -584,26 +578,28 @@ bool MainWindow::listIsEqual(const QStringList &listOne,
 
 void MainWindow::loadBlockly() {
     // Load blockly index
-    connect(ui->webView->page()->mainFrame(),
-            SIGNAL(javaScriptWindowObjectCleared()),
+    connect(ui->webView->page(),
+            SIGNAL(loadFinished(bool)),
             this,
             SLOT(actionInsertLanguage()));
     ui->webView->load(QUrl::fromLocalFile(settings->htmlIndex()));
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(
+    /* TODO
+    ui->webView->page()->setScrollBarPolicy(
                 Qt::Vertical,
                 Qt::ScrollBarAlwaysOff);
-    ui->webView->page()->mainFrame()->setScrollBarPolicy(
+    ui->webView->page()->setScrollBarPolicy(
                 Qt::Horizontal,
                 Qt::ScrollBarAlwaysOff);
 
     // Signal is emitted before frame loads any web content
     webHelper = new JsWebHelpers();
-    connect(ui->webView->page()->mainFrame(),
-            SIGNAL(javaScriptWindowObjectCleared()),
+    connect(ui->webView->page(),
+            SIGNAL(loadFinished(bool)),
             this,
             SLOT(actionInjectWebHelper()));
     // Capture signal
     connect(webHelper, SIGNAL(changed()), this, SLOT(onSourceChanged()));
+    */
     // Reset history
     sourceChanging = false;
     documentHistoryStep = -1;
@@ -905,8 +901,20 @@ void MainWindow::updateSerialPorts() {
     }
 }
 
-QString MainWindow::escapeCharacters(const QString& string)
-{
+QVariant MainWindow::evaluateJavaScript(const QString code) {
+    // Execute JavaScript code and return
+    QEventLoop loop;
+    QVariant returnValue = "";
+    QWebEnginePage *page = ui->webView->page();
+    page->runJavaScript(code, [&](const QVariant var){
+        returnValue = var;
+        loop.quit();
+    });
+    loop.exec();
+    return returnValue;
+}
+
+QString MainWindow::escapeCharacters(const QString& string) {
     QString rValue = QString(string);
     // Assign \\ to backSlash
     QString backSlash = QString(QChar(0x5c)).append(QChar(0x5c));
@@ -922,9 +930,11 @@ QString MainWindow::escapeCharacters(const QString& string)
 void MainWindow::actionInjectWebHelper() {
     // Inject the webHelper object in the webview. This is used in index.html,
     // where a call is made back to webHelper.sourceChanged() function.
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject(
+    /* TODO
+    ui->webView->page()->addToJavaScriptWindowObject(
                 QString("webHelper"),
                 webHelper);
+    */
 }
 
 int MainWindow::checkSourceChanged() {
@@ -970,9 +980,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
             QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
             if (keyEvent->key() == Qt::Key_Backspace) {
                 // Is the active element a text field?
-                QWebFrame *frame = ui->webView->page()->mainFrame();
-                QVariant code = frame->evaluateJavaScript(
-                    "document.activeElement.type");
+                QVariant code = evaluateJavaScript("document.activeElement.type");
                 QString type = code.toString();
                 if (type == "text") {
                     // Text field: pass the event to the widget
