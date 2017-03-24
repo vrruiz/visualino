@@ -6,12 +6,16 @@
     <message>
         <location filename="../src/aboutdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>A proposito di</translation>
     </message>
     <message>
         <location filename="../src/aboutdialog.ui" line="30"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino is open source software (MIT license). Visit the web site at &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2016 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;It uses the following open source projects:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (LGPL license 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (MIT license).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (LGPL license).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This project is done with the help of &lt;a href=&quot;http://www.facebook.com/groups/arduinograncanaria&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Arduino Gran Canaria&lt;/span&gt;&lt;/a&gt; members and other &lt;a href=&quot;https://github.com/vrruiz/visualino/blob/master/AUTHORS&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;contributors&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino è un programma open-source (licenza MIT). Visita il sito web &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2016 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Questo programma utilizza i seguenti progetti open-source:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (licenza LGPL 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (licenza MIT).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (licenza LGPL).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Questo progetto è fatto con l&apos;aiuto di collaboratori di &lt;a href=&quot;http://www.facebook.com/groups/arduinograncanaria&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Arduino Gran Canaria&lt;/span&gt;&lt;/a&gt; e di altri &lt;a href=&quot;https://github.com/vrruiz/visualino/blob/master/AUTHORS&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;contributors&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino is open source software (MIT license). Visit the web site at &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2015 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;It uses the following open source projects:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (LGPL license 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (MIT license).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (LGPL license).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This project is done with the help of &lt;a href=&quot;http://www.facebook.com/groups/arduinograncanaria&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Arduino Gran Canaria&lt;/span&gt;&lt;/a&gt; members.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Visualino è un programma open-source (licenza MIT). Visita il sito web &lt;a href=&quot;http://www.visualino.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;visualino.net&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2014-2016 Víctor R. Ruiz &amp;lt;&lt;a href=&quot;mailto:rvr@linotipo.es&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;rvr@linotipo.es&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;Questo programma utilizza i seguenti progetti open-source:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.qt.io/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt 5&lt;/span&gt;&lt;/a&gt;, The Qt Company (licenza LGPL 2.1).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Blockly&lt;/span&gt;&lt;/a&gt; (licenza MIT).&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/bq/roboblocks&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Roboblocks&lt;/span&gt;&lt;/a&gt;, bq (licenza LGPL).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Questo progetto è fatto con l&apos;aiuto di collaboratori di &lt;a href=&quot;http://www.facebook.com/groups/arduinograncanaria&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Arduino Gran Canaria&lt;/span&gt;&lt;/a&gt; e di altri &lt;a href=&quot;https://github.com/vrruiz/visualino/blob/master/AUTHORS&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;contributors&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -19,308 +23,364 @@
     <message>
         <location filename="../src/mainwindow.ui" line="23"/>
         <source>Visualino</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualino</translation>
+    </message>
+    <message>
+        <source>about:blank</source>
+        <translation type="vanished">A proposito di </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="238"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="306"/>
+        <location filename="../src/mainwindow.ui" line="309"/>
         <source>arduino:avr:uno</source>
-        <translation type="unfinished"></translation>
+        <translation>arduino:avr:uno</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="311"/>
+        <source>arduino:avr:nano</source>
+        <translation type="vanished">arduino:avr:nano</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="314"/>
         <source>arduino:avr:nano:cpu=atmega328</source>
-        <translation type="unfinished"></translation>
+        <translation>arduino:avr:nano:cpu=atmega328</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="316"/>
+        <location filename="../src/mainwindow.ui" line="319"/>
         <source>arduino:avr:mega</source>
-        <translation type="unfinished"></translation>
+        <translation>arduino:avr:mega</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="321"/>
+        <location filename="../src/mainwindow.ui" line="324"/>
         <source>arduino:avr:diecimila</source>
-        <translation type="unfinished"></translation>
+        <translation>arduino:avr:diecimila</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="326"/>
+        <location filename="../src/mainwindow.ui" line="329"/>
         <source>arduino:avr:bt</source>
+        <translation>arduino:avr:bt</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="334"/>
+        <source>Intel:arc32:arduino_101</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/mainwindow.ui" line="339"/>
+        <source>esp8266:esp8266:generic:CpuFrequency=80,FlashFreq=40,FlashMode=dio,UploadSpeed=115200,FlashSize=512K64,ResetMethod=ck,Debug=Disabled,DebugLevel=None____</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="344"/>
+        <source>esp8266:esp8266:nodemcuv2:CpuFrequency=80,UploadSpeed=115200,FlashSize=4M3M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="406"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="389"/>
+        <location filename="../src/mainwindow.ui" line="410"/>
         <source>Export as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta come...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="412"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="418"/>
+        <location filename="../src/mainwindow.ui" line="439"/>
         <source>&amp;Tools</source>
+        <translation>&amp;Strumenti</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="451"/>
+        <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="460"/>
+        <location filename="../src/mainwindow.ui" line="489"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="480"/>
-        <location filename="../src/mainwindow.ui" line="483"/>
-        <location filename="../src/mainwindow.ui" line="653"/>
+        <location filename="../src/mainwindow.ui" line="509"/>
+        <location filename="../src/mainwindow.ui" line="512"/>
+        <location filename="../src/mainwindow.ui" line="682"/>
         <source>Verify</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifica</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="486"/>
+        <location filename="../src/mainwindow.ui" line="515"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="495"/>
-        <location filename="../src/mainwindow.ui" line="498"/>
-        <location filename="../src/mainwindow.ui" line="563"/>
+        <location filename="../src/mainwindow.ui" line="524"/>
+        <location filename="../src/mainwindow.ui" line="527"/>
+        <location filename="../src/mainwindow.ui" line="592"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="507"/>
+        <location filename="../src/mainwindow.ui" line="536"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="516"/>
+        <location filename="../src/mainwindow.ui" line="545"/>
         <location filename="../src/mainwindow.cpp" line="181"/>
-        <location filename="../src/mainwindow.cpp" line="412"/>
-        <location filename="../src/mainwindow.cpp" line="416"/>
+        <location filename="../src/mainwindow.cpp" line="447"/>
+        <location filename="../src/mainwindow.cpp" line="451"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="525"/>
-        <location filename="../src/mainwindow.ui" line="539"/>
+        <location filename="../src/mainwindow.ui" line="554"/>
+        <location filename="../src/mainwindow.ui" line="568"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="542"/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="547"/>
-        <source>Open...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="550"/>
-        <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="555"/>
-        <source>Save...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="558"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="566"/>
-        <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="674"/>
-        <source>List of examples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="679"/>
-        <source>Examples...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="694"/>
+        <location filename="../src/mainwindow.ui" line="723"/>
         <source>Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafico</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="699"/>
+        <location filename="../src/mainwindow.ui" line="728"/>
         <source>Zoom +</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="702"/>
+        <location filename="../src/mainwindow.ui" line="731"/>
         <source>Ctrl++</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="707"/>
+        <location filename="../src/mainwindow.ui" line="736"/>
         <source>Zoom -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="710"/>
+        <location filename="../src/mainwindow.ui" line="739"/>
         <source>Ctrl+-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="534"/>
-        <location filename="../src/mainwindow.ui" line="571"/>
-        <source>Preferences</source>
+        <location filename="../src/mainwindow.ui" line="744"/>
+        <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="574"/>
-        <source>Ctrl+,</source>
+        <location filename="../src/mainwindow.ui" line="747"/>
+        <source>Ctrl+Z</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="752"/>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="755"/>
+        <source>Ctrl+Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Preferenze</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="571"/>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="576"/>
+        <source>Open...</source>
+        <translation>Apri...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="579"/>
-        <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="582"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/mainwindow.ui" line="584"/>
+        <source>Save...</source>
+        <translation>Salva...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="587"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+S</source>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="595"/>
-        <source>Show/hide messages</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+U</source>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="613"/>
+        <location filename="../src/mainwindow.ui" line="563"/>
+        <location filename="../src/mainwindow.ui" line="600"/>
+        <source>Preferences</source>
+        <translation>Preferenze</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="603"/>
+        <source>Ctrl+,</source>
+        <translation>Ctrl+,</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="608"/>
+        <source>Quit</source>
+        <translation>Esci</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="611"/>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+Q</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="616"/>
-        <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <source>About</source>
+        <translation>A proposito di</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="624"/>
-        <source>Show/hide monitor</source>
-        <translation type="unfinished"></translation>
+        <source>Show/hide messages</source>
+        <translation>Mostra/nascondi messaggi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="627"/>
-        <source>Ctrl+Shift+M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="632"/>
-        <source>Sketch (.ino)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="640"/>
-        <source>Save as...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../src/mainwindow.ui" line="642"/>
         <location filename="../src/mainwindow.ui" line="645"/>
-        <source>Include...</source>
-        <translation type="unfinished"></translation>
+        <source>Monitor</source>
+        <translation>Monitor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="648"/>
-        <source>Include</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/mainwindow.ui" line="653"/>
+        <source>Show/hide monitor</source>
+        <translation>Mostra/nascondi Monitor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="658"/>
-        <source>Show/hide code</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/mainwindow.ui" line="656"/>
+        <source>Ctrl+Shift+M</source>
+        <translation>Ctrl+Mayus+M</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="661"/>
+        <source>Sketch (.ino)</source>
+        <translation>Sketch (.ino)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="669"/>
+        <source>Save as...</source>
+        <translation>Salva come...</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="674"/>
+        <source>Include...</source>
+        <translation>Includi...</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="677"/>
+        <source>Include</source>
+        <translation>Includi</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="687"/>
+        <source>Show/hide code</source>
+        <translation>Mostra/nascondi codice</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="698"/>
         <source>Show/hide icon labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra/nascondi testo delle icone</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="171"/>
-        <source>Examples</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/mainwindow.ui" line="703"/>
+        <source>List of examples</source>
+        <translation>Lista degli esempi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="185"/>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/mainwindow.ui" line="708"/>
+        <source>Examples...</source>
+        <translation>Esempi...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="197"/>
-        <location filename="../src/mainwindow.cpp" line="432"/>
+        <location filename="../src/mainwindow.cpp" line="467"/>
         <source>Couldn&apos;t open file to save content: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non è possibile aprire il file per salvare il contenuto:%1.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="204"/>
         <source>Done exporting: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportazione terminata: %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="235"/>
+        <source>Import file</source>
+        <translation type="vanished">Importa il file</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="171"/>
+        <source>Examples</source>
+        <translation>Esempi</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="185"/>
+        <source>Export</source>
+        <translation>Esporta</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="266"/>
         <source>Include file</source>
-        <translation type="unfinished"></translation>
+        <translation>Includi il file</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="326"/>
+        <location filename="../src/mainwindow.cpp" line="360"/>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri il file</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="338"/>
+        <location filename="../src/mainwindow.cpp" line="373"/>
         <source>Blockly Files %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Files Blockly %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="358"/>
+        <location filename="../src/mainwindow.cpp" line="393"/>
         <source>Couldn&apos;t open file to read content: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non è possibile aprire il file per leggere il contenuto: %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="442"/>
+        <location filename="../src/mainwindow.cpp" line="477"/>
         <source>Done saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvataggio terminato.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="489"/>
+        <location filename="../src/mainwindow.cpp" line="525"/>
         <source>Please, restart the application to display the selected language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si prega di riavviare l&apos;applicazione per visualizzare la lingua selezionata.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="591"/>
+        <location filename="../src/mainwindow.cpp" line="632"/>
         <source>Finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Finito.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="600"/>
+        <location filename="../src/mainwindow.cpp" line="641"/>
         <source>Building...</source>
-        <translation type="unfinished"></translation>
+        <translation>in compilazione...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="874"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>There are unsaved changes that could be lost. Do you want to save them before continuing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono modifiche non salvate che potrebbero essere perse. Salvarle prima di continuare ?</translation>
     </message>
 </context>
 <context>
@@ -328,37 +388,57 @@
     <message>
         <location filename="../src/settingsdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.ui" line="48"/>
         <source>Arduino IDE Program Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso dell&apos; IDE di Arduino</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Roboblocks Path</source>
+        <translation type="vanished">Percorso dei Roboblocks</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.ui" line="103"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Roboblocks language</source>
+        <translation type="obsolete">Lingua dei Roboblocks</translation>
+    </message>
+    <message>
+        <source>en-GB</source>
+        <translation type="obsolete">en-GB</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.cpp" line="84"/>
         <source>Arduino IDE</source>
-        <translation type="unfinished"></translation>
+        <translation>IDE di Arduino</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.cpp" line="95"/>
         <source>Default settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurazione predefinita</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.cpp" line="96"/>
         <source>Are you sure? This will erase your current preferences and replace them with the defaults.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sei sicuro ? Questa operazione sostituirà le preferenze attuali con le opzioni predefinite. </translation>
+    </message>
+    <message>
+        <source>Roboblocks</source>
+        <translation type="vanished">Roboblocks</translation>
+    </message>
+    <message>
+        <source>HTML (*.html)</source>
+        <translation type="vanished">HTML (*.html)</translation>
     </message>
 </context>
 </TS>
