@@ -66,17 +66,17 @@
     <message>
         <location filename="../src/mainwindow.ui" line="334"/>
         <source>Intel:arc32:arduino_101</source>
-        <translation type="unfinished"></translation>
+        <translation>Intel:arc32:arduino_101</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="339"/>
         <source>esp8266:esp8266:generic:CpuFrequency=80,FlashFreq=40,FlashMode=dio,UploadSpeed=115200,FlashSize=512K64,ResetMethod=ck,Debug=Disabled,DebugLevel=None____</source>
-        <translation type="unfinished"></translation>
+        <translation>esp8266:esp8266:generic:CpuFrequency=80,FlashFreq=40,FlashMode=dio,UploadSpeed=115200,FlashSize=512K64,ResetMethod=ck,Debug=Disabled,DebugLevel=None____</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>esp8266:esp8266:nodemcuv2:CpuFrequency=80,UploadSpeed=115200,FlashSize=4M3M</source>
-        <translation type="unfinished"></translation>
+        <translation>esp8266:esp8266:nodemcuv2:CpuFrequency=80,UploadSpeed=115200,FlashSize=4M3M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="451"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Modifica</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
@@ -154,37 +154,37 @@
     <message>
         <location filename="../src/mainwindow.ui" line="728"/>
         <source>Zoom +</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom +</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="731"/>
         <source>Ctrl++</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl++</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="736"/>
         <source>Zoom -</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom -</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="739"/>
         <source>Ctrl+-</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+-</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="744"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="747"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="752"/>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripeti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="755"/>
