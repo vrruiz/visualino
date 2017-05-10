@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>about:blank</source>
-        <translation type="vanished">A proposito di </translation>
+        <translation>A proposito di </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="238"/>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>arduino:avr:nano</source>
-        <translation type="vanished">arduino:avr:nano</translation>
+        <translation>arduino:avr:nano</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="314"/>
@@ -189,11 +189,11 @@
     <message>
         <location filename="../src/mainwindow.ui" line="755"/>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="vanished">Preferenze</translation>
+        <translation>Preferenze</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="571"/>
@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="653"/>
         <source>Show/hide monitor</source>
-        <translation>Mostra/nascondi Monitor</translation>
+        <translation>Mostra/nascondi monitor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="656"/>
         <source>Ctrl+Shift+M</source>
-        <translation>Ctrl+Mayus+M</translation>
+        <translation>Ctrl+Shift+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="661"/>
@@ -316,7 +316,7 @@
         <location filename="../src/mainwindow.cpp" line="197"/>
         <location filename="../src/mainwindow.cpp" line="467"/>
         <source>Couldn&apos;t open file to save content: %1.</source>
-        <translation>Non è possibile aprire il file per salvare il contenuto:%1.</translation>
+        <translation>Non è possibile aprire il file per salvare il contenuto: %1.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="204"/>
@@ -325,7 +325,7 @@
     </message>
     <message>
         <source>Import file</source>
-        <translation type="vanished">Importa il file</translation>
+        <translation>Importa il file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="171"/>
@@ -402,7 +402,7 @@
     </message>
     <message>
         <source>Roboblocks Path</source>
-        <translation type="vanished">Percorso dei Roboblocks</translation>
+        <translation>Percorso dei Roboblocks</translation>
     </message>
     <message>
         <location filename="../src/settingsdialog.ui" line="103"/>
@@ -430,15 +430,15 @@
     <message>
         <location filename="../src/settingsdialog.cpp" line="96"/>
         <source>Are you sure? This will erase your current preferences and replace them with the defaults.</source>
-        <translation>Sei sicuro ? Questa operazione sostituirà le preferenze attuali con le opzioni predefinite. </translation>
+        <translation>Sei sicuro? Questa operazione sostituirà le preferenze attuali con le opzioni predefinite.</translation>
     </message>
     <message>
         <source>Roboblocks</source>
-        <translation type="vanished">Roboblocks</translation>
+        <translation>Roboblocks</translation>
     </message>
     <message>
         <source>HTML (*.html)</source>
-        <translation type="vanished">HTML (*.html)</translation>
+        <translation>HTML (*.html)</translation>
     </message>
 </context>
 </TS>
