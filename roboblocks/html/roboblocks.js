@@ -2661,7 +2661,7 @@
                 LANG_CATEGORY_LOGIC: 'Logica',
                 LANG_LOGIC_OPERATION_AND: 'e',
                 LANG_LOGIC_OPERATION_OR: 'o',
-                LANG_LOGIC_COMPARE_TOOLTIP_EQ: 'Controlla che entrambi i valori siano uguali .',
+                LANG_LOGIC_COMPARE_TOOLTIP_EQ: 'Controlla che entrambi i valori siano uguali.',
                 LANG_LOGIC_COMPARE_TOOLTIP_NEQ: 'Controlla che i valori siano differenti.',
                 LANG_LOGIC_COMPARE_TOOLTIP_LT: 'Controlla che il primo valore sia più piccolo del secondo.',
                 LANG_LOGIC_COMPARE_TOOLTIP_LTE: 'Controlla che il primo valore sia più piccolo o uguale al secondo.',
@@ -2674,7 +2674,7 @@
                 LANG_LOGIC_NEGATE_HELPURL: '',
                 LANG_LOGIC_BOOLEAN_TRUE: 'Vero',
                 LANG_LOGIC_BOOLEAN_FALSE: 'Falso',
-                LANG_LOGIC_BOOLEAN_TOOLTIP: 'Restituisce il valore vero o falso della funzione selezionata.',
+                LANG_LOGIC_BOOLEAN_TOOLTIP: 'Restituisce il valore Vero o Falso della funzione selezionata.',
                 //communication blocks:
                 LANG_CATEGORY_COMMUNICATION: 'Comunicazione',
                 LANG_BQ_BLUETOOTH_RECEIVE: 'Ricezione dati da Bluetooth',
@@ -2688,7 +2688,7 @@
                 LANG_BQ_BLUETOOTH_DEF_PIN1: 'RX',
                 LANG_BQ_BLUETOOTH_DEF_PIN2: 'TX',
                 LANG_BQ_BLUETOOTH_DEF_NAME: 'Nome',
-                LANG_BQ_BLUETOOTH_DEF_PINCODE: 'Codice pin',
+                LANG_BQ_BLUETOOTH_DEF_PINCODE: 'Codice Pin',
                 LANG_BQ_BLUETOOTH_DEF_RECEIVE: 'Ricevi',
                 LANG_BQ_BLUETOOTH_DEF_SEND: 'Invia',
                 LANG_BQ_BLUETOOTH_DEF_TOOLTIP: 'Definizione del modulo Bluetooth',
@@ -2696,8 +2696,8 @@
                 LANG_ADVANCED_BT_SERIAL_AVAILABLE_TOOLTIP: 'Controlla se il Bluetooth è disponibile o meno.',
                 LANG_ADVANCED_SERIAL_AVAILABLE: 'Porta seriale disponibile',
                 LANG_ADVANCED_SERIAL_AVAILABLE_TOOLTIP: 'Controlla se la porta seriale è disponibile o meno.',
-                LANG_ADVANCED_SERIAL_PARSEINT: 'Serial Read Integer', // To translate
-                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'First valid (long) integer number from the serial buffer', // To translate
+                LANG_ADVANCED_SERIAL_PARSEINT: 'Leggi un numero intero dalla porta seriale',
+                LANG_ADVANCED_SERIAL_PARSEINT_TOOLTIP: 'Primo valido numero intero dalla porta seriale',
                 LANG_ADVANCED_SERIAL_PRINT: 'Invio dati porta seriale',
                 LANG_ADVANCED_SERIAL_PRINT_TOOLTIP: 'Scrive i dati come testo ASCII.',
                 LANG_ADVANCED_SERIAL_PRINTLN: 'Invio dati porta seriale (+accapo)',
@@ -2787,13 +2787,13 @@
                 LANG_CATEGORY_CONTROLS: 'Controllo',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendi (ms)',
                 LANG_CONTROLS_BASE_DELAY_TOOLTIP: 'Attende un determinato tempo in millisecondi (ms)',
-                LANG_CONTROLS_BASE_MILLIS: 'Time from start (ms)', // To translate
-                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Number of milliseconds since the program started (long integer)', // To translate
+                LANG_CONTROLS_BASE_MILLIS: 'Tempo dall\'inizio (ms)',
+                LANG_CONTROLS_BASE_MILLIS_TOOLTIP: 'Numero di millisecondi dall\'avvio del programma (long integer)',
                 LANG_CONTROLS_DOWHILE_OPERATOR_DO: 'Do',
                 LANG_CONTROLS_DOWHILE_OPERATOR_WHILE: 'while',
-                LANG_CONTROLS_DOWHILE_TOOLTIP: 'While the condition is true, continue doing the statements.',
-                LANG_CONTROLS_EXECUTE: 'Execute',
-                LANG_CONTROLS_EXECUTE_TOOLTIP: 'Executes C/C++ code. Use with caution, as it can easily break the program and prevent it from compiling.',
+                LANG_CONTROLS_DOWHILE_TOOLTIP: 'Mentre la condizione è vera continua a eseguire le istruzioni.',
+                LANG_CONTROLS_EXECUTE: 'Esegui',
+                LANG_CONTROLS_EXECUTE_TOOLTIP: 'Esegue il codice C/C++. Usa questo comando con attenzione poichè può rompere il codice e negare la compilazione.',
                 LANG_CONTROLS_IF_TOOLTIP_1: 'Se la condizione è vera, esegue il blocco.',
                 LANG_CONTROLS_IF_TOOLTIP_2: 'Se la condizione è vera, esegue il primo blocco, altrimenti esegue il secondo blocco.',
                 LANG_CONTROLS_IF_TOOLTIP_3: 'Se la prima condizione è vera si esegue il primo blocco di codice. Altrimenti, se il secondo valore è Vero, viene eseguito il secondo blocco di codice.',
@@ -4959,7 +4959,7 @@
             var blocks = {};
 
             for (var block in this.Blocks) {
-                // important check that this is objects own property 
+                // important check that this is objects own property
                 // not from prototype prop inherited
                 if (this.Blocks.hasOwnProperty(block) && this.Blocks[block] instanceof Object && this.Blocks[block].category) {
                     var category = this.Blocks[block].category;
