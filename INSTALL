@@ -40,7 +40,7 @@ Fedora-based system
 Install the required dependencies in Fedora
 
 ```
-sudo dnf install qt-devel qt5-qtserialport-devel qt5-linguist qt5-qtwebkit-devel
+$ sudo dnf install qt-devel qt5-qtserialport-devel qt5-linguist qt5-qtwebkit-devel
 ```
 
 Then open the ts.pro archive and change all "lupdate" by "lupdate-qt5"
@@ -48,14 +48,14 @@ and all "lrelease" by "lrelease-qt5". Save changes
 In the console type:
 
 ```
-make
-make install 
+$ make
+$ make install 
 ```
 
 If no errors appear then write 
 
 ```
-sudo mkdir /usr/share/visualino/ && cp -r roboblocks/html/ /usr/share/visualino/
+$ sudo mkdir /usr/share/visualino/ && cp -r roboblocks/html/ /usr/share/visualino/
 ```
 from the Visualino directory.
 
