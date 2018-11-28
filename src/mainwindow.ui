@@ -313,6 +313,11 @@ pressed: { border: 1px };</string>
         </item>
         <item>
          <property name="text">
+          <string>arduino:avr:nano:cpu=atmega328old</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>arduino:avr:mega</string>
          </property>
         </item>
