@@ -267,9 +267,13 @@ void MainWindow::actionInclude() {
 }
 
 void MainWindow::actionInsertLanguage() {
-    // Set language in Roboblocks
-    QString jsLanguage = QString("var roboblocksLanguage = '%1';").
-            arg(settings->defaultLanguage());
+    // Set language and board parameters in Roboblocks
+    QStringList arduino_board_fields=settings->arduinoBoard().split(":");
+    QString arduino_board_selected="arduino_uno";
+    if(arduino_board_fields[0]=="arduino") arduino_board_selected="arduino_"+arduino_board_fields[2];
+    QString jsLanguage = QString("var roboblocksLanguage = '%1';\nvar selectedArduinoBoard = '%2'").
+            arg(settings->defaultLanguage()).
+            arg(arduino_board_selected);
     ui->webView->page()->mainFrame()->evaluateJavaScript(jsLanguage);
 }
 
@@ -617,6 +621,12 @@ void MainWindow::setArduinoBoard() {
 void MainWindow::onBoardChanged() {
     // Board changed, update settings
     settings->setArduinoBoard(ui->boardBox->currentText());
+    // Refresh workspace with new board parameters
+    xmlLoadContent = getXml();
+    loadBlockly();
+    connect(ui->webView,
+            SIGNAL(loadFinished(bool)),
+            SLOT(onLoadFinished(bool)));
 }
 
 void MainWindow::onLoadFinished(bool finished) {
