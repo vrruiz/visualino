@@ -9,7 +9,7 @@
 </head>
 <body>
     <xml id="startBlocks" style="display: none">
-        <block type="controls_setupLoop" deletable="false"></block>
+        <block type="controls_setupLoop" deletable="true"></block>
     </xml>
     <div id="wrap">
         <div id="blockly" style="float: left; width: 66%;"></div>
@@ -104,7 +104,6 @@
                 Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),
                     document.getElementById('startBlocks'));
             }
-
     </script>
 </body>
 </html>

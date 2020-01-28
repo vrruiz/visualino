@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2020-01-20
+/*! roboblocks - v0.2.3 - 2020-01-26
  * https://github.com/bq/roboblocks
  * Copyright (c) 2020 bq; Licensed  */
 
@@ -453,6 +453,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TO',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Durada',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Brunzidor piezoelèctric avançat.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servo de rotació contínua',
@@ -940,6 +945,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TONE',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duration [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Piezo Buzzer Advanced',
+                LANG_ZUM_DHT11_VALUE: 'Get',
+                LANG_ZUM_DHT11_VALUE1: 'Temperature',
+                LANG_ZUM_DHT11_VALUE2: 'Humidity',
+                LANG_ZUM_DHT11_PIN: 'PIN',
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.',
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors',
                 LANG_MOTOR_SERVO_CONT: 'Continuous rotation servo',
@@ -1427,6 +1437,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TONO',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duración [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Zumbador piezoeléctrico avanzado.',
+                LANG_ZUM_DHT11_VALUE: 'Obtener',
+                LANG_ZUM_DHT11_VALUE1: 'Temperatura',
+                LANG_ZUM_DHT11_VALUE2: 'Humedad',
+                LANG_ZUM_DHT11_PIN: 'PIN',
+                LANG_ZUM_DHT11_TOOLTIP: 'Obtiene el valor de temperatura o humedad de un sensor DHT11, DHT21 o DHT22.',
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motores',
                 LANG_MOTOR_SERVO_CONT: 'Servo rotación continua',
@@ -1917,6 +1932,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TONUA',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Iraupena [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Burrunbagailu piezoelektriko aurreratua.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Errotazio jarraiko serboa',
@@ -2404,6 +2424,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TONALITÉ',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Temps [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Buzzer avancé',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servo',
@@ -2891,6 +2916,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TON',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duración [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Zumbador piezoeléctrico avanzado.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servo de rotación continua',
@@ -3378,6 +3408,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TONO',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Durata',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Buzzer avanzato',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servomotore a rotazione continua',
@@ -3863,6 +3898,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'Ton',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Czas trwania [ms]',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Brzęczyk piezoelektryczny Zum zaawansowany',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Serwo obrotu ciągłego',
@@ -4355,6 +4395,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TOM',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duração',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Cigarra - Elemento piezoelétrico avançado.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servo de rotação contínua',
@@ -4842,6 +4887,11 @@
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TOM',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duração',
                 LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Cigarra - Elemento piezoeléctrico avançado.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                 LANG_MOTOR_SERVO_CONT: 'Servo de rotação contínua',
@@ -5329,6 +5379,11 @@
                         LANG_ZUM_PIEZO_BUZZERAV_TONE: 'Тон',
                         LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Продолжительность',
                         LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Звукоизлучатель - пьезоэлектрический элемент.',
+                LANG_ZUM_DHT11_VALUE: 'Get', //to translate
+                LANG_ZUM_DHT11_VALUE1: 'Temperature', //to translate
+                LANG_ZUM_DHT11_VALUE2: 'Humidity', //to translate
+                LANG_ZUM_DHT11_PIN: 'PIN', //to translate
+                LANG_ZUM_DHT11_TOOLTIP: 'Get temperature or humidity from a DHT11, DHT21 or DHT22 sensor.', //to translate
                 //motor blocks (servo and stepper):
                 LANG_CATEGORY_MOTOR: 'Motors', //to translate
                         LANG_MOTOR_SERVO_CONT: 'Сервопривод непрерывного вращения',
@@ -7558,6 +7613,62 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'wifi.enableMUX();\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["zum_dht11"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'dht_' +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
+                    '.read' +
+                    ((__t = (value_type)) == null ? '' : __t) +
+                    '()';
+
+            }
+            return __p
+        };
+
+        this["JST"]["zum_dht11_declare"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'DHT dht_' +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
+                    '(' +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
+                    ', ' +
+                    ((__t = (sensor_type)) == null ? '' : __t) +
+                    ');\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["zum_dht11_definitions"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += '#include <DHT.h>';
+
+            }
+            return __p
+        };
+
+        this["JST"]["zum_dht11_setups"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'dht_' +
+                    ((__t = (dropdown_pin)) == null ? '' : __t) +
+                    '.begin();\n';
 
             }
             return __p
@@ -9916,6 +10027,13 @@
         };
 
         // Source: src/blocks/lcd_def/lcd_def.js
+        /*
+        *******VER ESTO A VER SI LO PUEDO PONER TODO EN UN SOLO BLOQUE:
+        https://stackoverflow.com/questions/51667300/how-to-hide-remove-field-in-blockly
+
+        *******ADEMÁS DE LO ANTERIOR, TAMBIÉN TENDRÍA QUE DAR SOPORTE A VARIAS PANTALLAS
+        CONECTADAS, LO QUE CONLLEVA MODIFICAR EL RESTO DE BLOQUES DE LCD
+        */
         /* global Blockly, JST, options, RoboBlocks */
         /* jshint sub:true */
         /**
@@ -9924,15 +10042,14 @@
          */
         Blockly.Arduino.lcd_def = function() {
             var conn_type = this.getFieldValue('CONN_TYPE');
-            var pin1 = Blockly.Arduino.valueToCode(this, 'PIN_1', Blockly.Arduino.ORDER_ATOMIC);
-            var pin2 = Blockly.Arduino.valueToCode(this, 'PIN_2', Blockly.Arduino.ORDER_ATOMIC);
-            var pin3 = Blockly.Arduino.valueToCode(this, 'PIN_3', Blockly.Arduino.ORDER_ATOMIC);
-            var pin4 = Blockly.Arduino.valueToCode(this, 'PIN_4', Blockly.Arduino.ORDER_ATOMIC);
-            var pin5 = Blockly.Arduino.valueToCode(this, 'PIN_5', Blockly.Arduino.ORDER_ATOMIC);
-            var pin6 = Blockly.Arduino.valueToCode(this, 'PIN_6', Blockly.Arduino.ORDER_ATOMIC);
-            var address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
-            var code = '';
+            var pin1, pin2, pin3, pin4, pin5, pin6, address;
             if (conn_type === '1') {
+                pin1 = Blockly.Arduino.valueToCode(this, 'PIN_1', Blockly.Arduino.ORDER_ATOMIC);
+                pin2 = Blockly.Arduino.valueToCode(this, 'PIN_2', Blockly.Arduino.ORDER_ATOMIC);
+                pin3 = Blockly.Arduino.valueToCode(this, 'PIN_3', Blockly.Arduino.ORDER_ATOMIC);
+                pin4 = Blockly.Arduino.valueToCode(this, 'PIN_4', Blockly.Arduino.ORDER_ATOMIC);
+                pin5 = Blockly.Arduino.valueToCode(this, 'PIN_5', Blockly.Arduino.ORDER_ATOMIC);
+                pin6 = Blockly.Arduino.valueToCode(this, 'PIN_6', Blockly.Arduino.ORDER_ATOMIC);
                 Blockly.Arduino.definitions_['define_lcd'] = JST['lcd_def_definitions']({});
                 Blockly.Arduino.definitions_['declare_var_lcd'] = JST['lcd_def_declare']({
                     'pin1': pin1,
@@ -9944,14 +10061,14 @@
                 });
                 Blockly.Arduino.setups_['setup_lcd_'] = JST['lcd_def_setups']({});
             } else {
+                address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
                 Blockly.Arduino.definitions_['define_lcd'] = JST['lcd_def_definitions_i2c']({});
                 Blockly.Arduino.definitions_['declare_var_lcd'] = JST['lcd_def_declare_i2c']({
                     'address': address
                 });
                 Blockly.Arduino.setups_['setup_lcd_'] = JST['lcd_def_setups_i2c']({});
             }
-
-            return [code, Blockly.Arduino.ORDER_ATOMIC];
+            return '';
         };
         /**
          * lcd_def block definition
@@ -9968,16 +10085,34 @@
                     [RoboBlocks.locales.getKey('LANG_LCD_DEF_CONNECTION_PARALLEL') || 'Parallel', '1'],
                     [RoboBlocks.locales.getKey('LANG_LCD_DEF_CONNECTION_I2C') || 'I2C', '2']
                 ]), 'CONN_TYPE');
-                this.check_conn_type();
                 this.last_conn_type = this.getFieldValue('CONN_TYPE');
+                this.check_conn_type();
                 this.setInputsInline(false);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_LCD_DEF_TOOLTIP'));
             },
             check_conn_type: function() {
-                if (this.getFieldValue('CONN_TYPE') === '1') {
-                    try {
-                        this.removeInput('ADDRESS');
-                    } catch (e) {}
+                if (this.getInput('PIN_1')) {
+                    this.removeInput('PIN_1');
+                }
+                if (this.getInput('PIN_2')) {
+                    this.removeInput('PIN_2');
+                }
+                if (this.getInput('PIN_3')) {
+                    this.removeInput('PIN_3');
+                }
+                if (this.getInput('PIN_4')) {
+                    this.removeInput('PIN_4');
+                }
+                if (this.getInput('PIN_5')) {
+                    this.removeInput('PIN_5');
+                }
+                if (this.getInput('PIN_6')) {
+                    this.removeInput('PIN_6');
+                }
+                if (this.getInput('ADDRESS')) {
+                    this.removeInput('ADDRESS');
+                }
+                if (this.last_conn_type === '1') {
                     this.appendValueInput('PIN_1').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_PIN_1')).setAlign(Blockly.ALIGN_RIGHT);
                     this.appendValueInput('PIN_2').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_PIN_2')).setAlign(Blockly.ALIGN_RIGHT);
                     this.appendValueInput('PIN_3').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_PIN_3')).setAlign(Blockly.ALIGN_RIGHT);
@@ -9985,22 +10120,26 @@
                     this.appendValueInput('PIN_5').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_PIN_5')).setAlign(Blockly.ALIGN_RIGHT);
                     this.appendValueInput('PIN_6').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_PIN_6')).setAlign(Blockly.ALIGN_RIGHT);
                 } else {
-                    try {
-                        this.removeInput('PIN_1');
-                        this.removeInput('PIN_2');
-                        this.removeInput('PIN_3');
-                        this.removeInput('PIN_4');
-                        this.removeInput('PIN_5');
-                        this.removeInput('PIN_6');
-                    } catch (e) {}
                     this.appendValueInput('ADDRESS').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_DEF_ADDRESS')).setAlign(Blockly.ALIGN_RIGHT);
                 }
             },
             onchange: function() {
                 if (this.getFieldValue('CONN_TYPE') !== this.last_conn_type) {
-                    this.check_conn_type();
                     this.last_conn_type = this.getFieldValue('CONN_TYPE');
+                    this.check_conn_type();
                 }
+            },
+            mutationToDom: function() {
+                var container = document.createElement('mutation');
+                container.setAttribute('connection_type', this.last_conn_type);
+                return container;
+            },
+            domToMutation: function(xmlElement) {
+                var connectionType = xmlElement.getAttribute('connection_type');
+                if (connectionType && connectionType !== 'undefined') {
+                    this.last_conn_type = connectionType;
+                }
+                this.check_conn_type();
             }
         };
 
@@ -14450,27 +14589,33 @@
                     ]), 'CONN_TYPE');
                 this.appendValueInput('SSID', String).setCheck(String).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_SSID')).setAlign(Blockly.ALIGN_RIGHT);
                 this.appendValueInput('PASSWORD', String).setCheck(String).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_PASSWORD')).setAlign(Blockly.ALIGN_RIGHT);
-                this.appendValueInput('CHANNEL').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_CHANNEL')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                 this.appendValueInput('RX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_RX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                 this.appendValueInput('TX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_TX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                 this.appendValueInput('BAUD').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_BAUD')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
-                this.check_conn_type();
                 this.last_conn_type = this.getFieldValue('CONN_TYPE');
+                this.check_conn_type();
                 this.setInputsInline(false);
                 this.setOutput(true, Boolean);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_TOOLTIP'));
             },
             check_conn_type: function() {
-                if (this.getFieldValue('CONN_TYPE') === '1') {
-                    try {
-                        this.removeInput('CHANNEL');
-                    } catch (e) {}
+                if (this.getInput('CHANNEL')) {
+                    this.removeInput('CHANNEL');
+                }
+                if (this.getInput('RX_PIN')) {
+                    this.removeInput('RX_PIN');
+                }
+                if (this.getInput('TX_PIN')) {
+                    this.removeInput('TX_PIN');
+                }
+                if (this.getInput('BAUD')) {
+                    this.removeInput('BAUD');
+                }
+                if (this.last_conn_type === '1') {
+                    this.appendValueInput('RX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_RX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('TX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_TX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('BAUD').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_BAUD')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                 } else {
-                    try {
-                        this.removeInput('RX_PIN');
-                        this.removeInput('TX_PIN');
-                        this.removeInput('BAUD');
-                    } catch (e) {}
                     this.appendValueInput('CHANNEL').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_CHANNEL')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                     this.appendValueInput('RX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_RX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
                     this.appendValueInput('TX_PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_WIFI_CONNECT_TX_PIN')).setCheck(Number).setAlign(Blockly.ALIGN_RIGHT);
@@ -14482,6 +14627,18 @@
                     this.check_conn_type();
                     this.last_conn_type = this.getFieldValue('CONN_TYPE');
                 }
+            },
+            mutationToDom: function() {
+                var container = document.createElement('mutation');
+                container.setAttribute('connection_type', this.last_conn_type);
+                return container;
+            },
+            domToMutation: function(xmlElement) {
+                var connectionType = xmlElement.getAttribute('connection_type');
+                if (connectionType && connectionType !== 'undefined') {
+                    this.last_conn_type = connectionType;
+                }
+                this.check_conn_type();
             }
         };
 
@@ -14704,6 +14861,69 @@
                 this.setInputsInline(false);
                 this.setOutput(true, Boolean);
                 this.setTooltip(RoboBlocks.locales.getKey('LANG_WIFI_SERVER_TOOLTIP'));
+            }
+        };
+
+        // Source: src/blocks/zum_dht11/zum_dht11.js
+        /* global Blockly, options, JST, RoboBlocks */
+        /* jshint sub:true */
+
+        /**
+         * zum_dht11 code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.zum_dht11 = function() {
+            var sensor_type = this.getFieldValue('SENSOR_TYPE');
+            var value_type = this.getFieldValue('VALUE_TYPE');
+            var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+            var code = '';
+            var a = RoboBlocks.findPinMode(dropdown_pin);
+            code += a['code'];
+            dropdown_pin = a['pin'];
+            Blockly.Arduino.definitions_['define_dht11'] = JST['zum_dht11_definitions']({});
+            Blockly.Arduino.definitions_['declare_var_dht11_' + dropdown_pin] = JST['zum_dht11_declare']({
+                'dropdown_pin': dropdown_pin,
+                'sensor_type': sensor_type
+            });
+            Blockly.Arduino.setups_['setup_dht11_' + dropdown_pin] = JST['zum_dht11_setups']({
+                'dropdown_pin': dropdown_pin
+            });
+            code += JST['zum_dht11']({
+                'dropdown_pin': dropdown_pin,
+                'value_type': value_type
+            });
+            return [code, Blockly.Arduino.ORDER_ATOMIC];
+        };
+
+        /**
+         * zum_dht11 block definition
+         * @type {Object}
+         */
+        Blockly.Blocks.zum_dht11 = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_SENSOR'),
+            tags: ['dht11'],
+            helpUrl: RoboBlocks.URL_SENSOR,
+
+            /**
+             * zum_dht11 initialization
+             */
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_SENSOR);
+                this.appendDummyInput().appendField(new Blockly.FieldImage('img/blocks/dht11.png', 208 * options.zoom, 140 * options.zoom))
+                    .appendField(new Blockly.FieldDropdown([
+                        ['DHT11', 'DHT11'],
+                        ['DHT21 (AM2301)', 'DHT21'],
+                        ['DHT22 (AM2302/AM2321)', 'DHT22']
+                    ]), 'SENSOR_TYPE').setAlign(Blockly.ALIGN_RIGHT);
+                this.appendDummyInput('').appendField(RoboBlocks.locales.getKey('LANG_ZUM_DHT11_VALUE'))
+                    .appendField(new Blockly.FieldDropdown([
+                        [RoboBlocks.locales.getKey('LANG_ZUM_DHT11_VALUE1') || 'Temperature', 'Temperature'],
+                        [RoboBlocks.locales.getKey('LANG_ZUM_DHT11_VALUE2') || 'Humidity', 'Humidity']
+                    ]), 'VALUE_TYPE').setAlign(Blockly.ALIGN_RIGHT);
+                this.appendValueInput('PIN').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_ZUM_DHT11_PIN')).setAlign(Blockly.ALIGN_RIGHT);
+                this.setInputsInline(false);
+                this.setOutput(true, Number);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_ZUM_DHT11_TOOLTIP'));
             }
         };
 
