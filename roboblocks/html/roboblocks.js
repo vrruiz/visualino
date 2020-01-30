@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2020-01-26
+/*! roboblocks - v0.2.3 - 2020-01-28
  * https://github.com/bq/roboblocks
  * Copyright (c) 2020 bq; Licensed  */
 
@@ -486,6 +486,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupcions',
                 LANG_INTERRUPTS_STATE: 'Estableix l\'estat de les interrupcions a ',
@@ -978,6 +987,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor',
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)',
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.',
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685',
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency',
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.',
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.',
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component',
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.',
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo',
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle',
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.',
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts',
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ',
@@ -1468,6 +1486,15 @@
                 LANG_MOTOR_STEPPER_MOVE_SETSPEED: 'Establecer velocidad a (rpm)',
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Mover motor (pasos)',
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Bloque para mover un motor los pasos indicados. Un valor de pasos positivo lo mueve en un sentido, negativo en el otro.',
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685',
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frecuencia',
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Mínimo',
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Máximo',
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Dirección del coponente',
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Define una placa PCA9685 conectada a Arduino por I2C.',
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Mover servo',
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'el ángulo',
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Mueve el servo conectado a un PCA9685 el ángulo indicado en grados.',
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupciones',
                 LANG_INTERRUPTS_STATE: 'Establece estado de las interrupciones a ',
@@ -1965,6 +1992,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -2457,6 +2493,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interruption',
                 LANG_INTERRUPTS_STATE: 'Configurer les interruptions à l état de',
@@ -2949,6 +2994,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -3441,6 +3495,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -3931,6 +3994,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -4428,6 +4500,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -4920,6 +5001,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -5412,6 +5502,15 @@
                 LANG_MOTOR_STEPPER_MOVE_STEP: 'Move motor', //to translate
                 LANG_MOTOR_STEPPER_MOVE_STEP_NEXT: '(steps)', //to translate
                 LANG_MOTOR_STEPPER_MOVE_TOOLTIP: 'Moves motor the number of steps. A positive steps value move in one direction, a negative value moves to the other direction.', //to translate
+                LANG_MOTOR_PCA9685_DEF: 'PCA9685', //to translate
+                LANG_MOTOR_PCA9685_DEF_FREQ: 'Servo: Frequency', //to translate
+                LANG_MOTOR_PCA9685_DEF_MIN: 'Min.', //to translate
+                LANG_MOTOR_PCA9685_DEF_MAX: 'Max.', //to translate
+                LANG_MOTOR_PCA9685_DEF_ADDRESS: 'Address of the component', //to translate
+                LANG_MOTOR_PCA9685_DEF_TOOLTIP: 'Defines a PCA9685 connected to Arduino over I2C.', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM: 'PCA9685 Move servo', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_ANGLE: 'angle', //to translate
+                LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP: 'Moves servo connected to PCA9685 the specified angle in degrees.', //to translate
                 //interrupt blocks :
                 LANG_CATEGORY_INTERRUPTS: 'Interrupts', // To translate
                 LANG_INTERRUPTS_STATE: 'Set interrupts state to ', // To translate
@@ -6814,6 +6913,61 @@
                 __p += 'randomSeed(' +
                     ((__t = (seed_num)) == null ? '' : __t) +
                     ');\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["pca9685_def_declare"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'Adafruit_PWMServoDriver pca9685=Adafruit_PWMServoDriver(' +
+                    ((__t = (address)) == null ? '' : __t) +
+                    ');\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["pca9685_def_definitions"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += '#include <Adafruit_PWMServoDriver.h>\n#define PCA9685_SERVO_POS0 ' +
+                    ((__t = (servo_pos0)) == null ? '' : __t) +
+                    '\n#define PCA9685_SERVO_POS180 ' +
+                    ((__t = (servo_pos180)) == null ? '' : __t);
+
+            }
+            return __p
+        };
+
+        this["JST"]["pca9685_def_setups"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'pca9685.begin();\npca9685.setPWMFreq(' +
+                    ((__t = (servo_freq)) == null ? '' : __t) +
+                    ');\n';
+
+            }
+            return __p
+        };
+
+        this["JST"]["pca9685_set_pwm"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'pca9685.setPWM(' +
+                    ((__t = (servo_num)) == null ? '' : __t) +
+                    ',map(' +
+                    ((__t = (servo_angle)) == null ? '' : __t) +
+                    ',0,180,PCA9685_SERVO_POS0,PCA9685_SERVO_POS180));';
 
             }
             return __p
@@ -11290,6 +11444,89 @@
             POW10: RoboBlocks.locales.getKey('LANG_MATH_SINGLE_TOOLTIP_POW10')
         };
 
+        // Source: src/blocks/pca9685_def/pca9685_def.js
+        /* global Blockly, JST, options, RoboBlocks */
+        /* jshint sub:true */
+        /**
+         * pca9685_def code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.pca9685_def = function() {
+            var address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
+            var servo_freq = this.getFieldValue('SERVO_FREQ');
+            var servo_pos0 = this.getFieldValue('SERVO_POS0');
+            var servo_pos180 = this.getFieldValue('SERVO_POS180');
+            Blockly.Arduino.definitions_['define_pca9685'] = JST['pca9685_def_definitions']({
+                'servo_pos0': servo_pos0,
+                'servo_pos180': servo_pos180
+            });
+            Blockly.Arduino.definitions_['declare_var_pca9685'] = JST['pca9685_def_declare']({
+                'address': address
+            });
+            Blockly.Arduino.setups_['setup_lcd_'] = JST['pca9685_def_setups']({
+                'servo_freq': servo_freq
+            });
+            return '';
+        };
+        /**
+         * pca9685_def block definition
+         * @type {Object}
+         */
+        Blockly.Blocks.pca9685_def = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_MOTOR'),
+            tags: ['servo'],
+            helpUrl: RoboBlocks.URL_SERVO,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_MOTOR);
+                this.appendDummyInput('').appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF')).appendField(new Blockly.FieldImage('img/blocks/pca9685.png', 208 * options.zoom, 100 * options.zoom));
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF_FREQ'))
+                    .appendField(new Blockly.FieldTextInput('60', Blockly.Blocks.math_number.validator), 'SERVO_FREQ')
+                    .appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF_MIN'))
+                    .appendField(new Blockly.FieldTextInput('150', Blockly.Blocks.math_number.validator), 'SERVO_POS0')
+                    .appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF_MAX'))
+                    .appendField(new Blockly.FieldTextInput('600', Blockly.Blocks.math_number.validator), 'SERVO_POS180');
+                this.appendValueInput('ADDRESS').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF_ADDRESS')).setAlign(Blockly.ALIGN_RIGHT);
+                this.setInputsInline(false);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_DEF_TOOLTIP'));
+            }
+        };
+
+        // Source: src/blocks/pca9685_set_pwm/pca9685_set_pwm.js
+        /* global Blockly, JST, RoboBlocks */
+        /**
+         * pca9685_set_pwm code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.pca9685_set_pwm = function() {
+            var servo_num = Blockly.Arduino.valueToCode(this, 'SERVO_NUM', Blockly.Arduino.ORDER_NONE) || '';
+            var servo_angle = Blockly.Arduino.valueToCode(this, 'SERVO_ANGLE', Blockly.Arduino.ORDER_UNARY_POSTFIX) || '';
+            var code = '';
+            var a = RoboBlocks.findPinMode(servo_num);
+            code += a['code'];
+            servo_num = a['pin'];
+            a = RoboBlocks.findPinMode(servo_angle);
+            code += a['code'];
+            servo_angle = a['pin'];
+            code += JST['pca9685_set_pwm']({
+                'servo_num': servo_num,
+                'servo_angle': servo_angle
+            });
+            return code;
+        };
+        Blockly.Blocks.pca9685_set_pwm = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_MOTOR'),
+            helpUrl: RoboBlocks.URL_SERVO,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_MOTOR);
+                this.appendValueInput('SERVO_NUM').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_SET_PWM'));
+                this.appendValueInput('SERVO_ANGLE').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_SET_PWM_ANGLE'));
+                this.setPreviousStatement(true);
+                this.setNextStatement(true);
+                this.setInputsInline(true);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_MOTOR_PCA9685_SET_PWM_TOOLTIP'));
+            },
+
+        };
         // Source: src/blocks/pin_analog/pin_analog.js
         /* global Blockly, profiles, RoboBlocks */
 
