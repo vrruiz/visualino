@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2020-01-29
+/*! roboblocks - v0.2.3 - 2020-02-08
  * https://github.com/bq/roboblocks
  * Copyright (c) 2020 bq; Licensed  */
 
@@ -168,6 +168,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Ajusta la retroiluminació de la LCD',
                 LANG_LCD_PRINT: 'LCD: Imprimir ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Vols fifxar la posició del text?',
                 LANG_LCD_PRINT_TOOLTIP: 'Imprimeix una cadena a la LCD en la posició especificada o en la següent disponible.',
                 LANG_LCD_CLEAR: 'Esborra la LCD',
@@ -182,6 +186,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Espera (ms)',
@@ -674,6 +689,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: ')',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Sets the backlight of the LCD screen.',
                 LANG_LCD_PRINT: 'LCD: print ',
+                LANG_LCD_PRINT_TEXT: 'Text or value',
+                LANG_LCD_PRINT_SPECIAL: 'Defined character',
+                LANG_LCD_PRINT_ROW: 'Row',
+                LANG_LCD_PRINT_COL: 'Col',
                 LANG_LCD_PRINT_POSITION: 'Set text position?',
                 LANG_LCD_PRINT_TOOLTIP: 'Prints a String in the LCD at the specified position or the next available one.',
                 LANG_LCD_CLEAR: 'LCD clear',
@@ -688,6 +707,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left',
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right',
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right',
+                LANG_LCD_CREATECHAR: 'LCD Create character in index',
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1',
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2',
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3',
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4',
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5',
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6',
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7',
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8',
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.',
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.',
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Wait (ms)',
@@ -1173,8 +1203,12 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Ajusta la retroiluminación de la pantalla LCD',
                 LANG_LCD_PRINT: 'LCD: Imprimir ',
+                LANG_LCD_PRINT_TEXT: 'Texto o valor',
+                LANG_LCD_PRINT_SPECIAL: 'Carácter definido',
+                LANG_LCD_PRINT_ROW: 'Fila',
+                LANG_LCD_PRINT_COL: 'Columna',
                 LANG_LCD_PRINT_POSITION: '¿Fijar posición del texto?',
-                LANG_LCD_PRINT_TOOLTIP: 'Imprime un string en la pantalla LCD en la posición específicada o en la siguiente disponible.',
+                LANG_LCD_PRINT_TOOLTIP: 'Imprime un texto, un valor o un carácter definido en la pantalla LCD, en la posición específicada o en la siguiente disponible.',
                 LANG_LCD_CLEAR: 'LCD borrar',
                 LANG_LCD_CLEAR_TOOLTIP: 'LCD: Borrar',
                 LANG_LCD_HOME: 'LCD Ir al principio',
@@ -1187,6 +1221,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Desplaza el contenido de la pantalla una posición a la izquierda',
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Desplazar contenido a la derecha',
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Desplaza el contenido de la pantalla una posición a la derecha',
+                LANG_LCD_CREATECHAR: 'LCD Crear carácter en el índice',
+                LANG_LCD_CREATECHAR_ROW1: 'Fila 1',
+                LANG_LCD_CREATECHAR_ROW2: 'Fila 2',
+                LANG_LCD_CREATECHAR_ROW3: 'Fila 3',
+                LANG_LCD_CREATECHAR_ROW4: 'Fila 4',
+                LANG_LCD_CREATECHAR_ROW5: 'Fila 5',
+                LANG_LCD_CREATECHAR_ROW6: 'Fila 6',
+                LANG_LCD_CREATECHAR_ROW7: 'Fila 7',
+                LANG_LCD_CREATECHAR_ROW8: 'Fila 8',
+                LANG_LCD_CREATECHAR_LENGTH: 'Cada fila sólo puede contener cinco valores, cero o uno.',
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Crea un carácter especial para mostrar en el LCD y almacenarlo en el índice especificado.',
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar [ms]',
@@ -1676,6 +1721,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'LCD pantailaren atzeko iluminazioa doitu',
                 LANG_LCD_PRINT: 'LCD: Inprimatu ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Testuaren posizioa finkatu?',
                 LANG_LCD_PRINT_TOOLTIP: 'String bat zehaztutako posizioan edo erabilgarri dagoen hurrengoan inprimatzen du LCD pantailan.',
                 LANG_LCD_CLEAR: 'LCD ezabatu',
@@ -1690,6 +1739,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Kontrola',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Itxaron [ms]',
@@ -2174,6 +2234,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: ')',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Définit le rétroéclairage de l’écran LCD.',
                 LANG_LCD_PRINT: 'LCD : imprimer ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Définir la position du texte ?',
                 LANG_LCD_PRINT_TOOLTIP: 'Affiche une chaîne de caractères sur l’écran LCD à l’endroit défini ou au prochain endroit disponible.',
                 LANG_LCD_CLEAR: 'LCD : effacer',
@@ -2188,6 +2252,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Contrôle',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendre (ms)',
@@ -2673,6 +2748,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Axusta a retroiluminación da pantalla LCD',
                 LANG_LCD_PRINT: 'LCD: Imprimir ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Fixar posición do texto?',
                 LANG_LCD_PRINT_TOOLTIP: 'Imprime unha frase na pantalla LCD na posición específicada ou na seguinte dispoñible.',
                 LANG_LCD_CLEAR: 'LCD borrar',
@@ -2687,6 +2766,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Control',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Agardar [ms]',
@@ -3172,6 +3262,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: ')',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Imposta la retroilluminazione del display LCD.',
                 LANG_LCD_PRINT: 'LCD: Stampa ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Imposta posizione del testo',
                 LANG_LCD_PRINT_TOOLTIP: 'Visualizza una stringa sul display LCD ad una determinata posizione o alla successiva disponibile.',
                 LANG_LCD_CLEAR: 'Pulisci LCD',
@@ -3186,6 +3280,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Controllo',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendi (ms)',
@@ -3671,6 +3776,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: ')',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'ustawia podświetlenie ekranu LCD.',
                 LANG_LCD_PRINT: 'Wyświetl na LCD',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Ustaw pozycję tekstu.',
                 LANG_LCD_PRINT_TOOLTIP: 'Wyświetla ciąg znaków na wyświetlaczu LCD na określonej pozycji lub na następnej dostępnej.',
                 LANG_LCD_CLEAR: 'Czyść LCD',
@@ -3683,6 +3792,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //bloki sterujące:
                 LANG_CATEGORY_CONTROLS: 'Sterujące',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Czekaj (ms)',
@@ -4173,6 +4293,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Ajusta a retroiluminação do LCD',
                 LANG_LCD_PRINT: 'LCD: Imprimir ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Definir a posição do texto?',
                 LANG_LCD_PRINT_TOOLTIP: 'Imprime uma frase no LCD na posição específicada ou na seguinte disponível.',
                 LANG_LCD_CLEAR: 'LCD apagar',
@@ -4187,6 +4311,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Controles',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar (ms)',
@@ -4672,6 +4807,10 @@
                 LANG_LCD_SETBACKLIGHT_CLOSE: '',
                 LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Ajusta a retroiluminação do LCD',
                 LANG_LCD_PRINT: 'LCD: Imprimir ',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                 LANG_LCD_PRINT_POSITION: 'Definir a posição do texto?',
                 LANG_LCD_PRINT_TOOLTIP: 'Imprime uma frase no LCD na posição específicada ou na seguinte disponível.',
                 LANG_LCD_CLEAR: 'LCD apagar',
@@ -4686,6 +4825,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Controlo',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Esperar (ms)',
@@ -5171,6 +5321,10 @@
                         LANG_LCD_SETBACKLIGHT_CLOSE: '',
                         LANG_LCD_SETBACKLIGHT_TOOLTIP: 'Настройка подсветки ЖК-дисплея',
                         LANG_LCD_PRINT: 'ЖК: Печать',
+                LANG_LCD_PRINT_TEXT: 'Text or value', //to translate
+                LANG_LCD_PRINT_SPECIAL: 'Defined character', //to translate
+                LANG_LCD_PRINT_ROW: 'Row', //to translate
+                LANG_LCD_PRINT_COL: 'Col', //to translate
                         LANG_LCD_PRINT_POSITION: 'Установите позицию текста?',
                         LANG_LCD_PRINT_TOOLTIP: 'Печать фразы на ЖК-дисплее в указанной позиции или на следующей доступной.',
                         LANG_LCD_CLEAR: 'ЖК очистить',
@@ -5185,6 +5339,17 @@
                 LANG_LCD_SCROLLDISPLAYLEFT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the left', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT: 'LCD Scrolls to the right', //to translate
                 LANG_LCD_SCROLLDISPLAYRIGHT_TOOLTIP: 'LCD: Scrolls the contents of the display one space to the right', //to translate
+                LANG_LCD_CREATECHAR: 'LCD Create character in index', //to translate
+                LANG_LCD_CREATECHAR_ROW1: 'Row 1', //to translate
+                LANG_LCD_CREATECHAR_ROW2: 'Row 2', //to translate
+                LANG_LCD_CREATECHAR_ROW3: 'Row 3', //to translate
+                LANG_LCD_CREATECHAR_ROW4: 'Row 4', //to translate
+                LANG_LCD_CREATECHAR_ROW5: 'Row 5', //to translate
+                LANG_LCD_CREATECHAR_ROW6: 'Row 6', //to translate
+                LANG_LCD_CREATECHAR_ROW7: 'Row 7', //to translate
+                LANG_LCD_CREATECHAR_ROW8: 'Row 8', //to translate
+                LANG_LCD_CREATECHAR_LENGTH: 'Each row must have five values, zero or one.', //to translate
+                LANG_LCD_CREATECHAR_TOOLTIP: 'Creates a special char for LCD and stores it in the specified index.', //to translate
                          // Управление блоками:
                         LANG_CATEGORY_CONTROLS: 'Контроль',
                         LANG_CONTROLS_BASE_DELAY_WAIT: 'Ждать (мс)',
@@ -6556,6 +6721,66 @@
             return __p
         };
 
+        this["JST"]["lcd_createchar"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'lcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[0]=B' +
+                    ((__t = (row1)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[1]=B' +
+                    ((__t = (row2)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[2]=B' +
+                    ((__t = (row3)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[3]=B' +
+                    ((__t = (row4)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[4]=B' +
+                    ((__t = (row5)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[5]=B' +
+                    ((__t = (row6)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[6]=B' +
+                    ((__t = (row7)) == null ? '' : __t) +
+                    ';\nlcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[7]=B' +
+                    ((__t = (row8)) == null ? '' : __t) +
+                    ';\nlcd.createChar(' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    ',lcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    ');';
+
+            }
+            return __p
+        };
+
+        this["JST"]["lcd_createchar_declare"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'byte lcd_char_' +
+                    ((__t = (index)) == null ? '' : __t) +
+                    '[8];';
+
+            }
+            return __p
+        };
+
         this["JST"]["lcd_def_declare"] = function(obj) {
             obj || (obj = {});
             var __t, __p = '',
@@ -6674,7 +6899,9 @@
             var __t, __p = '',
                 __e = _.escape;
             with(obj) {
-                __p += 'lcd.print(' +
+                __p += 'lcd.' +
+                    ((__t = (print_type)) == null ? '' : __t) +
+                    '(' +
                     ((__t = (val)) == null ? '' : __t) +
                     ');\n';
 
@@ -6691,7 +6918,9 @@
                     ((__t = (ycoor)) == null ? '' : __t) +
                     ',' +
                     ((__t = (xcoor)) == null ? '' : __t) +
-                    ');\nlcd.print(' +
+                    ');\nlcd.' +
+                    ((__t = (print_type)) == null ? '' : __t) +
+                    '(' +
                     ((__t = (val)) == null ? '' : __t) +
                     ');\n';
 
@@ -10158,6 +10387,100 @@
             }
         };
 
+        // Source: src/blocks/lcd_createchar/lcd_createchar.js
+        /* global Blockly, JST, RoboBlocks */
+
+        /**
+         * lcd_createchar code generation
+         * @return {String} Code generated with block parameters
+         */
+        Blockly.Arduino.lcd_createchar = function() {
+            var index = this.getFieldValue('INDEX');
+            var row1 = this.getFieldValue('ROW1');
+            var row2 = this.getFieldValue('ROW2');
+            var row3 = this.getFieldValue('ROW3');
+            var row4 = this.getFieldValue('ROW4');
+            var row5 = this.getFieldValue('ROW5');
+            var row6 = this.getFieldValue('ROW6');
+            var row7 = this.getFieldValue('ROW7');
+            var row8 = this.getFieldValue('ROW8');
+            Blockly.Arduino.definitions_['declare_lcd_createchar'] = JST['lcd_createchar_declare']({
+                'index': index
+            });
+            var code = JST['lcd_createchar']({
+                'index': index,
+                'row1': row1,
+                'row2': row2,
+                'row3': row3,
+                'row4': row4,
+                'row5': row5,
+                'row6': row6,
+                'row7': row7,
+                'row8': row8
+            });
+            //return [code, Blockly.Arduino.ORDER_ATOMIC];
+            return code;
+        };
+
+        Blockly.Blocks.lcd_createchar = {
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_LCD'),
+            helpUrl: RoboBlocks.URL_LCD,
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_LCD);
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR'))
+                    .appendField(new Blockly.FieldDropdown([
+                        ['0', '0'],
+                        ['1', '1'],
+                        ['2', '2'],
+                        ['3', '3'],
+                        ['4', '4'],
+                        ['5', '5'],
+                        ['6', '6'],
+                        ['7', '7']
+                    ]), 'INDEX');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW1'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW1');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW2'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW2');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW3'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW3');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW4'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW4');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW5'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW5');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW6'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW6');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW7'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW7');
+                this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_ROW8'))
+                    .appendField(new Blockly.FieldTextInput('00000'), 'ROW8');
+                this.setPreviousStatement(true);
+                this.setNextStatement(true);
+                this.setInputsInline(false);
+                this.setTooltip(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_TOOLTIP'));
+            },
+            onchange: function() {
+                var row, error = false;
+                for (var i = 1; i < 9; i++) {
+                    row = this.getFieldValue('ROW' + i);
+                    if (row.length !== 5) {
+                        error = true;
+                    } else {
+                        for (var j = 0; j < 5; j++) {
+                            if (row.charAt(j) !== '0' && row.charAt(j) !== '1') {
+                                error = true;
+                            }
+                        }
+                    }
+                }
+                if (error === true) {
+                    this.setWarningText(RoboBlocks.locales.getKey('LANG_LCD_CREATECHAR_LENGTH'));
+                } else {
+                    this.setWarningText(null);
+                }
+            }
+        };
+
         // Source: src/blocks/lcd_def/lcd_def.js
         /*
         *******VER ESTO A VER SI LO PUEDO PONER TODO EN UN SOLO BLOQUE:
@@ -10409,31 +10732,39 @@
          * @return {String} Code generated with block parameters
          */
         Blockly.Arduino.lcd_print = function() {
+            var print_type = this.getFieldValue('PRINT_TYPE');
             var val = Blockly.Arduino.valueToCode(this, 'VAL', Blockly.Arduino.ORDER_ATOMIC);
             var xcoor = Blockly.Arduino.valueToCode(this, 'XCOOR', Blockly.Arduino.ORDER_ATOMIC);
             var ycoor = Blockly.Arduino.valueToCode(this, 'YCOOR', Blockly.Arduino.ORDER_ATOMIC);
             var code = '';
-
-            var a = RoboBlocks.findPinMode(xcoor);
-            code += a['code'];
-            xcoor = a['pin'];
-
-            a = RoboBlocks.findPinMode(ycoor);
-            code += a['code'];
-            ycoor = a['pin'];
-
-            a = RoboBlocks.findPinMode(val);
-            code += a['code'];
-            val = a['pin'];
+            /*
+            var a=RoboBlocks.findPinMode(xcoor);
+            code+=a['code'];
+            xcoor=a['pin'];
+            a=RoboBlocks.findPinMode(ycoor);
+            code+=a['code'];
+            ycoor=a['pin'];
+            a=RoboBlocks.findPinMode(val);
+            code+=a['code'];
+            val=a['pin'];
+            */
+            if (print_type === '1') {
+                print_type = 'print';
+            } else {
+                print_type = 'write';
+                val = 'byte(' + val + ')';
+            }
 
             if (this.getFieldValue('POS') === 'TRUE') {
                 code += JST['lcd_print_pos']({
+                    'print_type': print_type,
                     'val': val,
                     'xcoor': xcoor,
                     'ycoor': ycoor
                 });
             } else {
                 code += JST['lcd_print']({
+                    'print_type': print_type,
                     'val': val
                 });
             }
@@ -10453,8 +10784,11 @@
              */
             init: function() {
                 this.setColour(RoboBlocks.LANG_COLOUR_LCD);
-                this.appendValueInput('VAL').appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT'));
-                // .appendField(new Blockly.FieldImage('img/blocks/bqmod03.png', 208 * options.zoom, 100 * options.zoom));
+                this.appendValueInput('VAL').appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT'))
+                    .appendField(new Blockly.FieldDropdown([
+                        [RoboBlocks.locales.getKey('LANG_LCD_PRINT_TEXT') || 'Text', '1'],
+                        [RoboBlocks.locales.getKey('LANG_LCD_PRINT_SPECIAL') || 'Defined', '2']
+                    ]), 'PRINT_TYPE');
                 this.appendDummyInput().appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT_POSITION')).appendField(new Blockly.FieldCheckbox('TRUE'), 'POS').setAlign(Blockly.ALIGN_RIGHT);
                 this.last_pos = this.getFieldValue('POS');
                 this.getPosition();
@@ -10469,8 +10803,8 @@
                     this.removeInput('YCOOR');
                 } catch (e) {}
                 if (this.getFieldValue('POS') === 'TRUE') {
-                    this.appendValueInput('XCOOR').appendField('row').setAlign(Blockly.ALIGN_RIGHT);
-                    this.appendValueInput('YCOOR').appendField('column').setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('XCOOR').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT_ROW')).setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('YCOOR').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT_COL')).setAlign(Blockly.ALIGN_RIGHT);
                 }
             },
             onchange: function() {
@@ -10491,8 +10825,8 @@
             domToMutation: function(xmlElement) {
                 this.setFieldValue(xmlElement.getAttribute('fixed'), 'POS');
                 if (this.getFieldValue('POS') === 'TRUE') {
-                    this.appendValueInput('XCOOR').appendField('row').setAlign(Blockly.ALIGN_RIGHT);
-                    this.appendValueInput('YCOOR').appendField('column').setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('XCOOR').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT_ROW')).setAlign(Blockly.ALIGN_RIGHT);
+                    this.appendValueInput('YCOOR').setCheck(Number).appendField(RoboBlocks.locales.getKey('LANG_LCD_PRINT_COL')).setAlign(Blockly.ALIGN_RIGHT);
                 }
             }
         };
