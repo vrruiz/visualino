@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2020-02-08
+/*! roboblocks - v0.2.3 - 2020-02-23
  * https://github.com/bq/roboblocks
  * Copyright (c) 2020 bq; Licensed  */
 
@@ -6231,11 +6231,11 @@
             with(obj) {
                 __p += 'pinMode(' +
                     ((__t = (dropdown_pin)) == null ? '' : __t) +
-                    ',INPUT);\n  pinMode(' +
+                    ',INPUT);\npinMode(' +
                     ((__t = (NextPIN)) == null ? '' : __t) +
-                    ', OUTPUT);\n  blueToothSerial.begin(' +
+                    ', OUTPUT);\nblueToothSerial.begin(' +
                     ((__t = (baud_rate)) == null ? '' : __t) +
-                    ');\n  blueToothSerial.flush();\n';
+                    ');\nblueToothSerial.flush();\n';
 
             }
             return __p
@@ -7755,9 +7755,9 @@
                 __e = _.escape;
             with(obj) {
                 __p += 'SoftwareSerial serialwifi(' +
-                    ((__t = (rx_pin)) == null ? '' : __t) +
-                    ',' +
                     ((__t = (tx_pin)) == null ? '' : __t) +
+                    ',' +
+                    ((__t = (rx_pin)) == null ? '' : __t) +
                     ');\n';
 
             }
@@ -8495,7 +8495,7 @@
             Blockly.Arduino.setups_['setup_bluetooth_pinmode3'] = b['code'];
             baud_rate = b['pin'];
 
-            Blockly.Arduino.definitions_['declare_var_blueToothSerial' + dropdown_pin] = 'SoftwareSerial blueToothSerial(' + dropdown_pin + ',' + NextPIN + ');\n';
+            Blockly.Arduino.definitions_['declare_var_blueToothSerial' + dropdown_pin] = 'SoftwareSerial blueToothSerial(' + NextPIN + ',' + dropdown_pin + ');\n';
             Blockly.Arduino.definitions_['define_softwareserial'] = JST['bq_bluetooth_def_definitions']({
                 'dropdown_pin': dropdown_pin,
                 'NextPIN': NextPIN
