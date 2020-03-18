@@ -445,6 +445,7 @@ void MainWindow::actionSaveAndSaveAs(bool askFileName,
     if (this->xmlFileName.isEmpty() || askFileName == true) {
         // Open file dialog
         QFileDialog fileDialog(this, tr("Save"));
+        fileDialog.setAcceptMode(QFileDialog::AcceptSave);
         fileDialog.setFileMode(QFileDialog::AnyFile);
         fileDialog.setNameFilter(QString("Blockly Files %1").arg("(*.bly)"));
         fileDialog.setDefaultSuffix("bly");
