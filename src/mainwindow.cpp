@@ -4,6 +4,7 @@
 
 #include <QApplication>
 #include <QDebug>
+#include <QUuid>
 #include <QDir>
 #include <QFile>
 #include <QFileDialog>
@@ -96,9 +97,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Filter events to capture backspace key
     ui->webView->installEventFilter(this);
+    
+    // create temp path names
+    QString uuid = QUuid::createUuid().toString();
+    tmpDirName=QDir::tempPath()+"/visualino-"+uuid+"/visualino/";
+    
+    tmpFileName=tmpDirName+"visualino.ino";
 }
 
 MainWindow::~MainWindow() {
+    
+    // remove temp stuff
+    QFile tmpFile(tmpFileName);
+    if (tmpFile.exists()) {
+        tmpFile.remove();
+        QDir tmpDir(tmpDirName);
+        tmpDir.rmdir(tmpDir.path());
+        tmpDir.cdUp();
+        tmpDir.rmdir(tmpDir.path());
+    }
+    
     delete webHelper;
     delete serial;
     delete settings;
@@ -108,15 +126,16 @@ MainWindow::~MainWindow() {
 
 void MainWindow::arduinoExec(const QString &action) {
     QStringList arguments;
-
+    
     // Check if temp path exists
-    QDir dir(settings->tmpDirName());
+    QDir dir(tmpDirName);
     if (dir.exists() == false) {
-        dir.mkdir(settings->tmpDirName());
+        qDebug()<<"Using temp path:"<<tmpDirName;
+        dir.mkpath(tmpDirName);
     }
 
     // Check if tmp file exists
-    QFile tmpFile(settings->tmpFileName());
+    QFile tmpFile(tmpFileName);
     if (tmpFile.exists()) {
         tmpFile.remove();
     }
@@ -142,7 +161,7 @@ void MainWindow::arduinoExec(const QString &action) {
     if (ui->serialPortBox->count() > 0) {
         arguments << "--port" << ui->serialPortBox->currentText();
     }
-    arguments << settings->tmpFileName();
+    arguments << tmpFileName;
     process->start(settings->arduinoIdePath(), arguments);
 
     // Show messages

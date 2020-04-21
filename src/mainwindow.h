@@ -38,6 +38,9 @@ private:
     bool sourceChanging;
     bool sourceChanged;
     int documentHistoryStep;
+    
+    QString tmpDirName;
+    QString tmpFileName;
 
     void actionSaveAndSaveAs(bool askFileName, const QString &directory = "");
     void actionOpenInclude(const QString &title,
