@@ -9,7 +9,7 @@
 </head>
 <body>
     <xml id="startBlocks" style="display: none">
-        <block type="controls_setupLoop" deletable="false"></block>
+        <block type="controls_setupLoop" deletable="true"></block>
     </xml>
     <div id="wrap">
         <div id="blockly" style="float: left; width: 66%;"></div>
@@ -52,12 +52,13 @@
                 RoboBlocks.LANG_COLOUR_MATH,
                 RoboBlocks.LANG_COLOUR_VARIABLES,
                 RoboBlocks.LANG_COLOUR_TEXT,
+                RoboBlocks.LANG_COLOUR_SENSOR,
                 RoboBlocks.LANG_COLOUR_COMMUNICATION,
-                RoboBlocks.LANG_COLOUR_ZUM,
-                RoboBlocks.LANG_COLOUR_BQ,
                 RoboBlocks.LANG_COLOUR_ADVANCED,
+                RoboBlocks.LANG_COLOUR_INTERRUPTS,
                 RoboBlocks.LANG_COLOUR_LCD,
-                RoboBlocks.LANG_COLOUR_SERVO,
+                RoboBlocks.LANG_COLOUR_MOTOR,
+                RoboBlocks.LANG_COLOUR_ZUM,
             ];
             $('.blocklyTreeRow').each( function (i,e) {
                 $(e).prepend('<span class="treeLabelBlock" style="background-color:' + colors[i] + '"></span>');
@@ -103,7 +104,6 @@
                 Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(),
                     document.getElementById('startBlocks'));
             }
-
     </script>
 </body>
 </html>
