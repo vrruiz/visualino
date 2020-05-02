@@ -38,6 +38,10 @@ macx {
   ICON = ../icons/visualino.icns
 }
 
+unix {
+    INSTALLS_DESTDIR=/usr/share/visualino/
+}
+
 config.path = $${INSTALLS_DESTDIR}
 config.files = ../config.ini
 
@@ -51,3 +55,16 @@ translation.path = $${INSTALLS_DESTDIR}/ts
 translation.files = ../ts/*.qm
 
 INSTALLS += config examples html translation
+
+unix {
+    bin.path = /usr/bin/
+    bin.files = visualino
+    
+    desktop.path = /usr/share/applications/
+    desktop.files = ../visualino.desktop
+    
+    icons.path = $${INSTALLS_DESTDIR}/icons
+    icons.files = ../icon.png
+    
+    INSTALLS += bin desktop icons
+}

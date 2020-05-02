@@ -1,7 +1,0 @@
-src/visualino usr/bin/
-roboblocks/html/ usr/share/visualino/
-roboblocks/examples/ usr/share/visualino/
-config.ini usr/share/visualino/
-icon.png usr/share/visualino/icons/
-visualino.desktop usr/share/applications/
-ts/*.qm usr/share/visualino/ts/
