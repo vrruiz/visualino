@@ -54,14 +54,6 @@ QString SettingsStore::examplesPath() {
                            "/usr/share/visualino/examples/").toString();
 }
 
-QString SettingsStore::tmpDirName() {
-    return relativePath("tmp_dir_name", "/tmp/visualino/");
-}
-
-QString SettingsStore::tmpFileName() {
-    return relativePath("tmp_file_name", "/tmp/visualino/visualino.ino");
-}
-
 QString SettingsStore::htmlIndex() {
     return relativePath("html_index", "/usr/share/visualino/html/index.html");
 }

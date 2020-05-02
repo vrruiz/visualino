@@ -22,8 +22,6 @@ public:
     QString arduinoIdePath();
     QString defaultLanguage();
     QString examplesPath();
-    QString tmpDirName();
-    QString tmpFileName();
     QString htmlIndex();
     bool iconLabels();
     float zoomScale();
