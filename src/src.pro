@@ -59,12 +59,16 @@ INSTALLS += config examples html translation
 unix {
     bin.path = /usr/bin/
     bin.files = visualino
-    
+
     desktop.path = /usr/share/applications/
     desktop.files = ../visualino.desktop
-    
+
     icons.path = $${INSTALLS_DESTDIR}/icons
     icons.files = ../icon.png
-    
+
     INSTALLS += bin desktop icons
+}
+
+win32 {
+    RC_FILE = Resources.rc
 }
