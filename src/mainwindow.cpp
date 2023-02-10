@@ -152,10 +152,10 @@ void MainWindow::arduinoExec(const QString &action) {
     tmpFile.close();
 
     // Verify code
-    arguments << action;
+    arguments << action << "--no-color";
     // Board parameter
     if (ui->boardBox->count() > 0) {
-        arguments << "--board" << ui->boardBox->currentText();
+        arguments << "--fqbn" << ui->boardBox->currentText();
     }
     // Port parameter
     if (ui->serialPortBox->count() > 0) {
@@ -448,12 +448,12 @@ void MainWindow::actionQuit() {
 
 void MainWindow::actionUpload() {
     // Upload sketch
-    arduinoExec("--upload");
+    arduinoExec("upload");
 }
 
 void MainWindow::actionVerify() {
     // Build sketch
-    arduinoExec("--verify");
+    arduinoExec("compile");
 }
 
 void MainWindow::actionSaveAndSaveAs(bool askFileName,
