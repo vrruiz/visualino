@@ -1,3 +1,9 @@
+visualino (0.8) bullseye; urgency=medium
+
+  * Arduino IDE 2.0 migration.
+
+ -- Antonio Cebrián <ancebfer@gmail.com>  Fri, 10 Feb 2023 19:21:54 +0000
+
 visualino (0.7) wily; urgency=medium
 
   * Blocks for typed variables.
