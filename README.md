@@ -13,7 +13,7 @@ Check INSTALL file.
 Requirements
 ------------
 
-In order to Visualino to execute sketches, install Arduino IDE >= 1.6.
+In order to Visualino to execute sketches, install Arduino IDE >= 2.0.
 
 
 Configure
